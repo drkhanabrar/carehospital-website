@@ -1,0 +1,474 @@
+/* ==========================================================================
+   CARE — RESPONSIVE
+   --------------------------------------------------------------------------
+   THE BIG FIX
+
+   The previous file only switched to the hamburger below 768px. But the
+   header carries a 72px logo + 7 nav links + a search button + "Book
+   Appointment" + "Emergency". That needs roughly 1,150px. So on every
+   tablet and small laptop — 768px to 1100px, which is an iPad in both
+   orientations, an iPad Pro in portrait, and a Surface — the navigation
+   overflowed its container and the buttons were pushed off the edge.
+
+   The drawer breakpoint is now 1100px, and the drawer itself is a real
+   off-canvas panel rather than a max-height animation that could not
+   scroll reliably on a short screen.
+
+   Breakpoints
+     1400  wide desktop
+     1200  laptop
+     1100  >>> navigation collapses to the drawer <<<
+      992  tablet landscape — grids drop to 2 columns
+      768  tablet portrait / large phone
+      576  phone
+      380  small phone
+     landscape phones handled separately at the end
+   ========================================================================== */
+
+
+/* ==========================================================================
+   SKIP LINK  (visible only when focused)
+   ========================================================================== */
+
+.skip-link{
+    position:absolute;
+    top:-100px;
+    inset-inline-start:16px;
+    z-index:10050;
+    padding:14px 22px;
+    border-radius:0 0 14px 14px;
+    background:var(--primary,#0B7285);
+    color:#fff;
+    font-weight:700;
+    transition:top .25s ease;
+}
+
+.skip-link:focus{
+    top:0;
+    outline:3px solid #00C2B5;
+    outline-offset:2px;
+}
+
+
+/* ==========================================================================
+   WIDE DESKTOP
+   ========================================================================== */
+
+@media (min-width:1400px){
+
+    .container{ max-width:1320px; }
+}
+
+
+/* ==========================================================================
+   LAPTOP — COMPACT HEADER
+   --------------------------------------------------------------------------
+   Measured, not guessed. At full size the header needs ~1,320px:
+       logo 72 + nav 712 + buttons 533
+   but .container is capped at 1,320px and is only 92% of the viewport below
+   that. So the full-size header does not actually fit until roughly 1,440px.
+   This tier keeps the compact treatment all the way up to 1,499px, which
+   leaves real headroom instead of the 3px it had before.
+   ========================================================================== */
+
+@media (max-width:1499px){
+
+    .container{ width:92%; }
+
+    .nav ul{ gap:10px; }
+
+    .nav a{ padding:11px 9px; font-size:15px; }
+
+    .btn-book,
+    .btn-emergency{ padding:12px 18px; font-size:14.5px; }
+
+    .lang-toggle{ height:44px; padding:0 12px; font-size:14px; }
+
+    .btn-search{
+        flex:0 0 42px;
+        width:42px; height:42px;
+        min-width:42px; min-height:42px;
+    }
+
+    .logo{ margin-right:10px; }
+    .logo img{ height:58px; }
+}
+
+
+/* ==========================================================================
+   >>> NAVIGATION COLLAPSES HERE (1250px) <<<
+   --------------------------------------------------------------------------
+   Even compacted, the seven links plus Search, Language, Book Appointment
+   and Emergency need about 1,140px of the ~1,150px a 1,250px viewport
+   gives them. Below that the drawer takes over. The previous build only
+   collapsed at 768px, so every tablet AND every small laptop rendered a
+   header whose buttons ran off the edge of the page.
+   ========================================================================== */
+
+@media (max-width:1250px){
+
+    /* ---------- Hamburger ---------- */
+
+    .hamburger{
+        display:flex;
+        flex-direction:column;
+        justify-content:center;
+        gap:5px;
+        width:44px;
+        height:44px;
+        padding:10px 7px;
+        border:none;
+        border-radius:12px;
+        background:transparent;
+        cursor:pointer;
+        z-index:10002;
+    }
+
+    .hamburger span{
+        display:block;
+        width:100%;
+        height:3px;
+        border-radius:2px;
+        background:var(--dark,#123949);
+        transition:transform .35s ease, opacity .25s ease;
+    }
+
+    .hamburger.active span:nth-child(1){ transform:translateY(8px) rotate(45deg); }
+    .hamburger.active span:nth-child(2){ opacity:0; }
+    .hamburger.active span:nth-child(3){ transform:translateY(-8px) rotate(-45deg); }
+
+    /* ---------- Off-canvas drawer ---------- */
+
+    .nav{
+        position:fixed;
+        top:0;
+        inset-inline-end:0;
+        z-index:10001;
+
+        width:min(360px, 86vw);
+        height:100dvh;               /* dvh: correct on mobile Safari */
+        height:100vh;
+
+        padding:calc(var(--header-h,88px) + 16px) 26px 40px;
+
+        overflow-y:auto;
+        -webkit-overflow-scrolling:touch;
+        overscroll-behavior:contain;
+
+        background:#fff;
+        box-shadow:-24px 0 60px rgba(9,40,52,.16);
+
+        transform:translateX(100%);
+        visibility:hidden;
+        transition:transform .38s cubic-bezier(.22,.61,.36,1), visibility .38s;
+    }
+
+    html[dir="rtl"] .nav{
+        box-shadow:24px 0 60px rgba(9,40,52,.16);
+        transform:translateX(-100%);
+    }
+
+    .nav.active{
+        transform:translateX(0);
+        visibility:visible;
+    }
+
+    /* Dimmed backdrop behind the open drawer */
+
+    /* STACKING NOTE
+       .header sets z-index:9999, which creates a stacking context. Every
+       z-index inside it — including the drawer's 10001 — is therefore
+       resolved WITHIN that context and can never rise above 9999 on the
+       page. A backdrop at 10000 consequently painted on top of the open
+       drawer and swallowed every tap, so menu links did nothing on a
+       phone. The backdrop must sit BELOW the header instead. */
+
+    body.nav-open::after{
+        content:"";
+        position:fixed;
+        inset:0;
+        z-index:9998;
+        background:rgba(9,30,40,.45);
+        backdrop-filter:blur(3px);
+        -webkit-backdrop-filter:blur(3px);
+        animation:navFade .3s ease;
+    }
+
+    /* Lift the whole header (drawer included) above the backdrop */
+    body.nav-open .header{
+        z-index:10005;
+    }
+
+    @keyframes navFade{ from{ opacity:0; } to{ opacity:1; } }
+
+    .nav ul{
+        flex-direction:column;
+        align-items:stretch;
+        gap:0;
+        padding:0;
+    }
+
+    .nav ul li{
+        width:100%;
+        border-bottom:1px solid rgba(0,0,0,.06);
+    }
+
+    .nav ul li a{
+        display:block;
+        padding:18px 4px;
+        border-radius:10px;
+        font-size:17px;
+    }
+
+    /* The underline sweep is a desktop affordance */
+    .nav a::after{ display:none; }
+
+    .nav a[aria-current="page"]{
+        color:var(--primary,#0B7285);
+        background:rgba(0,194,181,.07);
+    }
+
+    /* ---------- Header buttons ---------- */
+
+    /* Below 1100 the desktop language dropdown is replaced by the
+       in-drawer version, so it is hidden rather than duplicated. */
+    .nav-buttons .lang-switch{ display:none; }
+
+    .btn-emergency{
+        padding:12px 18px;
+        font-size:14px;
+    }
+}
+
+
+/* ==========================================================================
+   TABLET LANDSCAPE
+   ========================================================================== */
+
+@media (max-width:992px){
+
+    .section-heading h2{ font-size:clamp(30px,4.4vw,44px); }
+
+    .hero-grid{
+        grid-template-columns:1fr;
+        gap:56px;
+    }
+
+    .hero-stats{ grid-template-columns:repeat(3,1fr); }
+
+    .doctor-card{ grid-template-columns:1fr; }
+
+    .department-grid,
+    .procedure-grid,
+    .gallery-grid,
+    .footer-top,
+    .highlight-grid,
+    .treatment-grid,
+    .related-grid,
+    .testimonial-grid{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .cta-wrapper{ grid-template-columns:1fr; }
+
+    /* The sticky booking rail becomes a normal block on tablet */
+    .profile-hero-grid{ grid-template-columns:1fr; }
+
+    #stickyBooking{
+        position:static;
+        width:100%;
+    }
+}
+
+
+/* ==========================================================================
+   TABLET PORTRAIT / LARGE PHONE
+   ========================================================================== */
+
+@media (max-width:768px){
+
+    .logo img{ height:54px; }
+
+    .hero-stats{ grid-template-columns:1fr; }
+
+    .department-grid,
+    .procedure-grid,
+    .footer-top,
+    .highlight-grid,
+    .treatment-grid,
+    .related-grid,
+    .testimonial-grid,
+    .expertise-grid{
+        grid-template-columns:1fr;
+    }
+
+    .gallery-grid{ grid-template-columns:repeat(2,1fr); }
+
+    /* "Book Appointment" is long; the floating button covers it on phones */
+    .nav-buttons .btn-book{ display:none; }
+
+    /* Tap targets: WCAG asks for 44x44 minimum */
+    .nav ul li a,
+    .filter-btn,
+    .doctor-btn,
+    .doctor-outline,
+    .btn-primary,
+    .btn-secondary,
+    .lang-option{
+        min-height:44px;
+    }
+
+    .procedure-meta,
+    .procedure-features{
+        gap:8px;
+    }
+
+    .footer-bottom{
+        flex-direction:column;
+        gap:10px;
+        text-align:center;
+    }
+}
+
+
+/* ==========================================================================
+   PHONE
+   ========================================================================== */
+
+@media (max-width:576px){
+
+    .container{ width:90%; }
+
+    .section-heading h2{ font-size:clamp(26px,7vw,34px); }
+
+    .gallery-grid{ grid-template-columns:1fr; }
+
+    /* Search becomes a full-screen sheet */
+
+    .search-overlay{ padding:0; }
+
+    .search-box{
+        max-width:100%;
+        height:100dvh;
+        height:100vh;
+        border-radius:0;
+        display:flex;
+        flex-direction:column;
+    }
+
+    .search-results{
+        max-height:none;
+        flex:1;
+    }
+
+    .video-modal-box{ border-radius:14px; }
+
+    .hero-buttons,
+    .cta-buttons,
+    .profile-buttons,
+    .doctor-actions{
+        flex-direction:column;
+        align-items:stretch;
+    }
+
+    .hero-buttons > *,
+    .cta-buttons > *,
+    .profile-buttons > *,
+    .doctor-actions > *{
+        width:100%;
+        justify-content:center;
+        text-align:center;
+    }
+
+    .profile-stats{ grid-template-columns:repeat(2,1fr); }
+
+    .schedule-row{
+        flex-direction:column;
+        align-items:flex-start;
+        gap:4px;
+    }
+
+    /* Long unbroken strings (URLs, e-mail) must not force sideways scroll */
+    body{ overflow-wrap:break-word; }
+}
+
+
+/* ==========================================================================
+   SMALL PHONE
+   ========================================================================== */
+
+@media (max-width:380px){
+
+    .logo img{ height:46px; }
+
+    .btn-emergency{
+        padding:10px 14px;
+        font-size:13px;
+    }
+
+    .profile-stats{ grid-template-columns:1fr; }
+
+    .nav{ width:92vw; }
+}
+
+
+/* ==========================================================================
+   LANDSCAPE PHONES
+   A phone held sideways is ~360px tall; full-height panels have to shrink.
+   ========================================================================== */
+
+@media (max-height:520px) and (orientation:landscape){
+
+    .nav{
+        padding-top:76px;
+        padding-bottom:24px;
+    }
+
+    .nav ul li a{
+        padding:12px 4px;
+        font-size:15px;
+    }
+
+    .hero{
+        padding-top:110px;
+        padding-bottom:60px;
+    }
+}
+
+
+/* ==========================================================================
+   PRINT
+   ========================================================================== */
+
+@media print{
+
+    .header,
+    .nav,
+    .floating-buttons,
+    .floating-book,
+    #backToTop,
+    .search-overlay,
+    .video-modal,
+    .appointment-modal,
+    .skip-link,
+    .lang-switch,
+    .lang-switch-mobile,
+    .share-profile{
+        display:none !important;
+    }
+
+    body{
+        background:#fff;
+        color:#000;
+    }
+
+    .doctor-section,
+    .profile-cta{
+        page-break-inside:avoid;
+    }
+
+    a[href^="http"]::after{
+        content:" (" attr(href) ")";
+        font-size:11px;
+    }
+}

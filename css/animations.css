@@ -1,0 +1,55 @@
+/* ==========================================================
+   ANIMATIONS
+   Shared animation utilities used by more than one component.
+   Component-specific keyframes (e.g. the floating book button's
+   glow, the lightbox zoom-in, the appointment modal pop-in) stay
+   next to the component that uses them in their own CSS file —
+   only cross-cutting stuff lives here.
+   ========================================================== */
+
+/* ----------------------------------------
+   SCROLL REVEAL
+   Toggled by the IntersectionObserver in js/scroll-effects.js
+   on any element with class="reveal" as it enters the viewport.
+---------------------------------------- */
+
+.reveal{
+    opacity:0;
+    transform:translateY(60px);
+    transition:all .8s ease;
+}
+
+.reveal.active{
+    opacity:1;
+    transform:translateY(0);
+}
+
+/* ----------------------------------------
+   FADE IN / OUT
+   Used by the search overlay and the video modal.
+---------------------------------------- */
+
+@keyframes fadeIn{
+    from{ opacity:0; }
+    to{ opacity:1; }
+}
+
+@keyframes fadeInUp{
+    from{
+        opacity:0;
+        transform:translateY(24px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+/* ----------------------------------------
+   SPINNER
+   Used by the video modal while a video is buffering.
+---------------------------------------- */
+
+@keyframes spin{
+    to{ transform:rotate(360deg); }
+}

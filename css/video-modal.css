@@ -1,0 +1,1514 @@
+/* ===================================================================
+   CARE HOSPITAL
+   PREMIUM PROCEDURE VIDEO MODAL
+   PART 1 / 3
+   ---------------------------------------------------------------
+   Contents
+   1. Variables
+   2. Overlay
+   3. Modal Container
+   4. Header
+   5. Close Button
+   =================================================================== */
+
+
+/* ==============================================================
+   VARIABLES
+   ============================================================== */
+
+:root{
+
+    --video-primary:#0B7285;
+    --video-primary-dark:#075565;
+    --video-accent:#19A7CE;
+
+    --video-bg:#07131B;
+    --video-card:#0F1B26;
+
+    --video-text:#FFFFFF;
+    --video-text-soft:rgba(255,255,255,.82);
+    --video-text-muted:rgba(255,255,255,.62);
+
+    --video-border:rgba(255,255,255,.10);
+
+    --video-shadow:
+        0 40px 120px rgba(0,0,0,.55);
+
+    --video-radius:26px;
+
+}
+
+
+/* ==============================================================
+   OVERLAY
+   ============================================================== */
+
+.video-modal{
+
+    position:fixed;
+
+    inset:0;
+
+    z-index:10500;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    padding:32px;
+
+    overflow-y:auto;
+
+    opacity:0;
+
+    visibility:hidden;
+
+    pointer-events:none;
+
+    background:
+        radial-gradient(circle at top,
+            rgba(25,167,206,.14),
+            transparent 35%),
+
+        radial-gradient(circle at bottom,
+            rgba(11,114,133,.16),
+            transparent 40%),
+
+        rgba(3,8,14,.90);
+
+    backdrop-filter:blur(18px);
+
+    -webkit-backdrop-filter:blur(18px);
+
+    transition:
+
+        opacity .35s ease,
+
+        visibility .35s ease,
+
+        background .35s ease;
+
+}
+
+
+/* Active */
+
+.video-modal.active{
+
+    opacity:1;
+
+    visibility:visible;
+
+    pointer-events:auto;
+
+}
+
+
+/* ==============================================================
+   MODAL CONTAINER
+   ============================================================== */
+
+.video-modal-box{
+
+    position:relative;
+
+    width:min(1120px,95vw);
+
+    max-height:94vh;
+
+    display:flex;
+
+    flex-direction:column;
+
+    overflow:hidden;
+
+    border-radius:var(--video-radius);
+
+    background:
+
+        linear-gradient(
+            180deg,
+            rgba(17,35,49,.98),
+            rgba(9,18,27,.98)
+        );
+
+    border:1px solid var(--video-border);
+
+    box-shadow:var(--video-shadow);
+
+    backdrop-filter:blur(24px);
+
+    -webkit-backdrop-filter:blur(24px);
+
+    transform:
+
+        translateY(50px)
+
+        scale(.94);
+
+    opacity:0;
+
+}
+
+
+/* Opening Animation */
+
+.video-modal.active .video-modal-box{
+
+    animation:
+
+        modalReveal .45s cubic-bezier(.22,.61,.36,1)
+
+        forwards;
+
+}
+
+
+/* Decorative Glow */
+
+.video-modal-box::before{
+
+    content:"";
+
+    position:absolute;
+
+    inset:-1px;
+
+    border-radius:inherit;
+
+    pointer-events:none;
+
+    background:
+
+        linear-gradient(
+            135deg,
+
+            rgba(25,167,206,.16),
+
+            transparent 35%,
+
+            transparent 65%,
+
+            rgba(11,114,133,.16)
+
+        );
+
+    opacity:.9;
+
+}
+
+
+/* Decorative Top Line */
+
+.video-modal-box::after{
+
+    content:"";
+
+    position:absolute;
+
+    left:0;
+
+    top:0;
+
+    width:100%;
+
+    height:4px;
+
+    background:
+
+        linear-gradient(
+            90deg,
+
+            #19A7CE,
+
+            #0B7285,
+
+            #19A7CE
+
+        );
+
+}
+
+
+/* ==============================================================
+   HEADER
+   ============================================================== */
+
+.video-modal-header{
+
+    position:relative;
+
+    z-index:2;
+
+    padding:
+
+        34px
+
+        40px
+
+        26px;
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:12px;
+
+    background:
+
+        linear-gradient(
+            180deg,
+
+            rgba(255,255,255,.03),
+
+            transparent
+
+        );
+
+    border-bottom:
+
+        1px solid
+
+        rgba(255,255,255,.06);
+
+}
+
+
+/* Department Badge */
+
+.video-category{
+
+    align-self:flex-start;
+
+    padding:
+
+        7px
+
+        16px;
+
+    border-radius:999px;
+
+    background:
+
+        rgba(25,167,206,.12);
+
+    border:
+
+        1px solid
+
+        rgba(25,167,206,.35);
+
+    color:#7FE8FF;
+
+    font-size:.82rem;
+
+    font-weight:700;
+
+    letter-spacing:.08em;
+
+    text-transform:uppercase;
+
+}
+
+
+/* Title */
+
+.video-modal-title{
+
+    margin:0;
+
+    color:var(--video-text);
+
+    font-size:2rem;
+
+    font-weight:800;
+
+    line-height:1.2;
+
+    letter-spacing:-.02em;
+
+}
+
+
+/* Subtitle */
+
+.video-modal-subtitle{
+
+    margin:0;
+
+    max-width:720px;
+
+    color:var(--video-text-soft);
+
+    font-size:1rem;
+
+    line-height:1.8;
+
+}
+
+
+/* ==============================================================
+   CLOSE BUTTON
+   ============================================================== */
+
+.video-modal-close{
+
+    position:absolute;
+
+    top:22px;
+
+    right:22px;
+
+    width:52px;
+
+    height:52px;
+
+    border:none;
+
+    border-radius:50%;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    cursor:pointer;
+
+    z-index:20;
+
+    color:#FFFFFF;
+
+    font-size:20px;
+
+    background:
+
+        rgba(255,255,255,.08);
+
+    border:
+
+        1px solid
+
+        rgba(255,255,255,.10);
+
+    backdrop-filter:blur(12px);
+
+    -webkit-backdrop-filter:blur(12px);
+
+    transition:
+
+        background .30s,
+
+        transform .30s,
+
+        box-shadow .30s,
+
+        border-color .30s;
+
+}
+
+
+.video-modal-close:hover{
+
+    background:
+
+        var(--video-primary);
+
+    border-color:
+
+        rgba(255,255,255,.18);
+
+    transform:
+
+        rotate(90deg)
+
+        scale(1.08);
+
+    box-shadow:
+
+        0 10px 30px
+
+        rgba(11,114,133,.45);
+
+}
+
+
+.video-modal-close:focus-visible{
+
+    outline:3px solid
+
+        rgba(25,167,206,.55);
+
+    outline-offset:4px;
+
+}
+
+
+/* ==============================================================
+   OPEN ANIMATION
+   ============================================================== */
+
+@keyframes modalReveal{
+
+    from{
+
+        opacity:0;
+
+        transform:
+
+            translateY(45px)
+
+            scale(.94);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:
+
+            translateY(0)
+
+            scale(1);
+
+    }
+
+}
+
+/* ========================== END PART 1 ========================== */
+
+/* ===================================================================
+   CARE HOSPITAL
+   PREMIUM PROCEDURE VIDEO MODAL
+   PART 2 / 3
+   ---------------------------------------------------------------
+   Contents
+   6. Video Wrapper
+   7. Video Frame
+   8. Loading Animation
+   9. Video Player
+   10. Portrait & Landscape Layouts
+   11. Placeholder
+   =================================================================== */
+
+/*==============================================================
+    MODAL LAYOUT V3
+==============================================================*/
+
+.video-modal-body{
+
+    display:grid;
+
+    grid-template-columns:minmax(0,1.7fr) 320px;
+
+    gap:32px;
+
+    padding:30px;
+
+    align-items:start;
+
+    flex:1;
+
+    min-height:0;
+
+}
+
+.video-column{
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    min-width:0;
+
+}
+
+.video-frame{
+
+    width:100%;
+
+    max-width:760px;
+
+    margin:auto;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    background:#000;
+
+    border-radius:24px;
+
+    overflow:hidden;
+
+    border:1px solid rgba(255,255,255,.08);
+
+    box-shadow:
+        inset 0 0 0 1px rgba(255,255,255,.03),
+        0 18px 60px rgba(0,0,0,.45);
+
+}
+
+.video-modal-player{
+
+    display:block;
+
+    width:100%;
+
+    height:100%;
+
+    max-width:100%;
+
+    max-height:100%;
+
+    object-fit:contain;
+
+    background:#000;
+
+}
+
+/*==============================================================
+    FEATURE LIST
+==============================================================*/
+
+.video-features{
+
+    display:grid;
+
+    gap:14px;
+
+}
+
+.video-features span{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:12px;
+
+    padding:16px;
+
+    border-radius:14px;
+
+    background:rgba(11,114,133,.10);
+
+    border:1px solid rgba(11,114,133,.25);
+
+}
+
+/*==============================================================
+    BOOK BUTTON
+==============================================================*/
+
+.video-book-btn{
+
+    margin-top:auto;
+
+    width:100%;
+
+    justify-content:center;
+
+}
+
+/*======================================================================
+    CARE PREMIUM VIDEO MODAL
+    PART 3A
+    INFORMATION PANEL + FOOTER + DESKTOP LAYOUT
+======================================================================*/
+
+
+/*==============================================================
+    INFORMATION PANEL
+==============================================================*/
+
+.video-info-column{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:22px;
+
+    padding:28px;
+
+    border-radius:22px;
+
+    background:
+        linear-gradient(
+            180deg,
+            rgba(255,255,255,.025),
+            rgba(255,255,255,.01)
+        );
+
+    border:1px solid rgba(255,255,255,.08);
+
+    min-height:0;
+
+    height:100%;
+
+}
+
+
+/*==============================================================
+    META
+==============================================================*/
+
+.video-meta{
+
+    display:grid;
+
+    gap:14px;
+
+}
+
+.video-meta span{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:12px;
+
+    padding:16px 18px;
+
+    border-radius:14px;
+
+    background:rgba(255,255,255,.05);
+
+    border:1px solid rgba(255,255,255,.08);
+
+    color:#ffffff;
+
+    font-weight:600;
+
+}
+
+.video-meta i{
+
+    color:#19A7CE;
+
+    width:20px;
+
+}
+
+
+
+
+/*==============================================================
+    BOOK BUTTON
+==============================================================*/
+
+.video-book-btn{
+
+    margin-top:auto;
+
+    min-height:54px;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    gap:10px;
+
+}
+
+
+/*==============================================================
+    FOOTER
+==============================================================*/
+
+.video-modal-footer{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    gap:24px;
+
+    padding:26px 36px;
+
+    border-top:1px solid rgba(255,255,255,.08);
+
+    background:
+
+        linear-gradient(
+
+            180deg,
+
+            rgba(255,255,255,.02),
+
+            rgba(0,0,0,.12)
+
+        );
+
+}
+
+.video-footer-brand{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:16px;
+
+}
+
+.video-footer-brand img{
+
+    width:54px;
+
+    height:54px;
+
+    object-fit:contain;
+
+}
+
+.video-footer-brand strong{
+
+    display:block;
+
+    color:#ffffff;
+
+    font-size:1.05rem;
+
+    font-weight:800;
+
+}
+
+.video-footer-brand span{
+
+    display:block;
+
+    margin-top:4px;
+
+    color:rgba(255,255,255,.70);
+
+    font-size:.88rem;
+
+}
+
+.video-footer-note{
+
+    color:rgba(255,255,255,.62);
+
+    font-size:.90rem;
+
+    text-align:right;
+
+}
+
+
+/*======================================================================
+    CARE PREMIUM VIDEO MODAL
+    PART 3B
+    RESPONSIVE + ANIMATION + ACCESSIBILITY
+======================================================================*/
+
+
+/*==============================================================
+    LARGE TABLET
+==============================================================*/
+
+@media (max-width:1100px){
+
+    .video-modal-body{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .video-info-column{
+
+        min-height:auto;
+
+    }
+
+}
+
+/*==============================================================
+    TABLET
+==============================================================*/
+
+@media (max-width:768px){
+
+.video-modal{
+
+    padding:18px;
+
+}
+
+.video-modal-box{
+
+    width:100%;
+
+    max-height:96vh;
+
+}
+
+.video-modal-header{
+
+    padding:24px;
+
+}
+
+.video-modal-title{
+
+    font-size:1.7rem;
+
+}
+
+.video-modal-subtitle{
+
+    font-size:.95rem;
+
+}
+
+.video-modal-body{
+
+    padding:20px;
+
+    gap:24px;
+
+}
+
+.video-info-column{
+
+    padding:22px;
+
+}
+
+.video-footer-brand{
+
+    justify-content:center;
+
+}
+
+.video-modal-footer{
+
+    flex-direction:column;
+
+    text-align:center;
+
+}
+
+.video-footer-note{
+
+    text-align:center;
+
+}
+
+}
+
+
+/*==============================================================
+    MOBILE
+==============================================================*/
+
+@media (max-width:576px){
+
+.video-modal{
+
+    padding:10px;
+
+}
+
+.video-modal-header{
+
+    padding:20px;
+
+}
+
+.video-modal-title{
+
+    font-size:1.45rem;
+
+}
+
+.video-modal-subtitle{
+
+    line-height:1.7;
+
+}
+
+.video-modal-body{
+
+    padding:16px;
+
+    gap:18px;
+
+}
+
+.video-frame{
+
+    min-height:300px;
+
+}
+
+.video-info-column{
+
+    padding:18px;
+
+}
+
+.video-modal-close{
+
+    width:44px;
+
+    height:44px;
+
+    top:16px;
+
+    right:16px;
+
+}
+
+.video-footer-brand img{
+
+    width:46px;
+
+    height:46px;
+
+}
+
+.video-footer-note{
+
+    font-size:.82rem;
+
+}
+
+}
+
+
+/*==============================================================
+    ASPECT RATIO
+    The frame takes the clip's REAL ratio (set by video-modal.js as
+    --video-ar) so 16:9, 9:16 and 1:1 sources all sit flush with no
+    letterboxing. The fixed 9/16-or-16/9 buckets used previously
+    letterboxed every square clip.
+==============================================================*/
+
+.video-frame{
+
+    aspect-ratio:var(--video-ar, 16 / 9);
+
+}
+
+/* Portrait clips must not grow taller than the viewport */
+
+.video-modal.portrait-video .video-frame{
+
+    max-height:70vh;
+
+    width:auto;
+
+}
+
+.video-modal.square-video .video-frame{
+
+    max-height:70vh;
+
+    width:auto;
+
+}
+
+/* The placeholder ("Video Coming Soon") has its own intrinsic height */
+
+.video-frame.is-placeholder{
+
+    aspect-ratio:auto;
+
+}
+
+
+/*==============================================================
+    LOADING
+==============================================================*/
+
+.video-loading{
+
+    position:absolute;
+
+    inset:0;
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+    align-items:center;
+
+    gap:20px;
+
+    background:rgba(7,18,28,.92);
+
+    transition:.35s;
+
+}
+
+.video-loading.hidden{
+
+    opacity:0;
+
+    visibility:hidden;
+
+    pointer-events:none;
+
+}
+
+.loading-ring{
+
+    width:72px;
+
+    height:72px;
+
+    border-radius:50%;
+
+    border:5px solid rgba(255,255,255,.10);
+
+    border-top-color:#19A7CE;
+
+    animation:spin .9s linear infinite;
+
+}
+
+.video-loading span{
+
+    color:#fff;
+
+}
+
+
+/*==============================================================
+    PLACEHOLDER
+==============================================================*/
+
+.video-modal-placeholder{
+
+width:100%;
+
+max-width:320px;
+
+margin:auto;
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+    align-items:center;
+
+    text-align:center;
+
+    min-height:520px;
+
+    gap:22px;
+
+    padding:50px;
+
+    border-radius:22px;
+
+    background:
+
+    linear-gradient(
+
+        135deg,
+
+        #0B7285,
+
+        #0A5E70,
+
+        #062A33
+
+    );
+
+    color:#fff;
+
+}
+
+.placeholder-icon{
+
+    width:110px;
+
+    height:110px;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    border-radius:50%;
+
+    background:rgba(255,255,255,.08);
+
+}
+
+.placeholder-icon i{
+
+    font-size:50px;
+
+}
+
+
+/*==============================================================
+    SCROLLBAR
+==============================================================*/
+
+.video-modal-body::-webkit-scrollbar{
+
+    width:8px;
+
+}
+
+.video-modal-body::-webkit-scrollbar-thumb{
+
+    background:#0B7285;
+
+    border-radius:999px;
+
+}
+
+
+/*==============================================================
+    ACCESSIBILITY
+==============================================================*/
+
+.video-modal button:focus-visible,
+.video-modal a:focus-visible,
+.video-modal video:focus-visible{
+
+    outline:3px solid rgba(25,167,206,.55);
+
+    outline-offset:4px;
+
+}
+
+
+/*==============================================================
+    ANIMATIONS
+==============================================================*/
+
+.video-modal.active .video-modal-header{
+
+    animation:fadeDown .45s ease;
+
+}
+
+.video-modal.active .video-column{
+
+    animation:fadeUp .55s ease;
+
+}
+
+.video-modal.active .video-info-column{
+
+    animation:fadeUp .65s ease;
+
+}
+
+.video-modal.active .video-modal-footer{
+
+    animation:fadeUp .75s ease;
+
+}
+
+@keyframes spin{
+
+    to{
+
+        transform:rotate(360deg);
+
+    }
+
+}
+
+@keyframes fadeDown{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(-18px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:none;
+
+    }
+
+}
+
+@keyframes fadeUp{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(24px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:none;
+
+    }
+
+}
+
+
+/*==============================================================
+    REDUCED MOTION
+==============================================================*/
+
+@media (prefers-reduced-motion:reduce){
+
+*{
+
+    animation:none!important;
+
+    transition:none!important;
+
+}
+
+}
+
+.video-modal-placeholder{
+
+    width:100%;
+
+    max-width:320px;
+
+    margin:auto;
+
+}
+
+/*======================================================================
+    FULL SCREEN
+    ----------------------------------------------------------------
+    THE FIX. Previously the player kept `max-height:68vh` and the frame
+    kept a fixed aspect-ratio + border-radius + overflow:hidden while
+    full screen, so a "full screen" video rendered as a small rectangle
+    marooned in a black field. Everything that constrains the element in
+    the modal is explicitly undone in the top layer here.
+======================================================================*/
+
+/* --- The frame is what we put into the top layer --- */
+
+.video-frame:fullscreen,
+.video-frame:-webkit-full-screen,
+.video-frame:-moz-full-screen,
+.video-frame:-ms-fullscreen{
+
+    width:100vw;
+    height:100vh;
+    max-width:100vw;
+    max-height:100vh;
+
+    aspect-ratio:auto;
+
+    margin:0;
+    padding:0;
+
+    border:none;
+    border-radius:0;
+    box-shadow:none;
+
+    background:#000;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}
+
+/* --- The video itself fills that frame --- */
+
+.video-frame:fullscreen .video-modal-player,
+.video-frame:-webkit-full-screen .video-modal-player,
+.video-frame:-moz-full-screen .video-modal-player,
+.video-frame:-ms-fullscreen .video-modal-player{
+
+    width:100%;
+    height:100%;
+    max-width:100vw;
+    max-height:100vh;
+
+    object-fit:contain;
+    border-radius:0;
+}
+
+/* --- If the browser's own control full-screens the <video> directly --- */
+
+.video-modal-player:fullscreen,
+.video-modal-player:-webkit-full-screen,
+.video-modal-player:-moz-full-screen,
+.video-modal-player:-ms-fullscreen{
+
+    width:100vw;
+    height:100vh;
+    max-width:100vw;
+    max-height:100vh;
+
+    object-fit:contain;
+    background:#000;
+    border-radius:0;
+}
+
+/* --- Overlays inside the frame must follow it into full screen --- */
+
+.video-frame:fullscreen .video-loading,
+.video-frame:-webkit-full-screen .video-loading{
+    border-radius:0;
+}
+
+/* --- Solid backdrop, so nothing shows through at the edges --- */
+
+.video-frame::backdrop,
+.video-modal-player::backdrop{
+    background:#000;
+}
+
+/* Safari applies the backdrop separately */
+.video-frame:-webkit-full-screen{
+    background-color:#000;
+}
+
+
+/*======================================================================
+    FULL SCREEN BUTTON
+======================================================================*/
+
+.video-modal-fullscreen{
+
+    position:absolute;
+    top:22px;
+    right:86px;
+
+    width:52px;
+    height:52px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    z-index:20;
+
+    padding:0;
+    border:1px solid rgba(255,255,255,.10);
+    border-radius:50%;
+
+    color:#FFFFFF;
+    font-size:18px;
+
+    background:rgba(255,255,255,.08);
+    backdrop-filter:blur(12px);
+    -webkit-backdrop-filter:blur(12px);
+
+    cursor:pointer;
+
+    transition:
+        background .30s,
+        transform .30s,
+        box-shadow .30s,
+        border-color .30s;
+}
+
+.video-modal-fullscreen:hover{
+    background:var(--video-primary);
+    border-color:rgba(255,255,255,.18);
+    transform:scale(1.08);
+    box-shadow:0 10px 30px rgba(11,114,133,.45);
+}
+
+.video-modal-fullscreen:focus-visible{
+    outline:3px solid rgba(25,167,206,.55);
+    outline-offset:4px;
+}
+
+.video-modal-fullscreen[hidden]{
+    display:none;
+}
+
+@media (max-width:576px){
+
+    .video-modal-fullscreen{
+        top:16px;
+        right:70px;
+        width:44px;
+        height:44px;
+        font-size:16px;
+    }
+}
+
+
+/*======================================================================
+    LANDSCAPE PHONES
+    A phone held sideways has almost no vertical room; collapse the
+    modal chrome so the video keeps the screen.
+======================================================================*/
+
+@media (max-height:520px) and (orientation:landscape){
+
+    .video-modal{
+        padding:8px;
+        align-items:flex-start;
+    }
+
+    .video-modal-box{
+        max-height:98vh;
+    }
+
+    .video-modal-header{
+        padding:14px 70px 12px 18px;
+        gap:6px;
+    }
+
+    .video-modal-title{
+        font-size:1.05rem;
+    }
+
+    .video-modal-subtitle,
+    .video-modal-footer{
+        display:none;
+    }
+
+    .video-modal-body{
+        padding:12px;
+        gap:12px;
+    }
+
+    .video-modal.portrait-video .video-frame,
+    .video-modal.square-video .video-frame{
+        max-height:60vh;
+    }
+
+    .video-modal-close,
+    .video-modal-fullscreen{
+        width:38px;
+        height:38px;
+        top:10px;
+    }
+
+    .video-modal-close{ right:10px; }
+    .video-modal-fullscreen{ right:56px; }
+}

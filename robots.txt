@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+
+# Nothing here is private, but there is no value in indexing raw data files
+Disallow: /assets/data/
+Disallow: /data/
+
+Sitemap: https://carehospital.in/sitemap.xml

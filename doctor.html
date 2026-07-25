@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Doctor Profile | CARE</title>
+
+<meta name="description"
+      content="Meet our experienced specialists at CARE, Chikhli. Qualifications, expertise, treatments and consultation timings.">
+
+<meta name="theme-color" content="#0B7285">
+<meta name="robots" content="index, follow">
+
+<link rel="canonical" href="https://carehospital.in/doctor.html">
+
+<meta property="og:type" content="profile">
+<meta property="og:site_name" content="CARE">
+<meta property="og:title" content="Doctor Profile | CARE">
+<meta property="og:description"
+      content="Qualifications, expertise, treatments and consultation timings for our specialists at CARE, Chikhli.">
+<meta property="og:image" content="https://carehospital.in/images/logo.png">
+<meta name="twitter:card" content="summary_large_image">
+
+<link rel="icon" href="images/logo/favicon.png">
+<link rel="apple-touch-icon" href="images/logo.png">
+<link rel="manifest" href="site.webmanifest">
+
+<!-- Fonts -->
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+<!-- Script fonts for the Hindi and Urdu editions -->
+
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Nastaliq+Urdu:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<!-- Icons -->
+
+<link rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+<!-- Styles: same load order as index.html -->
+
+<link rel="stylesheet" href="css/base.css">
+<link rel="stylesheet" href="css/header.css">
+<link rel="stylesheet" href="css/doctors.css">
+<link rel="stylesheet" href="css/testimonials.css">
+<link rel="stylesheet" href="css/footer.css">
+<link rel="stylesheet" href="css/floating-buttons.css">
+<link rel="stylesheet" href="css/doctor-profile.css">
+<link rel="stylesheet" href="css/i18n.css">
+<link rel="stylesheet" href="css/animations.css">
+<link rel="stylesheet" href="css/responsive.css">
+
+</head>
+
+<body data-page="doctors">
+
+<!-- Keyboard users can jump straight past the navigation -->
+<a class="skip-link" href="#profile-main">Skip to main content</a>
+
+<!-- ==========================================================
+     HEADER
+     Injected by js/site-chrome.js. This element used to be left
+     empty with nothing to fill it, so the whole profile page
+     rendered with no navigation at all.
+========================================================== -->
+
+<header id="header"></header>
+
+<main id="profile-main">
+
+<!-- ==========================================================
+     BREADCRUMB
+========================================================== -->
+
+<nav class="profile-breadcrumb" aria-label="Breadcrumb">
+
+    <div class="container">
+
+        <a href="index.html">Home</a>
+        <span aria-hidden="true">/</span>
+
+        <a href="index.html#doctors">Doctors</a>
+        <span aria-hidden="true">/</span>
+
+        <strong id="breadcrumb-name" aria-current="page">Doctor Profile</strong>
+
+    </div>
+
+</nav>
+
+<!-- ==========================================================
+     PROFILE HERO
+     #doctorHero and #stickyBooking are filled by
+     assets/js/doctor-profile.js
+========================================================== -->
+
+<section class="doctor-profile-hero">
+
+    <div class="container profile-hero-grid">
+
+        <div id="doctorHero" class="doctor-hero"></div>
+
+        <aside id="stickyBooking"></aside>
+
+    </div>
+
+</section>
+
+<!-- ==========================================================
+     ABOUT
+========================================================== -->
+
+<section class="doctor-section">
+
+    <div class="container">
+        <div id="doctorAbout"></div>
+    </div>
+
+</section>
+
+<!-- ==========================================================
+     PROFESSIONAL HIGHLIGHTS
+========================================================== -->
+
+<section class="doctor-section alt">
+
+    <div class="container">
+
+        <div class="section-heading">
+            <span class="section-tag">Professional Highlights</span>
+            <h2>Experience &amp; Achievements</h2>
+        </div>
+
+        <div id="doctorHighlights" class="highlight-grid"></div>
+
+    </div>
+
+</section>
+
+<!-- ==========================================================
+     EDUCATION
+========================================================== -->
+
+<section class="doctor-section">
+
+    <div class="container">
+
+        <div class="section-heading">
+            <span class="section-tag">Qualifications</span>
+            <h2>Education</h2>
+        </div>
+
+        <div id="doctorEducation" class="timeline"></div>
+
+    </div>
+
+</section>
+
+<!-- ==========================================================
+     EXPERTISE
+========================================================== -->
+
+<section class="doctor-section alt">
+
+    <div class="container">
+
+        <div class="section-heading">
+            <span class="section-tag">Specialization</span>
+            <h2>Areas of Expertise</h2>
+        </div>
+
+        <div id="doctorExpertise" class="expertise-grid"></div>
+
+    </div>
+
+</section>
+
+<!-- ==========================================================
+     TREATMENTS
+========================================================== -->
+
+<section class="doctor-section">
+
+    <div class="container">
+
+        <div class="section-heading">
+            <span class="section-tag">Services</span>
+            <h2>Treatments &amp; Procedures</h2>
+        </div>
+
+        <div id="doctorTreatments" class="treatment-grid"></div>
+
+    </div>
+
+</section>
+
+<!-- ==========================================================
+     LANGUAGES
+========================================================== -->
+
+<section class="doctor-section alt">
+
+    <div class="container">
+
+        <div class="section-heading">
+            <span class="section-tag">Communication</span>
+            <h2>Languages Spoken</h2>
+        </div>
+
+        <div id="doctorLanguages" class="expertise-grid"></div>
+
+    </div>
+
+</section>
+
+<!-- ==========================================================
+     CONSULTATION SCHEDULE
+========================================================== -->
+
+<section class="doctor-section">
+
+    <div class="container">
+
+        <div class="section-heading">
+            <span class="section-tag">Availability</span>
+            <h2>Consultation Schedule</h2>
+        </div>
+
+        <div id="consultationSchedule"></div>
+
+    </div>
+
+</section>
+
+<!-- ==========================================================
+     PATIENT TESTIMONIALS
+========================================================== -->
+
+<section class="doctor-section alt">
+
+    <div class="container">
+
+        <div class="section-heading">
+            <span class="section-tag">Testimonials</span>
+            <h2>What Our Patients Say</h2>
+        </div>
+
+        <div id="doctorTestimonials" class="testimonial-grid"></div>
+
+    </div>
+
+</section>
+
+<!-- ==========================================================
+     FAQ
+========================================================== -->
+
+<section class="doctor-section">
+
+    <div class="container">
+
+        <div class="section-heading">
+            <span class="section-tag">FAQs</span>
+            <h2>Frequently Asked Questions</h2>
+        </div>
+
+        <div id="doctorFaq"></div>
+
+    </div>
+
+</section>
+
+<!-- ==========================================================
+     RELATED DOCTORS
+========================================================== -->
+
+<section class="doctor-section alt">
+
+    <div class="container">
+
+        <div class="section-heading">
+            <span class="section-tag">Meet Our Specialists</span>
+            <h2>Other Specialists</h2>
+        </div>
+
+        <div id="relatedDoctors" class="related-grid"></div>
+
+    </div>
+
+</section>
+
+<!-- ==========================================================
+     CTA
+========================================================== -->
+
+<section class="profile-cta">
+
+    <div class="container">
+
+        <div class="cta-box">
+
+            <h2>Need Expert Medical Advice?</h2>
+
+            <p>
+                Book your appointment today and receive compassionate,
+                evidence-based care from our experienced specialists.
+            </p>
+
+            <div class="cta-buttons">
+
+                <a href="index.html#appointment" class="btn-primary">
+                    Book Appointment
+                </a>
+
+                <a href="tel:+919370111449" class="btn-secondary">
+                    Call Now
+                </a>
+
+                <a href="https://wa.me/919370111449"
+                   target="_blank" rel="noopener"
+                   class="btn-whatsapp">
+                    <i class="fa-brands fa-whatsapp"></i>
+                    WhatsApp
+                </a>
+
+            </div>
+
+            <div id="shareProfile"></div>
+
+        </div>
+
+    </div>
+
+</section>
+
+</main>
+
+<!-- ==========================================================
+     FOOTER — injected by js/site-chrome.js
+========================================================== -->
+
+<footer id="footer"></footer>
+
+<!-- ==========================================================
+     FLOATING CONTACT — injected by js/site-chrome.js
+========================================================== -->
+
+<div class="floating-buttons"></div>
+
+<!-- ==========================================================
+     STRUCTURED DATA — filled in per doctor at runtime
+========================================================== -->
+
+<script type="application/ld+json" id="doctorSchema"></script>
+
+<!-- ==========================================================
+     SCRIPTS
+========================================================== -->
+
+<script src="assets/i18n/dictionary.js" defer></script>
+<script src="assets/i18n/dictionary-doctors.js" defer></script>
+<script src="js/i18n.js" defer></script>
+
+<script src="js/site-chrome.js" defer></script>
+<script src="js/header.js" defer></script>
+
+<script src="assets/data/doctors.js" defer></script>
+<script src="assets/js/doctor-profile.js" defer></script>
+
+</body>
+
+</html>

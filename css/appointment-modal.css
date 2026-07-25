@@ -1,0 +1,249 @@
+/* Auto-generated from the original style.css during code reorganization.
+   Grouped by component so each concern can be found and debugged independently. */
+
+/* ==========================================================
+   APPOINTMENT MODAL
+========================================================== */
+
+.appointment-modal{
+
+    position:fixed;
+
+    inset:0;
+
+    background:rgba(0,0,0,.45);
+
+    backdrop-filter:blur(8px);
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    opacity:0;
+
+    visibility:hidden;
+
+    transition:.35s;
+
+    z-index:9999;
+
+}
+
+.appointment-modal.active{
+
+    opacity:1;
+
+    visibility:visible;
+
+}
+
+.appointment-modal-box{
+
+    width:min(560px,92%);
+
+    max-height:90vh;
+
+    overflow-y:auto;
+
+    background:#ffffff;
+
+    border-radius:24px;
+
+    padding:30px 32px;
+
+    position:relative;
+
+    animation:modalPop .35s ease;
+
+    box-shadow:0 30px 80px rgba(0,0,0,.18);
+
+}
+
+@keyframes modalPop{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(30px) scale(.96);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:none;
+
+    }
+
+}
+
+.appointment-modal-close{
+
+    position:absolute;
+
+    top:18px;
+
+    right:18px;
+
+    width:42px;
+
+    height:42px;
+
+    border:none;
+
+    border-radius:50%;
+
+    background:#f3f6fa;
+
+    cursor:pointer;
+
+    font-size:28px;
+
+}
+
+.appointment-modal-icon{
+
+    width:80px;
+
+    height:80px;
+
+    margin:0 auto 18px;
+
+    border-radius:50%;
+
+    background:linear-gradient(135deg,#00b5b8,#007d80);
+
+    color:#fff;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    font-size:42px;
+
+    font-weight:700;
+
+    box-shadow:0 15px 35px rgba(0,181,184,.35);
+
+}
+
+.appointment-modal h2{
+
+    margin:0;
+
+    text-align:center;
+
+    font-size:34px;
+
+    font-weight:800;
+
+    color:#12344d;
+
+}
+
+.appointment-modal p{
+
+    text-align:center;
+
+    color:#667085;
+
+    font-size:16px;
+
+    line-height:1.7;
+
+    margin:14px 0 30px;
+
+}
+
+.appointment-summary{
+
+    margin:30px 0;
+
+    border:1px solid #e8eef3;
+
+    border-radius:16px;
+
+    overflow:hidden;
+
+    background:#fafcfd;
+
+}
+
+.appointment-summary div{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    padding:16px 22px;
+
+    border-bottom:1px solid #edf2f7;
+
+}
+
+.appointment-summary div:last-child{
+
+    border-bottom:none;
+
+}
+
+.appointment-summary span{
+
+    color:var(--secondary);
+
+    font-weight:700;
+
+    text-align:right;
+
+}
+
+.appointment-summary strong{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:10px;
+
+    font-size:15px;
+
+    color:#12344d;
+
+    font-weight:700;
+
+}
+
+.appointment-summary strong i{
+
+    width:22px;
+
+    color:var(--secondary);
+
+    font-size:17px;
+
+}
+
+.appointment-modal-actions{
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    gap:16px;
+
+    margin-top:30px;
+
+    flex-wrap:wrap;
+
+}
+

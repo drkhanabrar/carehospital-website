@@ -1,0 +1,16 @@
+{
+    "name": "CARE — ENT, Women's Health, Skin & Hair Care",
+    "short_name": "CARE",
+    "description": "Multispecialty clinic in Chikhli offering ENT, Women's Health, Dermatology and Hair Restoration.",
+    "start_url": "/index.html",
+    "scope": "/",
+    "display": "standalone",
+    "background_color": "#F7FBFC",
+    "theme_color": "#0B7285",
+    "orientation": "portrait-primary",
+    "lang": "en",
+    "icons": [
+        { "src": "images/logo.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+        { "src": "images/logo.png", "sizes": "512x512", "type": "image/png", "purpose": "any" }
+    ]
+}

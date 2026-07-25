@@ -1,0 +1,95 @@
+# ==========================================================================
+# CARE — Apache configuration
+# Drop this file at the site root. If you host on Nginx, Netlify, Vercel or
+# Cloudflare Pages, translate the equivalent rules in that platform's config
+# instead — this file is ignored there.
+# ==========================================================================
+
+# --------------------------------------------------------------------------
+# Custom error page
+# --------------------------------------------------------------------------
+
+ErrorDocument 404 /404.html
+
+# --------------------------------------------------------------------------
+# Force HTTPS and a single canonical host
+# --------------------------------------------------------------------------
+
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+
+    RewriteCond %{HTTPS} off
+    RewriteRule ^(.*)$ https://%{HTTP_HOST}/$1 [R=301,L]
+
+    # Serve /doctor?id=... as /doctor.html?id=... too
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteRule ^doctor/?$ doctor.html [QSA,L]
+</IfModule>
+
+# --------------------------------------------------------------------------
+# Compression
+# --------------------------------------------------------------------------
+
+<IfModule mod_deflate.c>
+    AddOutputFilterByType DEFLATE text/html text/css text/plain text/xml
+    AddOutputFilterByType DEFLATE application/javascript application/json
+    AddOutputFilterByType DEFLATE image/svg+xml
+</IfModule>
+
+# --------------------------------------------------------------------------
+# Caching
+# Videos and images are fingerprint-free, so they get a shorter life than
+# they otherwise would; bump these once you add cache-busting filenames.
+# --------------------------------------------------------------------------
+
+<IfModule mod_expires.c>
+    ExpiresActive On
+
+    ExpiresByType text/html                 "access plus 0 seconds"
+    ExpiresByType text/css                  "access plus 7 days"
+    ExpiresByType application/javascript    "access plus 7 days"
+
+    ExpiresByType image/jpeg                "access plus 30 days"
+    ExpiresByType image/png                 "access plus 30 days"
+    ExpiresByType image/webp                "access plus 30 days"
+    ExpiresByType image/svg+xml             "access plus 30 days"
+
+    ExpiresByType video/mp4                 "access plus 30 days"
+
+    ExpiresByType application/manifest+json "access plus 7 days"
+</IfModule>
+
+# --------------------------------------------------------------------------
+# Range requests — required for video seeking
+# --------------------------------------------------------------------------
+
+<IfModule mod_headers.c>
+    <FilesMatch "\.(mp4)$">
+        Header set Accept-Ranges bytes
+    </FilesMatch>
+
+    # Security headers
+    Header always set X-Content-Type-Options "nosniff"
+    Header always set X-Frame-Options "SAMEORIGIN"
+    Header always set Referrer-Policy "strict-origin-when-cross-origin"
+    Header always set Permissions-Policy "geolocation=(), microphone=(), camera=()"
+</IfModule>
+
+# --------------------------------------------------------------------------
+# Correct MIME types
+# --------------------------------------------------------------------------
+
+<IfModule mod_mime.c>
+    AddType video/mp4                       .mp4
+    AddType application/manifest+json       .webmanifest
+    AddType image/svg+xml                   .svg
+</IfModule>
+
+# --------------------------------------------------------------------------
+# Keep source data out of the browser
+# --------------------------------------------------------------------------
+
+<FilesMatch "\.(md)$">
+    Require all denied
+</FilesMatch>

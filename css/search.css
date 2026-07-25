@@ -1,0 +1,202 @@
+/* ==========================================================
+   SITE SEARCH OVERLAY
+   Opened by clicking the magnifying-glass icon in the header.
+   Markup lives in index.html inside #searchOverlay.
+   Behaviour lives in js/search.js.
+   ========================================================== */
+
+.search-overlay{
+
+    position:fixed;
+    inset:0;
+    z-index:10500;
+
+    display:flex;
+    align-items:flex-start;
+    justify-content:center;
+
+    padding:10vh 20px 20px;
+
+    background:rgba(18,57,73,.55);
+    backdrop-filter:blur(6px);
+    -webkit-backdrop-filter:blur(6px);
+
+    opacity:0;
+    visibility:hidden;
+    transition:opacity .3s ease, visibility .3s ease;
+}
+
+.search-overlay.active{
+    opacity:1;
+    visibility:visible;
+}
+
+.search-overlay.active .search-box{
+    animation:fadeInUp .35s ease;
+}
+
+.search-box{
+
+    width:100%;
+    max-width:640px;
+
+    background:var(--white);
+    border-radius:var(--radius);
+    box-shadow:0 30px 70px rgba(0,0,0,.25);
+    overflow:hidden;
+}
+
+.search-input-row{
+
+    display:flex;
+    align-items:center;
+    gap:14px;
+
+    padding:20px 24px;
+    border-bottom:1px solid rgba(11,114,133,.12);
+}
+
+.search-input-row i.fa-magnifying-glass{
+    color:var(--primary);
+    font-size:20px;
+}
+
+#searchInput{
+
+    flex:1;
+    border:none;
+    outline:none;
+    font-family:inherit;
+    font-size:18px;
+    color:#1C2B36;
+    background:transparent;
+}
+
+#searchInput::placeholder{
+    color:#9AAAB2;
+}
+
+.search-close{
+
+    display:grid;
+    place-items:center;
+    width:36px;
+    height:36px;
+    border-radius:50%;
+    background:#EEF8FA;
+    color:var(--primary);
+    font-size:18px;
+    cursor:pointer;
+    flex-shrink:0;
+    transition:.25s;
+}
+
+.search-close:hover{
+    background:#DCF0F2;
+}
+
+.search-results{
+
+    max-height:52vh;
+    overflow-y:auto;
+    padding:10px 0;
+}
+
+.search-hint,
+.search-empty{
+
+    padding:32px 24px;
+    text-align:center;
+    color:var(--text);
+    font-size:15px;
+}
+
+.search-empty i,
+.search-hint i{
+    display:block;
+    font-size:26px;
+    margin-bottom:10px;
+    color:#C6D4D9;
+}
+
+.search-result-item{
+
+    display:flex;
+    align-items:center;
+    gap:16px;
+
+    width:100%;
+    padding:14px 24px;
+    border:none;
+    background:none;
+    text-align:left;
+    cursor:pointer;
+    transition:background .2s ease;
+}
+
+.search-result-item:hover,
+.search-result-item.is-active{
+    background:#F2FAFB;
+}
+
+.search-result-icon{
+
+    flex-shrink:0;
+    width:42px;
+    height:42px;
+    border-radius:12px;
+    display:grid;
+    place-items:center;
+    background:#EEF8FA;
+    color:var(--primary);
+    font-size:16px;
+}
+
+.search-result-text h4{
+
+    font-size:15px;
+    color:#1C2B36;
+    margin-bottom:2px;
+}
+
+.search-result-text p{
+
+    font-size:13px;
+    color:var(--text);
+}
+
+.search-result-tag{
+
+    margin-left:auto;
+    flex-shrink:0;
+    font-size:11px;
+    font-weight:700;
+    letter-spacing:.4px;
+    text-transform:uppercase;
+    color:var(--accent);
+    background:rgba(21,163,165,.1);
+    padding:5px 10px;
+    border-radius:20px;
+}
+
+/* Brief highlight pulse applied to the target section/card
+   after the person jumps to it from a search result */
+
+.search-highlight{
+    animation:searchPulse 1.6s ease;
+}
+
+@keyframes searchPulse{
+
+    0%{
+        box-shadow:0 0 0 0 rgba(21,163,165,.55);
+    }
+
+    70%{
+        box-shadow:0 0 0 18px rgba(21,163,165,0);
+    }
+
+    100%{
+        box-shadow:0 0 0 0 rgba(21,163,165,0);
+    }
+}

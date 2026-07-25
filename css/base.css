@@ -1,0 +1,188 @@
+/* Auto-generated from the original style.css during code reorganization.
+   Grouped by component so each concern can be found and debugged independently. */
+
+/* ================================================================
+   BASE — resets, CSS variables (design tokens), global elements
+   ================================================================ */
+/* ==========================================================
+CARE Premium Website v3.0
+Module 1 - Header + Hero
+========================================================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+:root{
+
+--primary:#0B7285;
+
+--secondary:#00C2B5;
+
+--accent:#15A3A5;
+
+--danger:#D62828;
+
+--dark:#123949;
+
+--text:#5E6E78;
+
+--white:#ffffff;
+
+--light:#F7FBFC;
+
+--radius:24px;
+
+--shadow:0 20px 45px rgba(0,0,0,.08);
+
+--transition:.35s;
+
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+
+    font-family:'Inter',sans-serif;
+
+    background:#F7FBFC;
+
+    color:#1C2B36;
+
+    overflow-x:hidden;
+
+}
+
+img{
+
+    max-width:100%;
+
+    display:block;
+
+}
+
+a{
+
+    text-decoration:none;
+
+}
+
+ul{
+
+    list-style:none;
+
+}
+
+.container{
+
+    width:min(92%,1320px);
+
+    margin:auto;
+
+}
+/* ==========================================================
+   UNIVERSAL CARD
+========================================================== */
+
+.card{
+
+    background:var(--white);
+
+    border-radius:var(--radius);
+
+    box-shadow:var(--shadow);
+
+    transition:var(--transition);
+
+    overflow:hidden;
+
+}
+
+.card:hover{
+
+    transform:translateY(-10px);
+
+}
+
+/* ==========================================================
+   PREMIUM CARD SUPPORT
+========================================================== */
+
+.premium-card{
+
+    position:relative;
+
+    overflow:hidden;
+
+}
+
+.premium-card > *:not(.card-shine){
+
+    position:relative;
+
+    z-index:3;
+
+}
+
+.premium-card:hover .card-shine{
+
+    left:170%;
+
+}
+
+/* ==========================================================
+   CARD SHINE
+========================================================== */
+
+.card-shine{
+
+    position:absolute;
+
+    top:0;
+
+    left:-140%;
+
+    width:70%;
+
+    height:100%;
+
+    pointer-events:none;
+
+    z-index:2;
+
+    background:
+
+        linear-gradient(
+
+            110deg,
+
+            transparent 0%,
+
+            rgba(255,255,255,.08) 25%,
+
+            rgba(255,255,255,.45) 50%,
+
+            rgba(255,255,255,.08) 75%,
+
+            transparent 100%
+
+        );
+
+    transform:skewX(-25deg);
+
+    transition:left .9s ease;
+
+}
+
+/* Universal hover utility for primary/CTA buttons (was 'UNIVERSAL BUTTON HOVER') */
+.doctor-btn:hover,
+.btn-primary:hover{
+
+
+box-shadow:0 15px 35px rgba(0,0,0,.15);
+
+}
+
