@@ -74,7 +74,7 @@ hi: {
 "Bachelor of Ayurvedic Medicine & Surgery (BAMS)": "बैचलर ऑफ़ आयुर्वेदिक मेडिसिन एंड सर्जरी (BAMS)",
 "Rajiv Gandhi University of Health Sciences, Karnataka": "राजीव गांधी यूनिवर्सिटी ऑफ़ हेल्थ साइंसेज़, कर्नाटक",
 "Medical Education": "चिकित्सा शिक्षा",
-"Bachelor of Medicine": "बैचलर ऑफ़ मेडिसिन",
+"Bachelor of Unani Medicine and Surgery ": "बैचलर ऑफ़ युनानी मेडिसिन एंड सर्जरी",
 "Recognized Medical Institution": "मान्यता प्राप्त चिकित्सा संस्थान",
 "Clinical Practice": "नैदानिक अभ्यास",
 "Women's Health & Obstetrics": "महिला स्वास्थ्य एवं प्रसूति",
