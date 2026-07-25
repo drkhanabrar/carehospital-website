@@ -70,10 +70,10 @@ window.CARE_DOCTORS = {
                 "description": "Completed postgraduate education in healthcare management with emphasis on hospital administration, healthcare systems, quality improvement, leadership, and strategic healthcare planning."
             },
             {
-                "year": "1996 – 2001",
-                "degree": "Bachelor of Ayurvedic Medicine & Surgery (BAMS)",
-                "institute": "Rajiv Gandhi University of Health Sciences, Karnataka",
-                "description": "Completed undergraduate medical education with comprehensive clinical training and later developed extensive experience in ENT practice."
+                "year": "Rome, Italy",
+                "degree": "Former Assistant Doctor",
+                "institute": "The Gemelli University Hospital, Rome, Italy",
+                "description": "Served as Assistant Doctor at one of Europe's leading university teaching hospitals, gaining international clinical exposure alongside postgraduate training in healthcare management."
             }
         ],
         "expertise": [
@@ -280,10 +280,10 @@ window.CARE_DOCTORS = {
         ],
         "education": [
             {
-                "year": "Medical Education",
-                "degree": "Bachelor of Medicine",
-                "institute": "Recognized Medical Institution",
-                "description": "Completed comprehensive medical education followed by specialized training in obstetrics and gynecology."
+                "year": "Indore, MP",
+                "degree": "Former Assistant Gynaecologist",
+                "institute": "Life Care Hospital and Infertility Centre, Indore, MP",
+                "description": "Practised as Assistant Gynaecologist at a dedicated infertility centre, building focused experience in fertility evaluation, assisted conception and high-risk obstetric care."
             },
             {
                 "year": "Clinical Practice",
@@ -450,7 +450,6 @@ window.CARE_DOCTORS = {
         "slug": "zainab-khan"
     }
 };
-
 
 /* Display order on the "Other Specialists" strip and in search results */
 window.CARE_DOCTOR_ORDER = ["abrar-khan", "zainab-khan"];
