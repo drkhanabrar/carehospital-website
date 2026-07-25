@@ -35,6 +35,8 @@ hi: {
 "{rating} out of 5": "5 में से {rating}",
 
 /* --- Titles & designations --- */
+"ENT Specialist & Clinic Administration": "ENT विशेषज्ञ एवं क्लिनिक प्रशासन",
+"Clinic Administration": "क्लिनिक प्रशासन",
 "Consultant ENT Physician & Healthcare Management Specialist": "कंसल्टेंट ENT चिकित्सक एवं हेल्थकेयर मैनेजमेंट विशेषज्ञ",
 "Consultant Obstetrician & Gynecologist": "कंसल्टेंट प्रसूति एवं स्त्री रोग विशेषज्ञ",
 
@@ -197,6 +199,8 @@ hi: {
 "Sunday": "रविवार",
 "Today": "आज",
 "10:00 AM – 8:00 PM": "सुबह 10:00 – रात 8:00",
+"11:30 AM – 9:00 PM": "सुबह 11:30 – रात 9:00",
+"Emergency Only": "केवल आपातकालीन",
 "Emergency Consultation / By Appointment": "आपातकालीन परामर्श / अपॉइंटमेंट द्वारा",
 
 /* --- Testimonials --- */
@@ -233,6 +237,8 @@ ur: {
 "{rating} out of 5": "5 میں سے {rating}",
 
 /* --- Titles & designations --- */
+"ENT Specialist & Clinic Administration": "ENT ماہر و انتظامِ کلینک",
+"Clinic Administration": "انتظامِ کلینک",
 "Consultant ENT Physician & Healthcare Management Specialist": "کنسلٹنٹ ENT معالج و ہیلتھ کیئر مینجمنٹ ماہر",
 "Consultant Obstetrician & Gynecologist": "کنسلٹنٹ ماہرِ زچگی و امراضِ نسواں",
 
@@ -395,6 +401,8 @@ ur: {
 "Sunday": "اتوار",
 "Today": "آج",
 "10:00 AM – 8:00 PM": "صبح 10:00 – رات 8:00",
+"11:30 AM – 9:00 PM": "صبح 11:30 – رات 9:00",
+"Emergency Only": "صرف ہنگامی صورت",
 "Emergency Consultation / By Appointment": "ہنگامی مشاورت / اپائنٹمنٹ سے",
 
 /* --- Testimonials --- */
