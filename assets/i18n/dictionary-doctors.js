@@ -36,6 +36,7 @@ hi: {
 
 /* --- Titles & designations --- */
 "ENT Specialist & Clinic Administration": "ENT विशेषज्ञ एवं क्लिनिक प्रशासन",
+"Leads the ENT department and clinic administration, with postgraduate training in Health Services Management from Università Cattolica del Sacro Cuore, Rome. Provides complete ear, nose and throat care — from routine hearing tests to endoscopy and hearing aid fittings.": "ENT विभाग और क्लिनिक प्रशासन का नेतृत्व करते हैं; यूनिवर्सिटा कैटोलिका डेल सैक्रो कुओरे, रोम से हेल्थ सर्विसेज़ मैनेजमेंट में स्नातकोत्तर प्रशिक्षण। नियमित श्रवण जाँच से लेकर एंडोस्कोपी और श्रवण यंत्र फ़िटिंग तक — संपूर्ण कान, नाक और गला देखभाल।",
 "Clinic Administration": "क्लिनिक प्रशासन",
 "Consultant ENT Physician & Healthcare Management Specialist": "कंसल्टेंट ENT चिकित्सक एवं हेल्थकेयर मैनेजमेंट विशेषज्ञ",
 "Consultant Obstetrician & Gynecologist": "कंसल्टेंट प्रसूति एवं स्त्री रोग विशेषज्ञ",
@@ -85,7 +86,7 @@ hi: {
 "Clinical Practice": "नैदानिक अभ्यास",
 "Women's Health & Obstetrics": "महिला स्वास्थ्य एवं प्रसूति",
 "Completed postgraduate education in healthcare management with emphasis on hospital administration, healthcare systems, quality improvement, leadership, and strategic healthcare planning.": "अस्पताल प्रशासन, स्वास्थ्य प्रणालियों, गुणवत्ता सुधार, नेतृत्व और सामरिक स्वास्थ्य नियोजन पर बल देते हुए हेल्थकेयर मैनेजमेंट में स्नातकोत्तर शिक्षा पूर्ण की।",
-"Extensive experience in pregnancy care, infertility management, gynecological disorders, preventive care, and women's wellness.": "गर्भावस्था देखभाल, निःसंतानता उपचार, स्त्री रोग विकार, निवारक देखभाल तथा महिला स्वास्थ्य में व्यापक अनुभव।",
+"Extensive experience in pregnancy care, infertility management, gynecological disorders, preventive care, and cosmetic gynecology.": "गर्भावस्था देखभाल, निःसंतानता उपचार, स्त्री रोग विकार, निवारक देखभाल तथा कॉस्मेटिक गायनेकोलॉजी में व्यापक अनुभव।",
 
 /* --- Expertise (ENT) --- */
 "Diagnostic Nasal Endoscopy": "नैदानिक नेज़ल एंडोस्कोपी",
@@ -238,6 +239,7 @@ ur: {
 
 /* --- Titles & designations --- */
 "ENT Specialist & Clinic Administration": "ENT ماہر و انتظامِ کلینک",
+"Leads the ENT department and clinic administration, with postgraduate training in Health Services Management from Università Cattolica del Sacro Cuore, Rome. Provides complete ear, nose and throat care — from routine hearing tests to endoscopy and hearing aid fittings.": "ENT شعبے اور کلینک کے انتظام کی قیادت کرتے ہیں؛ یونیورسٹا کیتھولیکا ڈیل سیکرو کورے، روم سے ہیلتھ سروسز مینجمنٹ میں پوسٹ گریجویٹ تربیت۔ معمول کے سماعتی ٹیسٹ سے لے کر اینڈوسکوپی اور سماعتی آلات کی فٹنگ تک — مکمل کان، ناک اور گلے کی نگہداشت۔",
 "Clinic Administration": "انتظامِ کلینک",
 "Consultant ENT Physician & Healthcare Management Specialist": "کنسلٹنٹ ENT معالج و ہیلتھ کیئر مینجمنٹ ماہر",
 "Consultant Obstetrician & Gynecologist": "کنسلٹنٹ ماہرِ زچگی و امراضِ نسواں",
@@ -287,7 +289,7 @@ ur: {
 "Clinical Practice": "طبی پریکٹس",
 "Women's Health & Obstetrics": "خواتین کی صحت و زچگی",
 "Completed postgraduate education in healthcare management with emphasis on hospital administration, healthcare systems, quality improvement, leadership, and strategic healthcare planning.": "ہسپتال کے انتظام، نظامِ صحت، معیار کی بہتری، قیادت اور طبی منصوبہ بندی پر زور دیتے ہوئے ہیلتھ کیئر مینجمنٹ میں پوسٹ گریجویٹ تعلیم مکمل کی۔",
-"Extensive experience in pregnancy care, infertility management, gynecological disorders, preventive care, and women's wellness.": "حمل کی نگہداشت، بانجھ پن کے علاج، امراضِ نسواں، احتیاطی نگہداشت اور خواتین کی صحت میں وسیع تجربہ۔",
+"Extensive experience in pregnancy care, infertility management, gynecological disorders, preventive care, and cosmetic gynecology.": "حمل کی نگہداشت، بانجھ پن کے علاج، امراضِ نسواں، احتیاطی نگہداشت اور کاسمیٹک گائنی میں وسیع تجربہ۔",
 
 /* --- Expertise (ENT) --- */
 "Diagnostic Nasal Endoscopy": "تشخیصی ناک کی اینڈوسکوپی",

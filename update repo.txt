@@ -1,0 +1,5 @@
+cd C:\path\to\your\repository
+git status
+git add .
+git commit -m "Update website files"
+git push origin main

@@ -343,3 +343,52 @@ rather than living in a `max-width` query. Verified fitting from 1280px to
 ### Translations
 About 35 new keys per language for the Hijama panel and Visit Us section,
 including the hours table. Verified in English, Hindi and Urdu.
+
+---
+
+## Revision 4 — translation gaps on the doctor profiles
+
+Three bugs, all introduced by earlier edits in this project.
+
+### 1. Reworded text, stale dictionary key
+Dr. Zainab Khan's timeline description was reworded to end
+*"…preventive care, and cosmetic gynecology."*, but the dictionary key still
+read *"…and women's wellness."* A dictionary lookup is an exact string match,
+so it missed and the sentence stayed in English while the three lines above
+it translated correctly — exactly the symptom reported.
+
+Fixed in both languages, and *cosmetic gynecology* is now translated properly
+(कॉस्मेटिक गायनेकोलॉजी / کاسمیٹک گائنی) rather than folded into the generic
+"women's health" wording it previously shared.
+
+### 2. Longer text in the data than in the dictionary
+Dr. Abrar Khan's `shortDescription` in the JSON carries a second sentence
+("Provides complete ear, nose and throat care — …") that the home-page card
+does not. The dictionary held only the shorter card version, so the profile
+page's longer version never matched. Full-length keys added.
+
+### 3. Truncate-before-translate — the structural one
+`renderRelated()` built the "Other Specialists" blurb as
+
+```js
+escapeHTML(other.shortDescription).slice(0, 150) + '…'
+```
+
+Cutting the English sentence to 150 characters produced a fragment that is
+not a dictionary key, so this blurb could never translate no matter how
+complete the dictionary was. It now **translates first, then truncates**, and
+cuts on a word boundary. Escaping also moved after the slice, so an HTML
+entity can no longer be cut in half.
+
+Because that string is shortened at render time, the generic text-node pass
+cannot re-expand it on a language switch — `renderRelated()` is therefore
+re-run on `care:languagechange` alongside the About and CTA blocks.
+
+### Audit added
+Rather than fixing only the reported line, every string in the doctor data
+was checked against both dictionaries (181 strings — 0 now missing), and each
+page was loaded in Hindi and scanned for any text node still holding English.
+
+**Result: the only untranslated string left on any page is
+`careclinic.admin@gmail.com`, which is correct — an e-mail address must not
+be translated.**
