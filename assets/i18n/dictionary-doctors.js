@@ -10,8 +10,8 @@
    assets/i18n/dictionary.js and before js/i18n.js.
 
    Medical convention followed here: established clinical terms that Indian
-   patients encounter in English on prescriptions and reports (PCOS, BAMS,
-   GERD, endoscopy) are kept recognisable, with the explanatory sense
+   patients encounter in English on prescriptions and reports (PCOS, GERD,
+   endoscopy, PCOD) are kept recognisable, with the explanatory sense
    carried by the surrounding translated text. Translating them into
    unfamiliar coinages would make the page harder to use, not easier.
    ========================================================================== */
@@ -35,6 +35,8 @@ hi: {
 "{rating} out of 5": "5 में से {rating}",
 
 /* --- Titles & designations --- */
+"ENT Specialist & Clinic Administration": "ENT विशेषज्ञ एवं क्लिनिक प्रशासन",
+"Clinic Administration": "क्लिनिक प्रशासन",
 "Consultant ENT Physician & Healthcare Management Specialist": "कंसल्टेंट ENT चिकित्सक एवं हेल्थकेयर मैनेजमेंट विशेषज्ञ",
 "Consultant Obstetrician & Gynecologist": "कंसल्टेंट प्रसूति एवं स्त्री रोग विशेषज्ञ",
 
@@ -68,19 +70,21 @@ hi: {
 "Dedicated to providing comprehensive women's healthcare with a compassionate, patient-centered approach. Experienced in pregnancy care, infertility management, PCOS/PCOD, menstrual disorders, adolescent gynecology, menopause care, cosmetic gynecology, and skin & hair treatments.": "संवेदनशील और रोगी-केंद्रित दृष्टिकोण के साथ संपूर्ण महिला स्वास्थ्य सेवा के प्रति समर्पित। गर्भावस्था देखभाल, निःसंतानता उपचार, PCOS/PCOD, मासिक धर्म विकार, किशोरी स्त्री रोग, रजोनिवृत्ति देखभाल, कॉस्मेटिक गायनेकोलॉजी तथा त्वचा एवं बाल उपचार में अनुभवी।",
 "Dr. Zainab Khan is committed to delivering personalized healthcare for women at every stage of life. With extensive clinical experience, she provides evidence-based obstetric and gynecological care while ensuring every patient feels comfortable, respected, and well-informed. Her approach combines preventive healthcare, early diagnosis, modern treatment protocols, and long-term wellness planning for women of all ages.": "डॉ. ज़ैनब खान जीवन के हर चरण में महिलाओं को व्यक्तिगत स्वास्थ्य सेवा देने हेतु प्रतिबद्ध हैं। व्यापक नैदानिक अनुभव के साथ वे प्रमाण-आधारित प्रसूति एवं स्त्री रोग देखभाल प्रदान करती हैं और यह सुनिश्चित करती हैं कि हर मरीज़ सहज, सम्मानित और पूर्ण जानकार महसूस करे। उनका दृष्टिकोण निवारक स्वास्थ्य सेवा, शीघ्र निदान, आधुनिक उपचार प्रोटोकॉल तथा हर आयु की महिलाओं हेतु दीर्घकालिक स्वास्थ्य योजना का संगम है।",
 
-/* --- Education --- */
+/* --- Education & professional experience --- */
+"Rome, Italy": "रोम, इटली",
+"Former Assistant Doctor": "पूर्व असिस्टेंट डॉक्टर",
+"The Gemelli University Hospital, Rome, Italy": "द जेमेल्ली यूनिवर्सिटी हॉस्पिटल, रोम, इटली",
+"Served as Assistant Doctor at one of Europe's leading university teaching hospitals, gaining international clinical exposure alongside postgraduate training in healthcare management.": "यूरोप के अग्रणी विश्वविद्यालय शिक्षण अस्पतालों में से एक में असिस्टेंट डॉक्टर के रूप में सेवा दी, जहाँ हेल्थकेयर मैनेजमेंट के स्नातकोत्तर प्रशिक्षण के साथ-साथ अंतरराष्ट्रीय नैदानिक अनुभव प्राप्त हुआ।",
+"Indore, MP": "इंदौर, मध्य प्रदेश",
+"Former Assistant Gynaecologist": "पूर्व असिस्टेंट स्त्री रोग विशेषज्ञ",
+"Life Care Hospital and Infertility Centre, Indore, MP": "लाइफ़ केयर हॉस्पिटल एंड इनफ़र्टिलिटी सेंटर, इंदौर, मध्य प्रदेश",
+"Practised as Assistant Gynaecologist at a dedicated infertility centre, building focused experience in fertility evaluation, assisted conception and high-risk obstetric care.": "एक समर्पित निःसंतानता केंद्र में असिस्टेंट स्त्री रोग विशेषज्ञ के रूप में कार्य किया, जहाँ प्रजनन मूल्यांकन, सहायक गर्भधारण और उच्च जोखिम प्रसूति देखभाल में केंद्रित अनुभव प्राप्त हुआ।",
+"Education & Professional Experience": "शिक्षा एवं व्यावसायिक अनुभव",
 "Master in Healthcare Management": "हेल्थकेयर मैनेजमेंट में मास्टर्स",
 "Università Cattolica del Sacro Cuore, Rome, Italy": "यूनिवर्सिटा कैटोलिका डेल सैक्रो कुओरे, रोम, इटली",
-"Bachelor of Ayurvedic Medicine & Surgery (BAMS)": "बैचलर ऑफ़ आयुर्वेदिक मेडिसिन एंड सर्जरी (BAMS)",
-"Rajiv Gandhi University of Health Sciences, Karnataka": "राजीव गांधी यूनिवर्सिटी ऑफ़ हेल्थ साइंसेज़, कर्नाटक",
-"Medical Education": "चिकित्सा शिक्षा",
-"Bachelor of Medicine": "बैचलर ऑफ़ मेडिसिन",
-"Recognized Medical Institution": "मान्यता प्राप्त चिकित्सा संस्थान",
 "Clinical Practice": "नैदानिक अभ्यास",
 "Women's Health & Obstetrics": "महिला स्वास्थ्य एवं प्रसूति",
 "Completed postgraduate education in healthcare management with emphasis on hospital administration, healthcare systems, quality improvement, leadership, and strategic healthcare planning.": "अस्पताल प्रशासन, स्वास्थ्य प्रणालियों, गुणवत्ता सुधार, नेतृत्व और सामरिक स्वास्थ्य नियोजन पर बल देते हुए हेल्थकेयर मैनेजमेंट में स्नातकोत्तर शिक्षा पूर्ण की।",
-"Completed undergraduate medical education with comprehensive clinical training and later developed extensive experience in ENT practice.": "संपूर्ण नैदानिक प्रशिक्षण सहित स्नातक चिकित्सा शिक्षा पूर्ण की और बाद में ENT अभ्यास में व्यापक अनुभव विकसित किया।",
-"Completed comprehensive medical education followed by specialized training in obstetrics and gynecology.": "संपूर्ण चिकित्सा शिक्षा के उपरांत प्रसूति एवं स्त्री रोग में विशेष प्रशिक्षण प्राप्त किया।",
 "Extensive experience in pregnancy care, infertility management, gynecological disorders, preventive care, and women's wellness.": "गर्भावस्था देखभाल, निःसंतानता उपचार, स्त्री रोग विकार, निवारक देखभाल तथा महिला स्वास्थ्य में व्यापक अनुभव।",
 
 /* --- Expertise (ENT) --- */
@@ -195,6 +199,8 @@ hi: {
 "Sunday": "रविवार",
 "Today": "आज",
 "10:00 AM – 8:00 PM": "सुबह 10:00 – रात 8:00",
+"11:30 AM – 9:00 PM": "सुबह 11:30 – रात 9:00",
+"Emergency Only": "केवल आपातकालीन",
 "Emergency Consultation / By Appointment": "आपातकालीन परामर्श / अपॉइंटमेंट द्वारा",
 
 /* --- Testimonials --- */
@@ -231,6 +237,8 @@ ur: {
 "{rating} out of 5": "5 میں سے {rating}",
 
 /* --- Titles & designations --- */
+"ENT Specialist & Clinic Administration": "ENT ماہر و انتظامِ کلینک",
+"Clinic Administration": "انتظامِ کلینک",
 "Consultant ENT Physician & Healthcare Management Specialist": "کنسلٹنٹ ENT معالج و ہیلتھ کیئر مینجمنٹ ماہر",
 "Consultant Obstetrician & Gynecologist": "کنسلٹنٹ ماہرِ زچگی و امراضِ نسواں",
 
@@ -264,19 +272,21 @@ ur: {
 "Dedicated to providing comprehensive women's healthcare with a compassionate, patient-centered approach. Experienced in pregnancy care, infertility management, PCOS/PCOD, menstrual disorders, adolescent gynecology, menopause care, cosmetic gynecology, and skin & hair treatments.": "ہمدردانہ اور مریض پر مرکوز رویّے کے ساتھ خواتین کی مکمل طبی نگہداشت کے لیے وقف۔ حمل کی نگہداشت، بانجھ پن کے علاج، PCOS/PCOD، ماہواری کی خرابیوں، نوعمر لڑکیوں کے امراضِ نسواں، سنِ یاس کی نگہداشت، کاسمیٹک گائنی اور جلد و بالوں کے علاج میں تجربہ کار۔",
 "Dr. Zainab Khan is committed to delivering personalized healthcare for women at every stage of life. With extensive clinical experience, she provides evidence-based obstetric and gynecological care while ensuring every patient feels comfortable, respected, and well-informed. Her approach combines preventive healthcare, early diagnosis, modern treatment protocols, and long-term wellness planning for women of all ages.": "ڈاکٹر زینب خان زندگی کے ہر مرحلے میں خواتین کو ذاتی نوعیت کی طبی سہولت دینے کے لیے پُرعزم ہیں۔ وسیع طبی تجربے کے ساتھ وہ شواہد پر مبنی زچگی اور امراضِ نسواں کی نگہداشت فراہم کرتی ہیں اور اس بات کو یقینی بناتی ہیں کہ ہر مریضہ آرام دہ، باوقار اور مکمل باخبر محسوس کرے۔ ان کا طریقۂ کار احتیاطی نگہداشت، بروقت تشخیص، جدید طریقۂ علاج اور ہر عمر کی خواتین کے لیے دیرپا صحت کی منصوبہ بندی کا امتزاج ہے۔",
 
-/* --- Education --- */
+/* --- Education & professional experience --- */
+"Rome, Italy": "روم، اٹلی",
+"Former Assistant Doctor": "سابق اسسٹنٹ ڈاکٹر",
+"The Gemelli University Hospital, Rome, Italy": "دی جیمیلی یونیورسٹی ہسپتال، روم، اٹلی",
+"Served as Assistant Doctor at one of Europe's leading university teaching hospitals, gaining international clinical exposure alongside postgraduate training in healthcare management.": "یورپ کے صفِ اوّل کے یونیورسٹی تدریسی ہسپتالوں میں سے ایک میں بطور اسسٹنٹ ڈاکٹر خدمات انجام دیں، جہاں ہیلتھ کیئر مینجمنٹ کی پوسٹ گریجویٹ تربیت کے ساتھ بین الاقوامی طبی تجربہ حاصل ہوا۔",
+"Indore, MP": "اندور، مدھیہ پردیش",
+"Former Assistant Gynaecologist": "سابق اسسٹنٹ ماہرِ امراضِ نسواں",
+"Life Care Hospital and Infertility Centre, Indore, MP": "لائف کیئر ہسپتال اینڈ انفرٹیلیٹی سینٹر، اندور، مدھیہ پردیش",
+"Practised as Assistant Gynaecologist at a dedicated infertility centre, building focused experience in fertility evaluation, assisted conception and high-risk obstetric care.": "ایک مخصوص بانجھ پن مرکز میں بطور اسسٹنٹ ماہرِ امراضِ نسواں خدمات انجام دیں، جہاں زرخیزی کے جائزے، معاون حمل اور زیادہ خطرے والی زچگی کی نگہداشت میں مرکوز تجربہ حاصل ہوا۔",
+"Education & Professional Experience": "تعلیم اور پیشہ ورانہ تجربہ",
 "Master in Healthcare Management": "ہیلتھ کیئر مینجمنٹ میں ماسٹرز",
 "Università Cattolica del Sacro Cuore, Rome, Italy": "یونیورسٹا کیتھولیکا ڈیل سیکرو کورے، روم، اٹلی",
-"Bachelor of Ayurvedic Medicine & Surgery (BAMS)": "بیچلر آف آیورویدک میڈیسن اینڈ سرجری (BAMS)",
-"Rajiv Gandhi University of Health Sciences, Karnataka": "راجیو گاندھی یونیورسٹی آف ہیلتھ سائنسز، کرناٹک",
-"Medical Education": "طبی تعلیم",
-"Bachelor of Medicine": "بیچلر آف میڈیسن",
-"Recognized Medical Institution": "تسلیم شدہ طبی ادارہ",
 "Clinical Practice": "طبی پریکٹس",
 "Women's Health & Obstetrics": "خواتین کی صحت و زچگی",
 "Completed postgraduate education in healthcare management with emphasis on hospital administration, healthcare systems, quality improvement, leadership, and strategic healthcare planning.": "ہسپتال کے انتظام، نظامِ صحت، معیار کی بہتری، قیادت اور طبی منصوبہ بندی پر زور دیتے ہوئے ہیلتھ کیئر مینجمنٹ میں پوسٹ گریجویٹ تعلیم مکمل کی۔",
-"Completed undergraduate medical education with comprehensive clinical training and later developed extensive experience in ENT practice.": "مکمل طبی تربیت کے ساتھ انڈر گریجویٹ طبی تعلیم مکمل کی اور بعد ازاں ENT پریکٹس میں وسیع تجربہ حاصل کیا۔",
-"Completed comprehensive medical education followed by specialized training in obstetrics and gynecology.": "مکمل طبی تعلیم کے بعد زچگی اور امراضِ نسواں میں خصوصی تربیت حاصل کی۔",
 "Extensive experience in pregnancy care, infertility management, gynecological disorders, preventive care, and women's wellness.": "حمل کی نگہداشت، بانجھ پن کے علاج، امراضِ نسواں، احتیاطی نگہداشت اور خواتین کی صحت میں وسیع تجربہ۔",
 
 /* --- Expertise (ENT) --- */
@@ -391,6 +401,8 @@ ur: {
 "Sunday": "اتوار",
 "Today": "آج",
 "10:00 AM – 8:00 PM": "صبح 10:00 – رات 8:00",
+"11:30 AM – 9:00 PM": "صبح 11:30 – رات 9:00",
+"Emergency Only": "صرف ہنگامی صورت",
 "Emergency Consultation / By Appointment": "ہنگامی مشاورت / اپائنٹمنٹ سے",
 
 /* --- Testimonials --- */

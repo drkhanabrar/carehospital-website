@@ -156,3 +156,190 @@ IDs · no missing assets · no dead anchors · profiles over both `http://` and
 screen at three aspect ratios · booking form validation, confirmation modal,
 and exactly one WhatsApp tab (an old duplicate-listener bug) · search ·
 gallery · mobile drawer · 13 viewports × 3 pages.
+
+---
+
+## Content revision (requested after the first build)
+
+### Dr. Abrar Khan
+- **Removed** the 1996–2001 BAMS entry (Rajiv Gandhi University of Health
+  Sciences, Karnataka) and its description.
+- **Added** *Former Assistant Doctor — The Gemelli University Hospital,
+  Rome, Italy.*
+
+  Gemelli is the teaching hospital of Università Cattolica del Sacro Cuore,
+  where the Master's in Healthcare Management was taken, so the two entries
+  now read as one coherent period in Rome rather than two unrelated facts.
+
+### Dr. Zainab Khan
+- **Removed** the placeholder entry *Medical Education / Bachelor of
+  Medicine / Recognized Medical Institution* and its description. It named
+  no actual institution, which reads as unverified on a clinical site.
+- **Added** *Former Assistant Gynaecologist — Life Care Hospital and
+  Infertility Centre, Indore, MP.*
+
+### Section renamed
+The timeline heading was **"Education"**, but it now carries hospital
+appointments as well as degrees. Changed to **"Education & Professional
+Experience"**, in all three languages.
+
+### Translations
+Seven obsolete keys were deleted from `dictionary-doctors.js` (they
+described content that no longer exists), and nine new keys were added per
+language — place names, post titles, institution names, the two new
+descriptions and the new section heading. Verified rendering in English,
+Hindi and Urdu.
+
+No colour, font, icon or layout changes were made — this was a data and
+translation edit only.
+
+---
+
+## Merge from carehospitals.gt.tc
+
+Content taken from the practice's own site and folded into this build.
+
+### Departments rebuilt — four became five
+The build previously listed *ENT / Women's Health / Skin & Beauty / Hair
+Clinic*. The practice actually runs five departments, and two of them were
+missing entirely:
+
+| Department | Services listed |
+|---|---|
+| ENT — Ear, Nose & Throat | 11 |
+| **Maternity Care** *(new)* | 5 |
+| Gynaecology | 9 |
+| **Diagnostics & Laboratory** *(new)* | 5 |
+| Skin, Hair & Unani Care | 6 |
+
+**Maternity was the significant omission.** The practice is a *Maternity
+Home* with inpatient beds and conducts deliveries; the site did not mention
+this anywhere. Service lists now use the practice's own wording — DNS,
+Anosmia, Leucorrhoea, IUD Insertion (Cu-T), TORCH Test, Semen Analysis and
+so on — rather than generic marketing terms.
+
+**Unani care** (Hijama/cupping, Ilaj bil Tadbeer) was also absent. It is a
+genuine differentiator and is now its own department alongside skin and hair.
+
+### New section: "Everything On Site"
+Seven concrete in-house capabilities — laboratory, pharmacy, inpatient beds,
+fetal doppler, ECG, laser mole & wart removal, ear & nose endoscopy. For a
+patient deciding whether to travel to Buldhana or Aurangabad, this is the
+most persuasive content on the page, so it gets its own section. Built from
+existing design tokens only.
+
+### Doctors realigned
+- **Dr. Abrar Khan** — "ENT Specialist & Clinic Administration". Expertise
+  now mirrors the ENT department's actual service list.
+- **Dr. Zainab Khan** — specialty corrected from "Women's Health Specialist"
+  to **"Gynaecologist & Obstetrician"**, which is what the practice calls
+  her, with maternity and infertility brought to the front.
+
+### Positioning
+Hero copy now states the real proposition: husband-and-wife specialist team,
+on-site diagnostics, 18+ years, serving Chikhli and the wider Buldhana
+district.
+
+### Contact details — CONFLICTS RESOLVED IN FAVOUR OF THE LIVE SITE
+| Field | Was | Now |
+|---|---|---|
+| Closing time | 8:30 PM | **9:00 PM** |
+| E-mail | admin@carehospital.com | **careclinic.admin@gmail.com** |
+| Address | Police Station Road, Chikhli 443201 | + Buldhana District, Maharashtra |
+| Sunday | not stated | **Emergency Only** |
+
+The booking form's time slots were regenerated to 9:00 PM (40 slots), and
+both doctors' consultation schedules updated to match. **Please confirm
+these two changes** — they were conflicts between two of your own sources,
+not additions.
+
+### Emergency disclaimer
+Added to the footer, from the practice's own wording: a web form should not
+imply it is a route to urgent care.
+
+### Booking form
+Department dropdown and the department-to-doctor mapping rebuilt around the
+five real departments.
+
+### Translations
+Roughly 70 new keys per language covering every merged string. Verified in
+English, Hindi and Urdu.
+
+### Not merged
+- **Site name.** The reference calls the practice "Care ENT Clinic &
+  Maternity Home"; this build says "CARE" throughout, including the logo
+  image. Renaming touches the logo asset, so it is left for you to decide.
+- **"20,000+ patients" and "10,000+ procedures".** These appear in this
+  build but not on the reference site. They have been left as-is, but if
+  they cannot be substantiated they are worth removing from a medical site.
+
+---
+
+## Revision 3 — new artwork, hero fix, Hijama panel, map
+
+### IMPORTANT: which index.html this build uses
+The uploaded zip contained a **mixed state**. Its `assets/` and `js/` were
+current (Gemelli/Life Care timeline, full-screen fix, dictionaries), but its
+`index.html` had reverted to the pre-merge version: four departments, no
+Maternity, no Diagnostics, no Unani, no "Everything On Site", 8:30 PM hours,
+and the old e-mail address.
+
+The live site in the screenshots shows the **merged** version, and the new
+artwork includes a purpose-made **Maternity Care** banner — so the merge is
+clearly what is wanted. This build therefore keeps the merged `index.html`
+and imports the new images on top of it. If the reverted `index.html` was
+deliberate, say so and it can be swapped back.
+
+### New artwork imported
+All 14 new/updated images: five department banners, `hero.jpg`,
+`doctors/doctor2.jpg`, two facilities and four gallery photos.
+
+### Hero gap — FIXED
+`.hero` carried `padding:140px` **and** `.hero-grid` carried
+`padding-top:120px` — 260px of padding beneath an 88px fixed header. The
+headline began 260px down a 800px screen and the photo fell below the fold.
+
+Now `padding:calc(var(--header-h) + 28px)` with the duplicate removed.
+Measured on a 1440x800 laptop: badge top **260px → 106px**, and the hero
+image is **fully visible on load** (previously it ran to 1013px on an 800px
+screen). A `max-height:820px` tier compacts type and cards further so short
+laptops still show both buttons above the fold.
+
+### Department banners no longer cropped
+The new banners are ~1900x820 (2.3:1) designed panels, but
+`.department-image` forced a 260px-tall box with `object-fit:cover` — which
+sliced the left-hand text panel and icon row off every one of them. The box
+now takes the banner's own aspect ratio and uses `object-fit:contain`, so
+each design shows whole. The 760px `min-height` floor on cards was also
+removed; it was creating dead space under the shorter cards.
+
+### Empty grid cell — FILLED
+Five departments in a two-column grid left the fifth card alone with an
+empty cell. That cell now holds a **Hijama & Regimental Therapy** feature
+panel: female practitioner for women, single-use sterile cups, and a note
+that it accompanies rather than replaces medical consultation.
+
+Deliberately built as a feature panel, **not a sixth department** — Hijama
+is a service *within* Skin, Hair & Unani Care, so a sixth card would
+double-count it in the nav and the booking form.
+
+### Google Map added
+New "Visit Us" section with address, phone, e-mail, an opening-hours table
+and an embedded map, laid out like the reference site.
+
+The map uses Google's **keyless** embed endpoint (`output=embed`), so there
+is no API key to leak, no billing account to attach, and nothing that can
+expire or start charging. `loading="lazy"` keeps it off the critical path.
+"Get Directions" opens turn-by-turn navigation. On narrow screens the map
+moves above the details.
+
+### Header
+Adding a "Visit Us" nav link took the header to eight links, which needs
+~1392px — but `.container` is capped at 1320px, so the full-size header did
+not fit **even at 1920px**. The compact treatment is now unconditional
+rather than living in a `max-width` query. Verified fitting from 1280px to
+2560px.
+
+### Translations
+About 35 new keys per language for the Hijama panel and Visit Us section,
+including the hours table. Verified in English, Hindi and Urdu.

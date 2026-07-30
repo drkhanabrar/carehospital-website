@@ -214,7 +214,7 @@
 
                 '<div class="sticky-today">' +
                     '<i class="fa-regular fa-clock"></i>' +
-                    '<span>' + escapeHTML(today ? today.time : "Mon–Sat : 11:30 AM – 8:30 PM") + '</span>' +
+                    '<span>' + escapeHTML(today ? today.time : "Mon–Sat : 11:30 AM – 9:00 PM") + '</span>' +
                 '</div>' +
 
                 '<a href="index.html#appointment" class="btn-book sticky-btn">' +

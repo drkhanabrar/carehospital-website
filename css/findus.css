@@ -1,0 +1,193 @@
+/* ==========================================================================
+   CARE — FIND US (address + embedded map)
+   --------------------------------------------------------------------------
+   The map is a keyless Google Maps embed (`output=embed`), so there is no
+   API key to leak, no billing account to attach, and nothing that can start
+   charging or expire. `loading="lazy"` keeps it off the critical path.
+
+   Uses existing design tokens only.
+   ========================================================================== */
+
+.findus{
+    padding:120px 0;
+    background:#F7FBFC;
+}
+
+.findus-grid{
+    display:grid;
+    grid-template-columns:minmax(0, 1fr) minmax(0, 1.05fr);
+    gap:44px;
+    align-items:stretch;
+    margin-top:60px;
+}
+
+/* ---------- Details column ---------- */
+
+.findus-details{
+    display:flex;
+    flex-direction:column;
+    gap:26px;
+    padding:40px 36px;
+    border:1px solid rgba(11,114,133,.10);
+    border-radius:26px;
+    background:#FFFFFF;
+    box-shadow:0 18px 44px rgba(9,40,52,.07);
+}
+
+.findus-item{
+    display:flex;
+    align-items:flex-start;
+    gap:18px;
+    padding-bottom:22px;
+    border-bottom:1px solid rgba(0,0,0,.06);
+}
+
+.findus-item:last-of-type{
+    border-bottom:none;
+    padding-bottom:0;
+}
+
+.findus-icon{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    flex-shrink:0;
+    width:48px;
+    height:48px;
+    border-radius:14px;
+    background:linear-gradient(135deg, rgba(11,114,133,.10), rgba(0,194,181,.16));
+    color:var(--primary,#0B7285);
+    font-size:17px;
+}
+
+.findus-label{
+    display:block;
+    margin-bottom:6px;
+    color:#6B7C86;
+    font-size:11.5px;
+    font-weight:800;
+    letter-spacing:.14em;
+    text-transform:uppercase;
+}
+
+.findus-item p{
+    color:#21404E;
+    font-size:1rem;
+    font-weight:600;
+    line-height:1.75;
+}
+
+.findus-item a{
+    color:#21404E;
+    transition:color .3s ease;
+}
+
+.findus-item a:hover{
+    color:var(--primary,#0B7285);
+}
+
+/* Phone and e-mail must not be re-ordered by the RTL algorithm */
+html[dir="rtl"] .findus-item a[href^="tel:"],
+html[dir="rtl"] .findus-item a[href^="mailto:"]{
+    direction:ltr;
+    unicode-bidi:embed;
+    display:inline-block;
+}
+
+/* ---------- Opening hours ---------- */
+
+.findus-hours{
+    width:100%;
+    border-collapse:collapse;
+}
+
+.findus-hours td{
+    padding:5px 0;
+    color:#21404E;
+    font-size:.95rem;
+    font-weight:600;
+    line-height:1.7;
+}
+
+.findus-hours td:last-child{
+    text-align:end;
+    color:var(--primary,#0B7285);
+    font-variant-numeric:tabular-nums;
+    white-space:nowrap;
+}
+
+/* ---------- Actions ---------- */
+
+.findus-actions{
+    display:flex;
+    flex-wrap:wrap;
+    gap:12px;
+    margin-top:6px;
+}
+
+.findus-actions .doctor-btn,
+.findus-actions .doctor-outline{
+    min-width:0;
+    height:auto;
+    padding:14px 26px;
+    display:inline-flex;
+    align-items:center;
+    gap:9px;
+    font-size:15px;
+}
+
+/* ---------- Map ---------- */
+
+.findus-map{
+    position:relative;
+    min-height:460px;
+    border:1px solid rgba(11,114,133,.10);
+    border-radius:26px;
+    overflow:hidden;
+    background:#E8F1F3;
+    box-shadow:0 18px 44px rgba(9,40,52,.08);
+}
+
+.findus-map iframe{
+    display:block;
+    width:100%;
+    height:100%;
+    min-height:460px;
+    border:0;
+}
+
+/* The embed renders in Latin regardless of site language, so it is left
+   out of translation rather than half-translated around the edges. */
+
+@media (max-width:992px){
+
+    .findus{ padding:80px 0; }
+
+    .findus-grid{
+        grid-template-columns:1fr;
+        gap:28px;
+        margin-top:40px;
+    }
+
+    .findus-map{
+        min-height:360px;
+        order:-1;                /* map first on narrow screens */
+    }
+
+    .findus-map iframe{ min-height:360px; }
+}
+
+@media (max-width:576px){
+
+    .findus-details{ padding:30px 24px; gap:20px; }
+
+    .findus-map,
+    .findus-map iframe{ min-height:300px; }
+
+    .findus-actions > *{
+        width:100%;
+        justify-content:center;
+    }
+
+    .findus-hours td{ font-size:.88rem; }
+}

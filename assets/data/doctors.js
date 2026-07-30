@@ -20,10 +20,10 @@ window.CARE_DOCTORS = {
     "abrar-khan": {
         "id": "abrar-khan",
         "name": "Dr. Abrar Khan",
-        "designation": "Consultant ENT Physician & Healthcare Management Specialist",
+        "designation": "ENT Specialist & Clinic Administration",
         "specialty": "ENT Specialist",
         "photo": "images/doctors/doctor1.jpg",
-        "shortDescription": "Providing comprehensive ENT care with over 18 years of clinical experience, specializing in nasal endoscopy, microscopic ear procedures, vertigo management, hearing disorders, and minimally invasive ENT treatments for patients of all ages.",
+        "shortDescription": "Leads the ENT department and clinic administration, with postgraduate training in Health Services Management from Università Cattolica del Sacro Cuore, Rome. Provides complete ear, nose and throat care — from routine hearing tests to endoscopy and hearing aid fittings.",
         "about": "Dr. Abrar Khan is an experienced ENT Physician with more than 18 years of clinical practice. Along with extensive experience in ear, nose and throat disorders, he holds a Master's degree in Healthcare Management from Università Cattolica del Sacro Cuore, Rome, Italy. He combines modern diagnostic techniques, evidence-based treatment, and compassionate patient care to deliver high-quality healthcare. His expertise includes advanced nasal endoscopy, microscopic ear procedures, vertigo evaluation, allergy management, hearing disorders, pediatric ENT care, and emergency foreign body removal.",
         "experience": "18+",
         "patients": "20,000+",
@@ -70,27 +70,25 @@ window.CARE_DOCTORS = {
                 "description": "Completed postgraduate education in healthcare management with emphasis on hospital administration, healthcare systems, quality improvement, leadership, and strategic healthcare planning."
             },
             {
-                "year": "1996 – 2001",
-                "degree": "Bachelor of Ayurvedic Medicine & Surgery (BAMS)",
-                "institute": "Rajiv Gandhi University of Health Sciences, Karnataka",
-                "description": "Completed undergraduate medical education with comprehensive clinical training and later developed extensive experience in ENT practice."
+                "year": "Rome, Italy",
+                "degree": "Former Assistant Doctor",
+                "institute": "The Gemelli University Hospital, Rome, Italy",
+                "description": "Served as Assistant Doctor at one of Europe's leading university teaching hospitals, gaining international clinical exposure alongside postgraduate training in healthcare management."
             }
         ],
         "expertise": [
-            "ENT Consultation",
-            "Diagnostic Nasal Endoscopy",
-            "Microscopic Ear Procedures",
-            "Vertigo Evaluation",
-            "Hearing Loss Assessment",
-            "Ear Wax Removal",
+            "Hearing Tests & Audiometry",
+            "Ear Endoscopy",
+            "Hearing Aid Fitting",
             "Foreign Body Removal",
-            "Sinusitis Treatment",
-            "Allergic Rhinitis",
-            "Tonsillitis",
-            "Voice Disorders",
-            "Pediatric ENT Care",
-            "Nasal Allergy Management",
-            "Snoring Evaluation"
+            "DNS (Deviated Nasal Septum)",
+            "Anosmia (Loss of Smell)",
+            "Tinnitus Management",
+            "Vertigo Treatment",
+            "Allergy Management",
+            "Thyroid Evaluation",
+            "Migraine Management",
+            "Clinic Administration"
         ],
         "treatments": [
             {
@@ -169,31 +167,31 @@ window.CARE_DOCTORS = {
         "schedule": [
             {
                 "day": "Monday",
-                "time": "10:00 AM – 8:00 PM"
+                "time": "11:30 AM – 9:00 PM"
             },
             {
                 "day": "Tuesday",
-                "time": "10:00 AM – 8:00 PM"
+                "time": "11:30 AM – 9:00 PM"
             },
             {
                 "day": "Wednesday",
-                "time": "10:00 AM – 8:00 PM"
+                "time": "11:30 AM – 9:00 PM"
             },
             {
                 "day": "Thursday",
-                "time": "10:00 AM – 8:00 PM"
+                "time": "11:30 AM – 9:00 PM"
             },
             {
                 "day": "Friday",
-                "time": "10:00 AM – 8:00 PM"
+                "time": "11:30 AM – 9:00 PM"
             },
             {
                 "day": "Saturday",
-                "time": "10:00 AM – 8:00 PM"
+                "time": "11:30 AM – 9:00 PM"
             },
             {
                 "day": "Sunday",
-                "time": "Emergency Consultation / By Appointment"
+                "time": "Emergency Only"
             }
         ],
         "testimonials": [
@@ -236,10 +234,10 @@ window.CARE_DOCTORS = {
     "zainab-khan": {
         "id": "zainab-khan",
         "name": "Dr. Zainab Khan",
-        "designation": "Consultant Obstetrician & Gynecologist",
-        "specialty": "Women's Health Specialist",
+        "designation": "Gynaecologist & Obstetrician",
+        "specialty": "Gynaecologist & Obstetrician",
         "photo": "images/doctors/doctor2.jpg",
-        "shortDescription": "Dedicated to providing comprehensive women's healthcare with a compassionate, patient-centered approach. Experienced in pregnancy care, infertility management, PCOS/PCOD, menstrual disorders, adolescent gynecology, menopause care, cosmetic gynecology, and skin & hair treatments.",
+        "shortDescription": "Heads Maternity Care and Gynaecology, guiding patients through antenatal care, delivery and women's health at every stage of life. Former Assistant Gynaecologist at Life Care Hospital and Infertility Centre, Indore, MP.",
         "about": "Dr. Zainab Khan is committed to delivering personalized healthcare for women at every stage of life. With extensive clinical experience, she provides evidence-based obstetric and gynecological care while ensuring every patient feels comfortable, respected, and well-informed. Her approach combines preventive healthcare, early diagnosis, modern treatment protocols, and long-term wellness planning for women of all ages.",
         "experience": "18+",
         "patients": "20,000+",
@@ -280,10 +278,10 @@ window.CARE_DOCTORS = {
         ],
         "education": [
             {
-                "year": "Medical Education",
-                "degree": "Bachelor of Medicine",
-                "institute": "Recognized Medical Institution",
-                "description": "Completed comprehensive medical education followed by specialized training in obstetrics and gynecology."
+                "year": "Indore, MP",
+                "degree": "Former Assistant Gynaecologist",
+                "institute": "Life Care Hospital and Infertility Centre, Indore, MP",
+                "description": "Practised as Assistant Gynaecologist at a dedicated infertility centre, building focused experience in fertility evaluation, assisted conception and high-risk obstetric care."
             },
             {
                 "year": "Clinical Practice",
@@ -293,20 +291,20 @@ window.CARE_DOCTORS = {
             }
         ],
         "expertise": [
-            "Pregnancy Care",
-            "High-Risk Pregnancy",
-            "Normal Delivery",
-            "Infertility Management",
-            "PCOS / PCOD",
-            "Menstrual Disorders",
-            "Family Planning",
-            "Adolescent Gynecology",
-            "Menopause Management",
-            "Cervical Cancer Screening",
-            "Breast Health",
-            "Cosmetic Gynecology",
-            "Hair Treatment",
-            "Skin Care"
+            "Normal (Vaginal) Delivery",
+            "Antenatal Care",
+            "Intrapartum Care",
+            "Postnatal Care",
+            "Complications during Pregnancy",
+            "Infertility Treatment",
+            "PCOD / PCOS Management",
+            "Irregular Periods",
+            "Delayed Menstruation",
+            "Menarche Counselling",
+            "Menopausal Syndrome Management",
+            "Leucorrhoea (White Discharge)",
+            "Contraceptive Counselling",
+            "IUD Insertion (Cu-T)"
         ],
         "treatments": [
             {
@@ -385,31 +383,31 @@ window.CARE_DOCTORS = {
         "schedule": [
             {
                 "day": "Monday",
-                "time": "10:00 AM – 8:00 PM"
+                "time": "11:30 AM – 9:00 PM"
             },
             {
                 "day": "Tuesday",
-                "time": "10:00 AM – 8:00 PM"
+                "time": "11:30 AM – 9:00 PM"
             },
             {
                 "day": "Wednesday",
-                "time": "10:00 AM – 8:00 PM"
+                "time": "11:30 AM – 9:00 PM"
             },
             {
                 "day": "Thursday",
-                "time": "10:00 AM – 8:00 PM"
+                "time": "11:30 AM – 9:00 PM"
             },
             {
                 "day": "Friday",
-                "time": "10:00 AM – 8:00 PM"
+                "time": "11:30 AM – 9:00 PM"
             },
             {
                 "day": "Saturday",
-                "time": "10:00 AM – 8:00 PM"
+                "time": "11:30 AM – 9:00 PM"
             },
             {
                 "day": "Sunday",
-                "time": "Emergency Consultation / By Appointment"
+                "time": "Emergency Only"
             }
         ],
         "testimonials": [
@@ -451,11 +449,8 @@ window.CARE_DOCTORS = {
     }
 };
 
-
-/* Display order on the "Other Specialists" strip and in search results */
 window.CARE_DOCTOR_ORDER = ["abrar-khan", "zainab-khan"];
 
-/* Legacy short ids used by older links (doctor.html?id=abrar) still resolve */
 window.CARE_DOCTOR_ALIASES = {
     "abrar": "abrar-khan",
     "zainab": "zainab-khan",

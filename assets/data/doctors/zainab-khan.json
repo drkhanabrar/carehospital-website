@@ -1,266 +1,215 @@
 {
-  "id": "zainab-khan",
-
-  "name": "Dr. Zainab Khan",
-
-  "designation": "Consultant Obstetrician & Gynecologist",
-
-  "specialty": "Women's Health Specialist",
-
-  "photo": "images/doctors/doctor2.jpg",
-
-  "shortDescription": "Dedicated to providing comprehensive women's healthcare with a compassionate, patient-centered approach. Experienced in pregnancy care, infertility management, PCOS/PCOD, menstrual disorders, adolescent gynecology, menopause care, cosmetic gynecology, and skin & hair treatments.",
-
-  "about": "Dr. Zainab Khan is committed to delivering personalized healthcare for women at every stage of life. With extensive clinical experience, she provides evidence-based obstetric and gynecological care while ensuring every patient feels comfortable, respected, and well-informed. Her approach combines preventive healthcare, early diagnosis, modern treatment protocols, and long-term wellness planning for women of all ages.",
-
-  "experience": "18+",
-
-  "patients": "20,000+",
-
-  "procedures": "12,000+",
-
-  "phone": "+919370111449",
-
-  "whatsapp": "919370111449",
-
-  "languages": [
-    "English",
-    "Hindi",
-    "Marathi",
-    "Urdu"
-  ],
-
-  "highlights": [
-    {
-      "icon": "fa-solid fa-user-doctor",
-      "number": "18+",
-      "title": "Years Experience",
-      "text": "Dedicated to comprehensive women's healthcare."
-    },
-    {
-      "icon": "fa-solid fa-heart-circle-check",
-      "number": "20,000+",
-      "title": "Patients Treated",
-      "text": "Trusted by thousands of women for compassionate medical care."
-    },
-    {
-      "icon": "fa-solid fa-baby",
-      "number": "High Risk",
-      "title": "Pregnancy Care",
-      "text": "Management of routine and high-risk pregnancies."
-    },
-    {
-      "icon": "fa-solid fa-award",
-      "number": "Advanced",
-      "title": "Women's Wellness",
-      "text": "Focused on preventive care and long-term reproductive health."
-    }
-  ],
-
-  "education": [
-    {
-      "year": "Medical Education",
-      "degree": "Bachelor of Medicine",
-      "institute": "Recognized Medical Institution",
-      "description": "Completed comprehensive medical education followed by specialized training in obstetrics and gynecology."
-    },
-    {
-      "year": "Clinical Practice",
-      "degree": "Women's Health & Obstetrics",
-      "institute": "Clinical Experience",
-      "description": "Extensive experience in pregnancy care, infertility management, gynecological disorders, preventive care, and cosmetic gynecology."
-    }
-  ],
-
-  "expertise": [
-    "Pregnancy Care",
-    "High-Risk Pregnancy",
-    "Normal Delivery",
-    "Infertility Management",
-    "PCOS / PCOD",
-    "Menstrual Disorders",
-    "Family Planning",
-    "Adolescent Gynecology",
-    "Menopause Management",
-    "Cervical Cancer Screening",
-    "Breast Health",
-    "Cosmetic Gynecology",
-    "Hair Treatment",
-    "Skin Care"
-  ],
-
-  "treatments": [
-    {
-      "icon": "fa-solid fa-baby",
-      "title": "Pregnancy Care",
-      "description": "Comprehensive antenatal, delivery planning, and postnatal care.",
-      "procedures": [
-        "Routine Pregnancy Checkups",
-        "High-Risk Pregnancy",
-        "Ultrasound Guidance",
-        "Nutrition Counseling",
-        "Postnatal Follow-up"
-      ]
-    },
-    {
-      "icon": "fa-solid fa-venus",
-      "title": "Gynecological Care",
-      "description": "Diagnosis and treatment of common and complex gynecological conditions.",
-      "procedures": [
-        "Menstrual Disorders",
-        "Pelvic Pain Evaluation",
-        "Fibroid Management",
-        "Ovarian Cyst Evaluation",
-        "Hormonal Disorders"
-      ]
-    },
-    {
-      "icon": "fa-solid fa-seedling",
-      "title": "Infertility Management",
-      "description": "Evidence-based fertility assessment and treatment planning.",
-      "procedures": [
-        "Couple Evaluation",
-        "Ovulation Assessment",
-        "PCOS Management",
-        "Hormonal Evaluation",
-        "Fertility Counseling"
-      ]
-    },
-    {
-      "icon": "fa-solid fa-heart",
-      "title": "Women's Wellness",
-      "description": "Preventive healthcare designed to promote lifelong wellness.",
-      "procedures": [
-        "Annual Checkups",
-        "Cancer Screening",
-        "Breast Examination",
-        "Vaccination Advice",
-        "Lifestyle Counseling"
-      ]
-    },
-    {
-      "icon": "fa-solid fa-spa",
-      "title": "Skin & Hair Care",
-      "description": "Medical solutions for common skin and hair concerns affecting women.",
-      "procedures": [
-        "Hair Loss Management",
-        "Acne Treatment",
-        "Pigmentation Care",
-        "Anti-Aging Advice",
-        "Medical Skin Consultation"
-      ]
-    },
-    {
-      "icon": "fa-solid fa-hand-holding-heart",
-      "title": "Family Planning",
-      "description": "Personalized reproductive health counseling for every stage of life.",
-      "procedures": [
-        "Contraceptive Counseling",
-        "Preconception Planning",
-        "Menopause Counseling",
-        "Adolescent Counseling",
-        "Long-Term Women's Health Planning"
-      ]
-    }
-  ],
-
-  "schedule": [
-    {
-      "day": "Monday",
-      "time": "10:00 AM – 8:00 PM"
-    },
-    {
-      "day": "Tuesday",
-      "time": "10:00 AM – 8:00 PM"
-    },
-    {
-      "day": "Wednesday",
-      "time": "10:00 AM – 8:00 PM"
-    },
-    {
-      "day": "Thursday",
-      "time": "10:00 AM – 8:00 PM"
-    },
-    {
-      "day": "Friday",
-      "time": "10:00 AM – 8:00 PM"
-    },
-    {
-      "day": "Saturday",
-      "time": "10:00 AM – 8:00 PM"
-    },
-    {
-      "day": "Sunday",
-      "time": "Emergency Consultation / By Appointment"
-    }
-  ],
-  "testimonials":[
-
-{
-
-"name":"Mr. Rahul P.",
-
-"rating":5,
-
-"comment":"Dr. Abrar Khan explained my condition very clearly and the treatment worked perfectly."
-
-},
-
-{
-
-"name":"Mrs. Farzana S.",
-
-"rating":5,
-
-"comment":"Very caring doctor. My child's ear infection was treated quickly."
-
-},
-
-{
-
-"name":"Mr. Imran K.",
-
-"rating":5,
-
-"comment":"Excellent diagnosis and modern ENT care."
-
-}
-
-],
-
-"faq":[
-
-{
-
-"question":"Do I need an appointment?",
-
-"answer":"Appointments are recommended, but walk-in patients are accommodated whenever possible."
-
-},
-
-{
-
-"question":"Do you treat children?",
-
-"answer":"Yes. Pediatric ENT consultations are available."
-
-},
-
-{
-
-"question":"Is nasal endoscopy painful?",
-
-"answer":"It is generally well tolerated and performed with appropriate precautions to minimize discomfort."
-
-},
-
-{
-
-"question":"Do you remove foreign bodies from the ear and nose?",
-
-"answer":"Yes. Emergency foreign body removal is one of our routine ENT procedures."
-
-}
-
-]
+    "id": "zainab-khan",
+    "name": "Dr. Zainab Khan",
+    "designation": "Gynaecologist & Obstetrician",
+    "specialty": "Gynaecologist & Obstetrician",
+    "photo": "images/doctors/doctor2.jpg",
+    "shortDescription": "Heads Maternity Care and Gynaecology, guiding patients through antenatal care, delivery and women's health at every stage of life. Former Assistant Gynaecologist at Life Care Hospital and Infertility Centre, Indore, MP.",
+    "about": "Dr. Zainab Khan is committed to delivering personalized healthcare for women at every stage of life. With extensive clinical experience, she provides evidence-based obstetric and gynecological care while ensuring every patient feels comfortable, respected, and well-informed. Her approach combines preventive healthcare, early diagnosis, modern treatment protocols, and long-term wellness planning for women of all ages.",
+    "experience": "18+",
+    "patients": "20,000+",
+    "procedures": "12,000+",
+    "phone": "+919370111449",
+    "whatsapp": "919370111449",
+    "languages": [
+        "English",
+        "Hindi",
+        "Marathi",
+        "Urdu"
+    ],
+    "highlights": [
+        {
+            "icon": "fa-solid fa-user-doctor",
+            "number": "18+",
+            "title": "Years Experience",
+            "text": "Dedicated to comprehensive women's healthcare."
+        },
+        {
+            "icon": "fa-solid fa-heart-circle-check",
+            "number": "20,000+",
+            "title": "Patients Treated",
+            "text": "Trusted by thousands of women for compassionate medical care."
+        },
+        {
+            "icon": "fa-solid fa-baby",
+            "number": "High Risk",
+            "title": "Pregnancy Care",
+            "text": "Management of routine and high-risk pregnancies."
+        },
+        {
+            "icon": "fa-solid fa-award",
+            "number": "Advanced",
+            "title": "Women's Wellness",
+            "text": "Focused on preventive care and long-term reproductive health."
+        }
+    ],
+    "education": [
+        {
+            "year": "Indore, MP",
+            "degree": "Former Assistant Gynaecologist",
+            "institute": "Life Care Hospital and Infertility Centre, Indore, MP",
+            "description": "Practised as Assistant Gynaecologist at a dedicated infertility centre, building focused experience in fertility evaluation, assisted conception and high-risk obstetric care."
+        },
+        {
+            "year": "Clinical Practice",
+            "degree": "Women's Health & Obstetrics",
+            "institute": "Clinical Experience",
+            "description": "Extensive experience in pregnancy care, infertility management, gynecological disorders, preventive care, and cosmetic gynecology."
+        }
+    ],
+    "expertise": [
+        "Normal (Vaginal) Delivery",
+        "Antenatal Care",
+        "Intrapartum Care",
+        "Postnatal Care",
+        "Complications during Pregnancy",
+        "Infertility Treatment",
+        "PCOD / PCOS Management",
+        "Irregular Periods",
+        "Delayed Menstruation",
+        "Menarche Counselling",
+        "Menopausal Syndrome Management",
+        "Leucorrhoea (White Discharge)",
+        "Contraceptive Counselling",
+        "IUD Insertion (Cu-T)"
+    ],
+    "treatments": [
+        {
+            "icon": "fa-solid fa-baby",
+            "title": "Pregnancy Care",
+            "description": "Comprehensive antenatal, delivery planning, and postnatal care.",
+            "procedures": [
+                "Routine Pregnancy Checkups",
+                "High-Risk Pregnancy",
+                "Ultrasound Guidance",
+                "Nutrition Counseling",
+                "Postnatal Follow-up"
+            ]
+        },
+        {
+            "icon": "fa-solid fa-venus",
+            "title": "Gynecological Care",
+            "description": "Diagnosis and treatment of common and complex gynecological conditions.",
+            "procedures": [
+                "Menstrual Disorders",
+                "Pelvic Pain Evaluation",
+                "Fibroid Management",
+                "Ovarian Cyst Evaluation",
+                "Hormonal Disorders"
+            ]
+        },
+        {
+            "icon": "fa-solid fa-seedling",
+            "title": "Infertility Management",
+            "description": "Evidence-based fertility assessment and treatment planning.",
+            "procedures": [
+                "Couple Evaluation",
+                "Ovulation Assessment",
+                "PCOS Management",
+                "Hormonal Evaluation",
+                "Fertility Counseling"
+            ]
+        },
+        {
+            "icon": "fa-solid fa-heart",
+            "title": "Women's Wellness",
+            "description": "Preventive healthcare designed to promote lifelong wellness.",
+            "procedures": [
+                "Annual Checkups",
+                "Cancer Screening",
+                "Breast Examination",
+                "Vaccination Advice",
+                "Lifestyle Counseling"
+            ]
+        },
+        {
+            "icon": "fa-solid fa-spa",
+            "title": "Skin & Hair Care",
+            "description": "Medical solutions for common skin and hair concerns affecting women.",
+            "procedures": [
+                "Hair Loss Management",
+                "Acne Treatment",
+                "Pigmentation Care",
+                "Anti-Aging Advice",
+                "Medical Skin Consultation"
+            ]
+        },
+        {
+            "icon": "fa-solid fa-hand-holding-heart",
+            "title": "Family Planning",
+            "description": "Personalized reproductive health counseling for every stage of life.",
+            "procedures": [
+                "Contraceptive Counseling",
+                "Preconception Planning",
+                "Menopause Counseling",
+                "Adolescent Counseling",
+                "Long-Term Women's Health Planning"
+            ]
+        }
+    ],
+    "schedule": [
+        {
+            "day": "Monday",
+            "time": "11:30 AM – 9:00 PM"
+        },
+        {
+            "day": "Tuesday",
+            "time": "11:30 AM – 9:00 PM"
+        },
+        {
+            "day": "Wednesday",
+            "time": "11:30 AM – 9:00 PM"
+        },
+        {
+            "day": "Thursday",
+            "time": "11:30 AM – 9:00 PM"
+        },
+        {
+            "day": "Friday",
+            "time": "11:30 AM – 9:00 PM"
+        },
+        {
+            "day": "Saturday",
+            "time": "11:30 AM – 9:00 PM"
+        },
+        {
+            "day": "Sunday",
+            "time": "Emergency Only"
+        }
+    ],
+    "testimonials": [
+        {
+            "name": "Mr. Rahul P.",
+            "rating": 5,
+            "comment": "Dr. Abrar Khan explained my condition very clearly and the treatment worked perfectly."
+        },
+        {
+            "name": "Mrs. Farzana S.",
+            "rating": 5,
+            "comment": "Very caring doctor. My child's ear infection was treated quickly."
+        },
+        {
+            "name": "Mr. Imran K.",
+            "rating": 5,
+            "comment": "Excellent diagnosis and modern ENT care."
+        }
+    ],
+    "faq": [
+        {
+            "question": "Do I need an appointment?",
+            "answer": "Appointments are recommended, but walk-in patients are accommodated whenever possible."
+        },
+        {
+            "question": "Do you treat children?",
+            "answer": "Yes. Pediatric ENT consultations are available."
+        },
+        {
+            "question": "Is nasal endoscopy painful?",
+            "answer": "It is generally well tolerated and performed with appropriate precautions to minimize discomfort."
+        },
+        {
+            "question": "Do you remove foreign bodies from the ear and nose?",
+            "answer": "Yes. Emergency foreign body removal is one of our routine ENT procedures."
+        }
+    ]
 }
