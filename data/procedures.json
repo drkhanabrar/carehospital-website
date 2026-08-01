@@ -1,0 +1,19 @@
+[
+    {
+        "id": "nasal-endoscopy",
+        "video": "videos/nasal-endoscopy.mp4",
+        "title": "Nasal Endoscopy",
+        "category": "ENT • Diagnostic",
+        "subtitle": "A minimally invasive examination...",
+        "meta": [
+            "15–20 Minutes",
+            "OPD Procedure",
+            "HD Imaging"
+        ],
+        "features": [
+            "Minimal Discomfort",
+            "No Incision",
+            "Quick Recovery"
+        ]
+    }
+]

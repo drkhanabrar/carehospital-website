@@ -47,22 +47,6 @@
             .replace(/'/g, "&#39;");
     }
 
-    /* Shorten AFTER translating.
-       Previously this sliced the English sentence to 150 characters and then
-       let the translation pass run over the result — but a half-sentence is
-       not a dictionary key, so the related-doctor blurb was the one string on
-       the site that always stayed English. Translating first, then cutting,
-       fixes that. Also cuts on a word boundary and escapes AFTER slicing, so
-       an HTML entity can never be sliced in half. */
-    function truncate(value, limit) {
-        var str = String(value || "");
-        if (str.length <= limit) return str;
-        var cut = str.slice(0, limit);
-        var space = cut.lastIndexOf(" ");
-        if (space > limit * 0.6) cut = cut.slice(0, space);
-        return cut.replace(/[\s,;:.\u2014\u2013-]+$/, "") + "\u2026";
-    }
-
     /* Only allow Font Awesome class strings through to `class="…"` */
     function safeIcon(value) {
         return /^[a-z0-9 \-]+$/i.test(value || "") ? value : "fa-solid fa-circle-check";
@@ -230,7 +214,7 @@
 
                 '<div class="sticky-today">' +
                     '<i class="fa-regular fa-clock"></i>' +
-                    '<span>' + escapeHTML(today ? today.time : "Mon–Sat : 11:30 AM – 9:00 PM") + '</span>' +
+                    '<span>' + escapeHTML(today ? today.time : "Mon–Sat : 11:30 AM – 8:30 PM") + '</span>' +
                 '</div>' +
 
                 '<a href="index.html#appointment" class="btn-book sticky-btn">' +
@@ -483,7 +467,7 @@
                        '<div class="related-info">' +
                            '<h3>' + escapeHTML(other.name) + '</h3>' +
                            '<span class="designation">' + escapeHTML(other.specialty) + '</span>' +
-                           '<p>' + escapeHTML(truncate(t(other.shortDescription), 150)) + '</p>' +
+                           '<p>' + escapeHTML(other.shortDescription).slice(0, 150) + '…</p>' +
                            '<div class="related-actions">' +
                                '<a class="doctor-btn" href="doctor.html?id=' +
                                    encodeURIComponent(other.id) + '">View Profile</a>' +
@@ -761,10 +745,6 @@
         if (!currentDoctor) return;
         renderAbout(currentDoctor);
         personaliseCTA(currentDoctor);
-        /* The related-doctor blurb is translated then truncated inside
-           renderRelated, so it has to be rebuilt too — the generic text-node
-           pass cannot re-expand an already-shortened sentence. */
-        renderRelated(currentDoctor);
     });
 
     function build(doctor) {

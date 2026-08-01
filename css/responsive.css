@@ -71,16 +71,9 @@
    leaves real headroom instead of the 3px it had before.
    ========================================================================== */
 
-/* ==========================================================================
-   COMPACT HEADER  (applies at every width)
-   --------------------------------------------------------------------------
-   .container is capped at 1320px. With eight nav links plus Search,
-   Language, Book Appointment and Emergency, the full-size header measures
-   ~1392px — so it does NOT fit even on a 1920px monitor, because the
-   container, not the viewport, is the constraint. These rules therefore
-   apply unconditionally rather than inside a max-width query.
-   ========================================================================== */
-.container{ width:92%; }
+@media (max-width:1499px){
+
+    .container{ width:92%; }
 
     .nav ul{ gap:10px; }
 
@@ -99,7 +92,7 @@
 
     .logo{ margin-right:10px; }
     .logo img{ height:58px; }
-
+}
 
 
 /* ==========================================================================

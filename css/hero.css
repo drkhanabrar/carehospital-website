@@ -10,15 +10,9 @@ HERO
 
 position:relative;
 
-min-height:100svh;
 min-height:100vh;
 
-    /* The header is fixed and ~88px tall, so the hero only needs to clear
-       THAT plus breathing room. This was previously a flat 140px here AND
-       another 120px on .hero-grid below — 260px of padding under an 88px
-       header, which pushed the headline a quarter of the way down the page
-       and shoved the hero photo below the fold. */
-    padding:calc(var(--header-h, 88px) + 28px) 0 80px;
+    padding:140px 0 140px;
 
 display:flex;
 
@@ -105,6 +99,8 @@ grid-template-columns:54% 46%;
 align-items:center;
 
 gap:55px;
+
+padding-top:120px;
 
 }
 
@@ -569,71 +565,3 @@ margin-top:-18px;
 
 }
 
-
-
-/* ==========================================================================
-   HERO IMAGE SIZING
-   --------------------------------------------------------------------------
-   images/hero.jpg is 1086x1098 — essentially square. At 46% of a 1440px
-   grid that renders ~614px tall, so on a 800px-tall laptop the bottom of
-   the photo fell below the fold and the hero never looked complete on load.
-
-   Capping the frame against the viewport height (minus the fixed header)
-   keeps the whole composition on screen at any window size, and object-fit
-   crops rather than distorts.
-   ========================================================================== */
-
-.hero-image{
-    max-height:calc(100vh - var(--header-h, 88px) - 150px);
-}
-
-.hero-image img{
-    width:100%;
-    height:100%;
-    max-height:calc(100vh - var(--header-h, 88px) - 150px);
-    object-fit:cover;
-    object-position:center 40%;
-}
-
-/* Short laptop screens: give the photo less of the vertical budget so the
-   headline, service pills and both buttons still clear the fold. */
-
-@media (max-height:820px) and (min-width:993px){
-
-    .hero{ padding:calc(var(--header-h, 88px) + 18px) 0 56px; }
-
-    .hero h1{ font-size:clamp(40px, 4.1vw, 58px); margin-bottom:20px; }
-
-    .hero p{ font-size:17px; line-height:1.7; margin-bottom:26px; }
-
-    .hero-services{ margin-bottom:26px; }
-    .hero-buttons{ margin:26px 0 24px; }
-    .hero-stats{ margin-top:32px; }
-
-    .glass-card{ min-height:auto; padding:20px 22px; }
-    .glass-card h2{ font-size:28px; margin:12px 0 8px; }
-    .glass-card p{ font-size:15px; }
-    .stat-icon{ font-size:22px; margin-bottom:8px; }
-}
-
-/* Tablet and below: the grid stacks, so the photo gets full width and no
-   longer competes with the text for vertical space. */
-
-@media (max-width:992px){
-
-    .hero{
-        min-height:auto;
-        padding:calc(var(--header-h, 88px) + 24px) 0 64px;
-    }
-
-    .hero-right{ margin-top:0; }
-
-    .hero-image,
-    .hero-image img{ max-height:52vh; }
-}
-
-@media (max-width:576px){
-
-    .hero-image,
-    .hero-image img{ max-height:44vh; }
-}

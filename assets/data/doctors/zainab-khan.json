@@ -1,10 +1,10 @@
 {
     "id": "zainab-khan",
     "name": "Dr. Zainab Khan",
-    "designation": "Gynaecologist & Obstetrician",
-    "specialty": "Gynaecologist & Obstetrician",
+    "designation": "Consultant Obstetrician & Gynecologist",
+    "specialty": "Women's Health Specialist",
     "photo": "images/doctors/doctor2.jpg",
-    "shortDescription": "Heads Maternity Care and Gynaecology, guiding patients through antenatal care, delivery and women's health at every stage of life. Former Assistant Gynaecologist at Life Care Hospital and Infertility Centre, Indore, MP.",
+    "shortDescription": "Dedicated to providing comprehensive women's healthcare with a compassionate, patient-centered approach. Experienced in pregnancy care, infertility management, PCOS/PCOD, menstrual disorders, adolescent gynecology, menopause care, cosmetic gynecology, and skin & hair treatments.",
     "about": "Dr. Zainab Khan is committed to delivering personalized healthcare for women at every stage of life. With extensive clinical experience, she provides evidence-based obstetric and gynecological care while ensuring every patient feels comfortable, respected, and well-informed. Her approach combines preventive healthcare, early diagnosis, modern treatment protocols, and long-term wellness planning for women of all ages.",
     "experience": "18+",
     "patients": "20,000+",
@@ -58,20 +58,20 @@
         }
     ],
     "expertise": [
-        "Normal (Vaginal) Delivery",
-        "Antenatal Care",
-        "Intrapartum Care",
-        "Postnatal Care",
-        "Complications during Pregnancy",
-        "Infertility Treatment",
-        "PCOD / PCOS Management",
-        "Irregular Periods",
-        "Delayed Menstruation",
-        "Menarche Counselling",
-        "Menopausal Syndrome Management",
-        "Leucorrhoea (White Discharge)",
-        "Contraceptive Counselling",
-        "IUD Insertion (Cu-T)"
+        "Pregnancy Care",
+        "High-Risk Pregnancy",
+        "Normal Delivery",
+        "Infertility Management",
+        "PCOS / PCOD",
+        "Menstrual Disorders",
+        "Family Planning",
+        "Adolescent Gynecology",
+        "Menopause Management",
+        "Cervical Cancer Screening",
+        "Breast Health",
+        "Cosmetic Gynecology",
+        "Hair Treatment",
+        "Skin Care"
     ],
     "treatments": [
         {
@@ -150,31 +150,31 @@
     "schedule": [
         {
             "day": "Monday",
-            "time": "11:30 AM – 9:00 PM"
+            "time": "10:00 AM – 8:00 PM"
         },
         {
             "day": "Tuesday",
-            "time": "11:30 AM – 9:00 PM"
+            "time": "10:00 AM – 8:00 PM"
         },
         {
             "day": "Wednesday",
-            "time": "11:30 AM – 9:00 PM"
+            "time": "10:00 AM – 8:00 PM"
         },
         {
             "day": "Thursday",
-            "time": "11:30 AM – 9:00 PM"
+            "time": "10:00 AM – 8:00 PM"
         },
         {
             "day": "Friday",
-            "time": "11:30 AM – 9:00 PM"
+            "time": "10:00 AM – 8:00 PM"
         },
         {
             "day": "Saturday",
-            "time": "11:30 AM – 9:00 PM"
+            "time": "10:00 AM – 8:00 PM"
         },
         {
             "day": "Sunday",
-            "time": "Emergency Only"
+            "time": "Emergency Consultation / By Appointment"
         }
     ],
     "testimonials": [

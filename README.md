@@ -34,7 +34,6 @@ css/
   hero.css            …one file per section…
   video-modal.css     procedure video player (incl. full-screen rules)
   doctor-profile.css  profile page
-  findus.css          address block + embedded Google Map
   i18n.css            language switcher, script fonts, RTL mirroring
   animations.css      shared keyframes
   responsive.css      ALL breakpoints + print styles
@@ -166,26 +165,3 @@ implement the standard API on non-video elements.
   someone replies on WhatsApp.
 - Dr. Zainab Khan's JSON reuses Dr. Abrar Khan's experience figures
   (18+ years / 20,000+ patients). Worth confirming these are correct.
-
----
-
-## The map
-
-The "Visit Us" section embeds Google Maps through the **keyless** public
-endpoint:
-
-```
-https://www.google.com/maps?q=<address>&z=16&output=embed
-```
-
-No API key, no billing account, nothing that can expire or start charging.
-To move the pin, edit the `q=` value in the `<iframe>` in `index.html`
-(URL-encoded address) and the `destination=` value on the "Get Directions"
-link beside it. Raising `z=` zooms in.
-
-If you ever want the official Maps Embed API instead (custom styling,
-place cards), that one *does* need a key and a billing account — the current
-approach is deliberately the one that cannot break unattended.
-
-The embed always renders in Latin script regardless of site language, so it
-is excluded from translation rather than being half-translated at the edges.

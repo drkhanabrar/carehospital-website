@@ -20,10 +20,10 @@ window.CARE_DOCTORS = {
     "abrar-khan": {
         "id": "abrar-khan",
         "name": "Dr. Abrar Khan",
-        "designation": "ENT Specialist & Clinic Administration",
+        "designation": "Consultant ENT Physician & Healthcare Management Specialist",
         "specialty": "ENT Specialist",
         "photo": "images/doctors/doctor1.jpg",
-        "shortDescription": "Leads the ENT department and clinic administration, with postgraduate training in Health Services Management from Università Cattolica del Sacro Cuore, Rome. Provides complete ear, nose and throat care — from routine hearing tests to endoscopy and hearing aid fittings.",
+        "shortDescription": "Providing comprehensive ENT care with over 18 years of clinical experience, specializing in nasal endoscopy, microscopic ear procedures, vertigo management, hearing disorders, and minimally invasive ENT treatments for patients of all ages.",
         "about": "Dr. Abrar Khan is an experienced ENT Physician with more than 18 years of clinical practice. Along with extensive experience in ear, nose and throat disorders, he holds a Master's degree in Healthcare Management from Università Cattolica del Sacro Cuore, Rome, Italy. He combines modern diagnostic techniques, evidence-based treatment, and compassionate patient care to deliver high-quality healthcare. His expertise includes advanced nasal endoscopy, microscopic ear procedures, vertigo evaluation, allergy management, hearing disorders, pediatric ENT care, and emergency foreign body removal.",
         "experience": "18+",
         "patients": "20,000+",
@@ -77,18 +77,20 @@ window.CARE_DOCTORS = {
             }
         ],
         "expertise": [
-            "Hearing Tests & Audiometry",
-            "Ear Endoscopy",
-            "Hearing Aid Fitting",
+            "ENT Consultation",
+            "Diagnostic Nasal Endoscopy",
+            "Microscopic Ear Procedures",
+            "Vertigo Evaluation",
+            "Hearing Loss Assessment",
+            "Ear Wax Removal",
             "Foreign Body Removal",
-            "DNS (Deviated Nasal Septum)",
-            "Anosmia (Loss of Smell)",
-            "Tinnitus Management",
-            "Vertigo Treatment",
-            "Allergy Management",
-            "Thyroid Evaluation",
-            "Migraine Management",
-            "Clinic Administration"
+            "Sinusitis Treatment",
+            "Allergic Rhinitis",
+            "Tonsillitis",
+            "Voice Disorders",
+            "Pediatric ENT Care",
+            "Nasal Allergy Management",
+            "Snoring Evaluation"
         ],
         "treatments": [
             {
@@ -167,31 +169,31 @@ window.CARE_DOCTORS = {
         "schedule": [
             {
                 "day": "Monday",
-                "time": "11:30 AM – 9:00 PM"
+                "time": "10:00 AM – 8:00 PM"
             },
             {
                 "day": "Tuesday",
-                "time": "11:30 AM – 9:00 PM"
+                "time": "10:00 AM – 8:00 PM"
             },
             {
                 "day": "Wednesday",
-                "time": "11:30 AM – 9:00 PM"
+                "time": "10:00 AM – 8:00 PM"
             },
             {
                 "day": "Thursday",
-                "time": "11:30 AM – 9:00 PM"
+                "time": "10:00 AM – 8:00 PM"
             },
             {
                 "day": "Friday",
-                "time": "11:30 AM – 9:00 PM"
+                "time": "10:00 AM – 8:00 PM"
             },
             {
                 "day": "Saturday",
-                "time": "11:30 AM – 9:00 PM"
+                "time": "10:00 AM – 8:00 PM"
             },
             {
                 "day": "Sunday",
-                "time": "Emergency Only"
+                "time": "Emergency Consultation / By Appointment"
             }
         ],
         "testimonials": [
@@ -234,10 +236,10 @@ window.CARE_DOCTORS = {
     "zainab-khan": {
         "id": "zainab-khan",
         "name": "Dr. Zainab Khan",
-        "designation": "Gynaecologist & Obstetrician",
-        "specialty": "Gynaecologist & Obstetrician",
+        "designation": "Consultant Obstetrician & Gynecologist",
+        "specialty": "Women's Health Specialist",
         "photo": "images/doctors/doctor2.jpg",
-        "shortDescription": "Heads Maternity Care and Gynaecology, guiding patients through antenatal care, delivery and women's health at every stage of life. Former Assistant Gynaecologist at Life Care Hospital and Infertility Centre, Indore, MP.",
+        "shortDescription": "Dedicated to providing comprehensive women's healthcare with a compassionate, patient-centered approach. Experienced in pregnancy care, infertility management, PCOS/PCOD, menstrual disorders, adolescent gynecology, menopause care, cosmetic gynecology, and skin & hair treatments.",
         "about": "Dr. Zainab Khan is committed to delivering personalized healthcare for women at every stage of life. With extensive clinical experience, she provides evidence-based obstetric and gynecological care while ensuring every patient feels comfortable, respected, and well-informed. Her approach combines preventive healthcare, early diagnosis, modern treatment protocols, and long-term wellness planning for women of all ages.",
         "experience": "18+",
         "patients": "20,000+",
@@ -291,20 +293,20 @@ window.CARE_DOCTORS = {
             }
         ],
         "expertise": [
-            "Normal (Vaginal) Delivery",
-            "Antenatal Care",
-            "Intrapartum Care",
-            "Postnatal Care",
-            "Complications during Pregnancy",
-            "Infertility Treatment",
-            "PCOD / PCOS Management",
-            "Irregular Periods",
-            "Delayed Menstruation",
-            "Menarche Counselling",
-            "Menopausal Syndrome Management",
-            "Leucorrhoea (White Discharge)",
-            "Contraceptive Counselling",
-            "IUD Insertion (Cu-T)"
+            "Pregnancy Care",
+            "High-Risk Pregnancy",
+            "Normal Delivery",
+            "Infertility Management",
+            "PCOS / PCOD",
+            "Menstrual Disorders",
+            "Family Planning",
+            "Adolescent Gynecology",
+            "Menopause Management",
+            "Cervical Cancer Screening",
+            "Breast Health",
+            "Cosmetic Gynecology",
+            "Hair Treatment",
+            "Skin Care"
         ],
         "treatments": [
             {
@@ -383,31 +385,31 @@ window.CARE_DOCTORS = {
         "schedule": [
             {
                 "day": "Monday",
-                "time": "11:30 AM – 9:00 PM"
+                "time": "10:00 AM – 8:00 PM"
             },
             {
                 "day": "Tuesday",
-                "time": "11:30 AM – 9:00 PM"
+                "time": "10:00 AM – 8:00 PM"
             },
             {
                 "day": "Wednesday",
-                "time": "11:30 AM – 9:00 PM"
+                "time": "10:00 AM – 8:00 PM"
             },
             {
                 "day": "Thursday",
-                "time": "11:30 AM – 9:00 PM"
+                "time": "10:00 AM – 8:00 PM"
             },
             {
                 "day": "Friday",
-                "time": "11:30 AM – 9:00 PM"
+                "time": "10:00 AM – 8:00 PM"
             },
             {
                 "day": "Saturday",
-                "time": "11:30 AM – 9:00 PM"
+                "time": "10:00 AM – 8:00 PM"
             },
             {
                 "day": "Sunday",
-                "time": "Emergency Only"
+                "time": "Emergency Consultation / By Appointment"
             }
         ],
         "testimonials": [
@@ -449,8 +451,10 @@ window.CARE_DOCTORS = {
     }
 };
 
+/* Display order on the "Other Specialists" strip and in search results */
 window.CARE_DOCTOR_ORDER = ["abrar-khan", "zainab-khan"];
 
+/* Legacy short ids used by older links (doctor.html?id=abrar) still resolve */
 window.CARE_DOCTOR_ALIASES = {
     "abrar": "abrar-khan",
     "zainab": "zainab-khan",

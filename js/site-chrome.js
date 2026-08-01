@@ -47,7 +47,6 @@
                     '<li><a href="' + link("departments") + '">Departments</a></li>' +
                     '<li><a href="' + link("treatments") + '">Treatments</a></li>' +
                     '<li><a href="' + link("gallery") + '">Gallery</a></li>' +
-                    '<li><a href="' + link("findus") + '">Visit Us</a></li>' +
                     '<li><a href="' + link("contact") + '">Contact</a></li>' +
                 '</ul>' +
 
@@ -163,31 +162,25 @@
                 '<div class="footer-links">' +
                     '<h3>Departments</h3>' +
                     '<ul>' +
-                        '<li><a href="' + link("departments") + '">ENT — Ear, Nose &amp; Throat</a></li>' +
-                        '<li><a href="' + link("departments") + '">Maternity Care</a></li>' +
-                        '<li><a href="' + link("departments") + '">Gynaecology</a></li>' +
-                        '<li><a href="' + link("departments") + '">Diagnostics &amp; Laboratory</a></li>' +
-                        '<li><a href="' + link("departments") + '">Skin, Hair &amp; Unani Care</a></li>' +
+                        '<li><a href="' + link("departments") + '">ENT Care</a></li>' +
+                        '<li><a href="' + link("departments") + '">Women\'s Health</a></li>' +
+                        '<li><a href="' + link("departments") + '">Skin Care</a></li>' +
+                        '<li><a href="' + link("departments") + '">Hair Treatment</a></li>' +
+                        '<li><a href="' + link("treatments") + '">Endoscopy</a></li>' +
                     '</ul>' +
                 '</div>' +
 
                 '<div class="footer-contact">' +
                     '<h3>Contact</h3>' +
                     '<ul>' +
-                        '<li>Police Station Road, Chikhli, Buldhana District, Maharashtra – 443201</li>' +
+                        '<li>Police Station Road, Chikhli</li>' +
                         '<li><a href="tel:' + PHONE + '">+91 9370111449</a></li>' +
-                        '<li><a href="mailto:careclinic.admin@gmail.com">careclinic.admin@gmail.com</a></li>' +
-                        '<li>Mon – Sat : 11:30 AM – 9:00 PM</li>' +
-                        '<li>Sunday : Emergency Only</li>' +
+                        '<li><a href="mailto:admin@carehospital.com">admin@carehospital.com</a></li>' +
+                        '<li>Mon – Sat : 11:30 AM – 8:30 PM</li>' +
                     '</ul>' +
                 '</div>' +
 
             '</div>' +
-
-            '<p class="footer-disclaimer">' +
-                'For medical emergencies, please call us directly rather than messaging ' +
-                'online. This website does not replace emergency medical services.' +
-            '</p>' +
 
             '<div class="footer-bottom">' +
                 '<p>&copy; ' + new Date().getFullYear() + ' CARE. All Rights Reserved.</p>' +
