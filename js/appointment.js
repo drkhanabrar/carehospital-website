@@ -40,15 +40,20 @@ document.addEventListener("DOMContentLoaded", () => {
             "Dr. Abrar Khan"
         ],
 
-        "Gynecology": [
+        "Maternity Care": [
             "Dr. Zainab Khan"
         ],
 
-        "Dermatology": [
+        "Gynaecology": [
             "Dr. Zainab Khan"
         ],
 
-        "Hair Restoration": [
+        "Diagnostics & Laboratory": [
+            "Dr. Abrar Khan",
+            "Dr. Zainab Khan"
+        ],
+
+        "Skin, Hair & Unani Care": [
             "Dr. Zainab Khan"
         ],
 
@@ -107,7 +112,9 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     /* ==========================================================
-       TIME SLOTS (11:30 AM - 8:30 PM, every 15 minutes)
+       TIME SLOTS (11:30 AM - 9:00 PM, every 15 minutes)
+       Clinic hours per the practice's own listing: Mon-Sat 11:30 AM - 9:00 PM,
+       Sunday emergency only (Sundays are blocked separately below).
     ========================================================== */
 
     function generateTimeSlots() {
@@ -118,8 +125,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
         let startHour = 11;
         let startMinute = 30;
-        const endHour = 20;
-        const endMinute = 30;
+        const endHour = 21;
+        const endMinute = 0;
 
         while (startHour < endHour || (startHour === endHour && startMinute <= endMinute)) {
 
