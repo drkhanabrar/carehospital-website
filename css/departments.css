@@ -366,14 +366,20 @@ transform:rotate(-6deg) scale(1.08);
 .department-image{
     height:auto;
     aspect-ratio:1909 / 824;
+    overflow:hidden;
+    border-radius:28px;              /* Rounded corners */
+    background:#F5F7FA;
+    box-shadow:0 12px 30px rgba(0,0,0,.10);
 }
 
 .department-image img{
     width:100%;
     height:100%;
-    object-fit:contain;          /* show the whole banner, never crop it */
+    object-fit:contain;
     object-position:center;
     background:#F5F7FA;
+    border-radius:28px;
+    transition:transform .8s ease;
 }
 
 /* hair.jpg is still a square photograph rather than a banner, so it keeps
@@ -419,187 +425,137 @@ transform:rotate(-6deg) scale(1.08);
    ========================================================================== */
 
 .hijama-panel{
-    position:relative;
-    display:flex;
+    background:#fff;
     border-radius:28px;
     overflow:hidden;
-    background:linear-gradient(150deg, #06333F 0%, #0B7285 55%, #128A88 100%);
-    box-shadow:0 10px 30px rgba(0,0,0,.10);
-    border:1px solid rgba(11,114,133,.14);
-    transition:transform .45s cubic-bezier(.22,.61,.36,1),
-               box-shadow .45s cubic-bezier(.22,.61,.36,1);
+    border:1px solid rgba(11,114,133,.08);
+    box-shadow:0 10px 30px rgba(0,0,0,.06);
+    display:flex;
+    flex-direction:column;
+    transition:.45s;
 }
 
 .hijama-panel:hover{
     transform:translateY(-10px);
-    box-shadow:0 28px 66px rgba(9,40,52,.20);
+    box-shadow:0 22px 50px rgba(0,0,0,.10);
 }
 
-/* Soft light bloom, echoing the hero treatment */
-.hijama-panel::before{
-    content:"";
-    position:absolute;
-    width:460px;
-    height:460px;
-    top:-190px;
-    inset-inline-end:-160px;
-    border-radius:50%;
-    background:rgba(255,255,255,.07);
-    filter:blur(38px);
-    pointer-events:none;
+.hijama-panel .department-image{
+    width:100%;
+    aspect-ratio:1909 / 824;
+    overflow:hidden;
+    border-radius:28px 28px 0 0;
+    background:#F5F7FA;
+}
+
+.hijama-panel .department-image img{
+    width:100%;
+    height:100%;
+    object-fit:contain;
+    object-position:center;
+    display:block;
+    transition:.8s;
+}
+
+.hijama-panel:hover .department-image img{
+    transform:scale(1.04);
 }
 
 .hijama-inner{
-    position:relative;
-    z-index:2;
+    padding:28px;
     display:flex;
     flex-direction:column;
-    gap:20px;
-    padding:44px 40px;
-    width:100%;
+    flex:1;
 }
 
 .hijama-badge{
     display:inline-flex;
     align-items:center;
-    gap:10px;
     align-self:flex-start;
-    padding:10px 20px;
-    border-radius:999px;
-    background:rgba(255,255,255,.13);
-    border:1px solid rgba(255,255,255,.18);
-    backdrop-filter:blur(14px);
-    -webkit-backdrop-filter:blur(14px);
-    color:#B9F5EF;
-    font-size:12px;
-    font-weight:800;
-    letter-spacing:.12em;
-    text-transform:uppercase;
+    padding:8px 16px;
+    border-radius:50px;
+    background:#EAFBFA;
+    color:var(--primary);
+    font-size:13px;
+    font-weight:700;
+    margin-bottom:18px;
 }
 
-.hijama-badge i{ font-size:11px; }
+.hijama-icon{
+    width:64px;
+    height:64px;
+    border-radius:20px;
+    background:linear-gradient(
+        135deg,
+        #EAFBFA,
+        #DCF7F5
+    );
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    color:var(--primary);
+    font-size:28px;
+    margin-bottom:24px;
+    transition:.35s;
+}
+
+.hijama-panel:hover .hijama-icon{
+    transform:rotate(-6deg) scale(1.08);
+}
 
 .hijama-panel h3{
-    color:#FFFFFF;
-    font-size:clamp(26px, 2.3vw, 34px);
-    font-weight:900;
-    line-height:1.2;
-    letter-spacing:-.6px;
+    font-size:30px;
+    font-weight:800;
+    color:var(--dark);
+    margin-bottom:18px;
 }
 
 .hijama-lead{
-    color:rgba(255,255,255,.88);
-    font-size:1rem;
+    color:#667785;
     line-height:1.8;
-    max-width:52ch;
+    margin-bottom:24px;
 }
 
 .hijama-points{
     display:flex;
     flex-direction:column;
-    gap:16px;
-    margin-top:4px;
+    gap:18px;
+    margin-bottom:28px;
 }
 
 .hijama-points li{
     display:flex;
-    align-items:flex-start;
     gap:14px;
-    padding:0;
+    list-style:none;
 }
 
-.hijama-points li::before{ content:none; }   /* clear the dept-list bullet */
-
 .hijama-points i{
+    width:42px;
+    height:42px;
+    border-radius:12px;
+    background:#EAFBFA;
+    color:var(--primary);
     display:flex;
     align-items:center;
     justify-content:center;
     flex-shrink:0;
-    width:40px;
-    height:40px;
-    border-radius:12px;
-    background:rgba(255,255,255,.12);
-    border:1px solid rgba(255,255,255,.16);
-    color:#9EF8F1;
-    font-size:15px;
 }
 
 .hijama-points strong{
     display:block;
-    color:#FFFFFF;
-    font-size:.98rem;
-    font-weight:700;
-    line-height:1.5;
+    margin-bottom:4px;
 }
 
 .hijama-points span{
-    display:block;
-    margin-top:3px;
-    color:rgba(255,255,255,.76);
-    font-size:.9rem;
+    color:#667785;
     line-height:1.7;
 }
 
 .hijama-actions{
     display:flex;
+    gap:16px;
     flex-wrap:wrap;
-    align-items:center;
-    gap:14px;
     margin-top:auto;
-    padding-top:12px;
-}
-
-.hijama-actions .doctor-btn{
-    min-width:0;
-    padding:15px 30px;
-    height:auto;
-    background:#FFFFFF;
-    color:var(--primary,#0B7285);
-}
-
-.hijama-actions .doctor-btn:hover{
-    background:#EAFBF9;
-    color:#06333F;
-}
-
-.hijama-ask{
-    display:inline-flex;
-    align-items:center;
-    gap:9px;
-    padding:15px 26px;
-    border:1.5px solid rgba(255,255,255,.42);
-    border-radius:50px;
-    color:#FFFFFF;
-    font-size:15px;
-    font-weight:700;
-    transition:background .32s ease, border-color .32s ease, transform .32s ease;
-}
-
-.hijama-ask:hover{
-    background:rgba(255,255,255,.12);
-    border-color:rgba(255,255,255,.72);
-    transform:translateY(-3px);
-}
-
-.hijama-ask:focus-visible,
-.hijama-actions .doctor-btn:focus-visible{
-    outline:3px solid #FFFFFF;
-    outline-offset:3px;
-}
-
-@media (max-width:992px){
-
-    .hijama-inner{ padding:36px 28px; }
-}
-
-@media (max-width:576px){
-
-    .hijama-inner{ padding:30px 24px; gap:16px; }
-
-    .hijama-actions > *{
-        width:100%;
-        justify-content:center;
-    }
 }
 
 /* Devanagari and Nastaliq need more line height in a dense panel */
