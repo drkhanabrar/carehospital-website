@@ -89,6 +89,85 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
 <link rel="stylesheet" href="css/animations.css">
 <link rel="stylesheet" href="css/responsive.css">
 
+<!-- Mobile layer: loaded last so it overrides everything above.
+     All rules are inside max-width media queries, so desktop is untouched. -->
+<link rel="stylesheet" href="css/mobile.css">
+
+<!-- Local-business structured data. The geo block uses the clinic's
+     verified Google Maps coordinates, which is what lets Google tie
+     this page to the map listing for local search. -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "MedicalClinic",
+  "name": "Care ENT Clinic & Maternity Home",
+  "alternateName": "CARE",
+  "description": "ENT, Maternity, Gynaecology, Diagnostics and Unani care in Chikhli, Buldhana district.",
+  "url": "https://carehospital.in/",
+  "logo": "https://carehospital.in/images/logo.png",
+  "image": "https://carehospital.in/images/hero.jpg",
+  "telephone": "+919370111449",
+  "email": "admin.careclinic@gmail.com",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Police Station Road",
+    "addressLocality": "Chikhli",
+    "addressRegion": "Maharashtra",
+    "postalCode": "443201",
+    "addressCountry": "IN"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": 20.3496273,
+    "longitude": 76.2549318
+  },
+  "hasMap": "https://www.google.com/maps/place/Care+ENT+Hospital+%26+Maternity+Home/@20.3496273,76.2549318,17z",
+  "openingHoursSpecification": [
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": [
+        "Monday",
+        "Tuesday",
+        "Wednesday",
+        "Thursday",
+        "Friday",
+        "Saturday"
+      ],
+      "opens": "11:30",
+      "closes": "21:00"
+    }
+  ],
+  "availableService": [
+    {
+      "@type": "MedicalProcedure",
+      "name": "ENT — Ear, Nose & Throat"
+    },
+    {
+      "@type": "MedicalProcedure",
+      "name": "Maternity Care"
+    },
+    {
+      "@type": "MedicalProcedure",
+      "name": "Gynaecology"
+    },
+    {
+      "@type": "MedicalProcedure",
+      "name": "Diagnostics & Laboratory"
+    },
+    {
+      "@type": "MedicalProcedure",
+      "name": "Skin, Hair & Unani Care"
+    }
+  ],
+  "medicalSpecialty": [
+    "Otolaryngologic",
+    "Obstetric",
+    "Gynecologic",
+    "Dermatology"
+  ]
+}
+</script>
+
 </head>
 
 <body>
@@ -782,26 +861,16 @@ Complete ear, nose and throat care — from routine hearing tests to endoscopy a
 
 <ul class="dept-services">
 
-<li>Hearing Tests &amp; Audiometry</li>
-
-<li>Ear Endoscopy</li>
-
-<li>Hearing Aid Fitting</li>
-
-<li>Foreign Body Removal</li>
-
-<li>DNS (Deviated Nasal Septum)</li>
-
-<li>Anosmia (Loss of Smell)</li>
-
-<li>Tinnitus Management</li>
-
-<li>Vertigo Treatment</li>
-
-<li>Allergy Management</li>
-
-<li>Thyroid Evaluation</li>
-
+<li>Hearing Tests &amp; Audiometry</li>
+<li>Ear Endoscopy</li>
+<li>Hearing Aid Fitting</li>
+<li>Foreign Body Removal</li>
+<li>DNS (Deviated Nasal Septum)</li>
+<li>Anosmia (Loss of Smell)</li>
+<li>Tinnitus Management</li>
+<li>Vertigo Treatment</li>
+<li>Allergy Management</li>
+<li>Thyroid Evaluation</li>
 <li>Migraine Management</li>
 
 </ul>
@@ -810,71 +879,6 @@ Complete ear, nose and throat care — from routine hearing tests to endoscopy a
 <a href="#appointment"
    class="book-department"
    data-department="ENT">
-   Book Appointment →
-</a>
-
-</div>
-
-</div>
-
-
-
-<div class="department-card">
-
-<div class="department-image">
-
-<img
-    src="images/departments/women.jpg"
-    alt="Gynaecology consultation room"
-    loading="lazy"
-    decoding="async">
-
-</div>
-
-<div class="department-content">
-
-<span class="dept-badge">
-Women's Care
-</span>
-
-<div class="dept-icon">
-
-<i class="fa-solid fa-person-pregnant"></i>
-
-</div>
-
-<h3>Gynaecology</h3>
-
-<p class="dept-description">
-Confidential, judgement-free care for women at every life stage.
-</p>
-
-<ul class="dept-services">
-
-<li>Infertility Treatment</li>
-
-<li>PCOD / PCOS Management</li>
-
-<li>Irregular Periods</li>
-
-<li>Delayed Menstruation</li>
-
-<li>Menarche Counselling</li>
-
-<li>Menopausal Syndrome Management</li>
-
-<li>Leucorrhoea (White Discharge)</li>
-
-<li>Contraceptive Counselling</li>
-
-<li>IUD Insertion (Cu-T)</li>
-
-</ul>
-
-
-<a href="#appointment"
-   class="book-department"
-   data-department="Gynaecology">
    Book Appointment →
 </a>
 
@@ -914,14 +918,10 @@ Antenatal to postnatal — supported care through every stage of pregnancy and d
 
 <ul class="dept-services">
 
-<li>Normal (Vaginal) Delivery</li>
-
-<li>Antenatal Care</li>
-
-<li>Intrapartum Care</li>
-
-<li>Postnatal Care</li>
-
+<li>Normal (Vaginal) Delivery</li>
+<li>Antenatal Care</li>
+<li>Intrapartum Care</li>
+<li>Postnatal Care</li>
 <li>Complications during Pregnancy</li>
 
 </ul>
@@ -930,6 +930,61 @@ Antenatal to postnatal — supported care through every stage of pregnancy and d
 <a href="#appointment"
    class="book-department"
    data-department="Maternity Care">
+   Book Appointment →
+</a>
+
+</div>
+
+</div>
+
+<div class="department-card">
+
+<div class="department-image">
+
+<img
+    src="images/departments/women.jpg"
+    alt="Gynaecology consultation room"
+    loading="lazy"
+    decoding="async">
+
+</div>
+
+<div class="department-content">
+
+<span class="dept-badge">
+Women's Care
+</span>
+
+<div class="dept-icon">
+
+<i class="fa-solid fa-person-pregnant"></i>
+
+</div>
+
+<h3>Gynaecology</h3>
+
+<p class="dept-description">
+Confidential, judgement-free care for women at every life stage.
+</p>
+
+<ul class="dept-services">
+
+<li>Infertility Treatment</li>
+<li>PCOD / PCOS Management</li>
+<li>Irregular Periods</li>
+<li>Delayed Menstruation</li>
+<li>Menarche Counselling</li>
+<li>Menopausal Syndrome Management</li>
+<li>Leucorrhoea (White Discharge)</li>
+<li>Contraceptive Counselling</li>
+<li>IUD Insertion (Cu-T)</li>
+
+</ul>
+
+
+<a href="#appointment"
+   class="book-department"
+   data-department="Gynaecology">
    Book Appointment →
 </a>
 
@@ -969,14 +1024,10 @@ On-site diagnostic and complete laboratory testing — results without waiting o
 
 <ul class="dept-services">
 
-<li>Complete Laboratory Testing &amp; Diagnosis</li>
-
-<li>Pregnancy Profile Test</li>
-
-<li>TORCH Test</li>
-
-<li>Semen Analysis</li>
-
+<li>Complete Laboratory Testing &amp; Diagnosis</li>
+<li>Pregnancy Profile Test</li>
+<li>TORCH Test</li>
+<li>Semen Analysis</li>
 <li>ECG</li>
 
 </ul>
@@ -1012,7 +1063,7 @@ Integrative Care
 
 <div class="dept-icon">
 
-<i class="fas fa-hand-holding-medical"></i>
+<i class="fa-solid fa-hand-holding-heart"></i>
 
 </div>
 
@@ -1024,16 +1075,11 @@ Traditional Unani medicine and regimental therapy alongside modern skin and hair
 
 <ul class="dept-services">
 
-<li>Skin &amp; Hair Treatment</li>
-
-<li>Fungal Infection Treatment</li>
-
-<li>Mole &amp; Wart Removal (Laser)</li>
-
-<li>Cupping Therapy / Hijama (For Ladies only)</li>
-
-<li>Regimental Therapy (Ilaj bil Tadbeer)</li>
-
+<li>Skin &amp; Hair Treatment</li>
+<li>Fungal Infection Treatment</li>
+<li>Mole &amp; Wart Removal (Laser)</li>
+<li>Cupping Therapy / Hijama (For Ladies only)</li>
+<li>Regimental Therapy (Ilaj bil Tadbeer)</li>
 <li>Unani Therapy</li>
 
 </ul>
@@ -1059,70 +1105,66 @@ Traditional Unani medicine and regimental therapy alongside modern skin and hair
 
 <article class="hijama-panel">
 
-    <div class="department-image">
-        <img
-            src="images/departments/hijama.png"
-            alt="Hijama & Regimental Therapy"
-            loading="lazy"
-            decoding="async">
-    </div>
+<div class="hijama-inner">
 
-    <div class="hijama-inner">
-
-       <span class="hijama-badge">
-	   
-	   Signature Service
+<span class="hijama-badge">
+<i class="fa-solid fa-star-of-life" aria-hidden="true"></i>
+Signature Service
 </span>
 
-<div class="hijama-icon">
-    <i class='fas fa-spa'"></i>
+<h3>Hijama &amp; Regimental Therapy</h3>
+
+<p class="hijama-lead">
+Traditional wet cupping and Ilaj bil Tadbeer, performed by a
+qualified practitioner using sterile, single-use equipment.
+</p>
+
+<ul class="hijama-points">
+
+<li>
+<i class="fa-solid fa-venus" aria-hidden="true"></i>
+<div>
+<strong>Female practitioner for ladies</strong>
+<span>Cupping for women is carried out by Dr. Zainab Khan in a private room.</span>
+</div>
+</li>
+
+<li>
+<i class="fa-solid fa-shield-halved" aria-hidden="true"></i>
+<div>
+<strong>Single-use, sterile cups</strong>
+<span>Disposable equipment for every patient, with clinical infection control.</span>
+</div>
+</li>
+
+<li>
+<i class="fa-solid fa-leaf" aria-hidden="true"></i>
+<div>
+<strong>Alongside modern care</strong>
+<span>Offered as part of a medical consultation, not in place of one.</span>
+</div>
+</li>
+
+</ul>
+
+<div class="hijama-actions">
+
+<a href="#appointment"
+   class="doctor-btn book-department"
+   data-department="Skin, Hair &amp; Unani Care">
+   Book Hijama Session
+</a>
+
+<a href="https://wa.me/919370111449"
+   class="hijama-ask"
+   target="_blank" rel="noopener">
+   <i class="fa-brands fa-whatsapp" aria-hidden="true"></i>
+   Ask a question
+</a>
+
 </div>
 
-        <h3>Hijama &amp; Regimental Therapy</h3>
-
-        <p class="hijama-lead">
-            Traditional wet cupping and Ilaj bil Tadbeer, performed by a qualified practitioner using sterile, single-use equipment.
-        </p>
-
-        <ul class="hijama-points">
-
-            <li>
-                <i class="fa-solid fa-venus"></i>
-                <div>
-                    <strong>Female practitioner for ladies</strong>
-                    <span>Cupping for women is carried out by Dr. Zainab Khan in a private room.</span>
-                </div>
-            </li>
-
-            <li>
-                <i class="fa-solid fa-shield-halved"></i>
-                <div>
-                    <strong>Single-use, sterile cups</strong>
-                    <span>Disposable equipment for every patient, with clinical infection control.</span>
-                </div>
-            </li>
-
-            <li>
-                <i class="fa-solid fa-leaf"></i>
-                <div>
-                    <strong>Alongside modern care</strong>
-                    <span>Offered as part of a medical consultation, not in place of one.</span>
-                </div>
-            </li>
-
-        </ul>
-
-        <div class="hijama-actions">
-
-            <a href="#appointment"
-               class="doctor-btn book-department"
-               data-department="Skin, Hair &amp; Unani Care">
-                Book Hijama Session
-            </a>
-
-           </div>
-
-    </div>
+</div>
 
 </article>
 
@@ -2058,170 +2100,88 @@ What a modern ENT and maternity practice needs, available in-house at Chikhli.
 
 <div class="onsite-grid">
 
-<div class="onsite-card">
-
-
-
-<div class="onsite-icon">
-
-<i class="fa-solid fa-flask-vial"></i>
-
-</div>
-
-
-
-<h3>In-House Laboratory</h3>
-
-
-
-<p>Complete testing without off-site referrals.</p>
-
-
-
-</div>
-
-
-
-<div class="onsite-card">
-
-
-
-<div class="onsite-icon">
-
-<i class="fa-solid fa-prescription-bottle-medical"></i>
-
-</div>
-
-
-
-<h3>In-House Pharmacy</h3>
-
-
-
-<p>Prescriptions filled on the spot.</p>
-
-
-
-</div>
-
-
-
-<div class="onsite-card">
-
-
-
-<div class="onsite-icon">
-
-<i class="fa-solid fa-bed-pulse"></i>
-
-</div>
-
-
-
-<h3>Inpatient Beds</h3>
-
-
-
-<p>For delivery, recovery and observation.</p>
-
-
-
-</div>
-
-
-
-<div class="onsite-card">
-
-
-
-<div class="onsite-icon">
-
-<i class="fa-solid fa-heart-pulse"></i>
-
-</div>
-
-
-
-<h3>Fetal Doppler</h3>
-
-
-
-<p>Prenatal heartbeat monitoring.</p>
-
-
-
-</div>
-
-
-
-<div class="onsite-card">
-
-
-
-<div class="onsite-icon">
-
-<i class="fa-solid fa-wave-square"></i>
-
-</div>
-
-
-
-<h3>ECG</h3>
-
-
-
-<p>On-site cardiac screening.</p>
-
-
-
-</div>
-
-
-
-<div class="onsite-card">
-
-
-
-<div class="onsite-icon">
-
-<i class="fa-solid fa-wand-magic-sparkles"></i>
-
-</div>
-
-
-
-<h3>Laser Mole &amp; Wart Removal</h3>
-
-
-
-<p>Precise, minimally invasive removal.</p>
-
-
-
-</div>
-
-
-
-<div class="onsite-card">
-
-
-
-<div class="onsite-icon">
-
-<i class="fa-solid fa-microscope"></i>
-
-</div>
-
-
-
-<h3>Ear &amp; Nose Endoscopy</h3>
-
-
-
-<p>Direct visualisation for accurate ENT diagnosis.</p>
-
-
-
+<div class="onsite-card">
+
+<div class="onsite-icon">
+<i class="fa-solid fa-flask-vial"></i>
+</div>
+
+<h3>In-House Laboratory</h3>
+
+<p>Complete testing without off-site referrals.</p>
+
+</div>
+
+<div class="onsite-card">
+
+<div class="onsite-icon">
+<i class="fa-solid fa-prescription-bottle-medical"></i>
+</div>
+
+<h3>In-House Pharmacy</h3>
+
+<p>Prescriptions filled on the spot.</p>
+
+</div>
+
+<div class="onsite-card">
+
+<div class="onsite-icon">
+<i class="fa-solid fa-bed-pulse"></i>
+</div>
+
+<h3>Inpatient Beds</h3>
+
+<p>For delivery, recovery and observation.</p>
+
+</div>
+
+<div class="onsite-card">
+
+<div class="onsite-icon">
+<i class="fa-solid fa-heart-pulse"></i>
+</div>
+
+<h3>Fetal Doppler</h3>
+
+<p>Prenatal heartbeat monitoring.</p>
+
+</div>
+
+<div class="onsite-card">
+
+<div class="onsite-icon">
+<i class="fa-solid fa-wave-square"></i>
+</div>
+
+<h3>ECG</h3>
+
+<p>On-site cardiac screening.</p>
+
+</div>
+
+<div class="onsite-card">
+
+<div class="onsite-icon">
+<i class="fa-solid fa-wand-magic-sparkles"></i>
+</div>
+
+<h3>Laser Mole &amp; Wart Removal</h3>
+
+<p>Precise, minimally invasive removal.</p>
+
+</div>
+
+<div class="onsite-card">
+
+<div class="onsite-icon">
+<i class="fa-solid fa-microscope"></i>
+</div>
+
+<h3>Ear &amp; Nose Endoscopy</h3>
+
+<p>Direct visualisation for accurate ENT diagnosis.</p>
+
 </div>
 
 </div>
@@ -2684,7 +2644,7 @@ Chikhli, Buldhana District, Maharashtra &ndash; 443201</p>
 <div class="findus-icon"><i class="fa-solid fa-envelope" aria-hidden="true"></i></div>
 <div>
 <span class="findus-label">Email</span>
-<p><a href="mailto:admin@carehospital.com">admin@carehospital.com</a></p>
+<p><a href="mailto:admin.careclinic@gmail.com">admin.careclinic@gmail.com</a></p>
 </div>
 </div>
 
@@ -2714,7 +2674,7 @@ Call Now
 </a>
 
 <a class="doctor-outline"
-   href="https://www.google.com/maps/dir/?api=1&amp;destination=Care+ENT+Clinic+%26+Maternity+Home%2C+Police+Station+Road%2C+Chikhli%2C+Buldhana%2C+Maharashtra+443201"
+   href="https://www.google.com/maps/dir/?api=1&amp;destination=20.3496273%2C76.2549318"
    target="_blank" rel="noopener">
 <i class="fa-solid fa-diamond-turn-right" aria-hidden="true"></i>
 Get Directions
@@ -2727,7 +2687,7 @@ Get Directions
 <div class="findus-map">
 
 <iframe
-    src="https://www.google.com/maps?q=Police%20Station%20Road%2C%20Chikhli%2C%20Buldhana%2C%20Maharashtra%20443201&amp;z=16&amp;output=embed"
+    src="https://www.google.com/maps?q=20.3496273%2C76.2549318&amp;z=17&amp;hl=en&amp;output=embed"
     title="Map showing Care ENT Clinic &amp; Maternity Home, Police Station Road, Chikhli"
     width="100%"
     height="100%"
@@ -2998,8 +2958,8 @@ for the entire family.
 </li>
 
 <li>
-    <a href="mailto:admin@carehospital.com">
-        admin@carehospital.com
+    <a href="mailto:admin.careclinic@gmail.com">
+        admin.careclinic@gmail.com
     </a>
 </li>
 
