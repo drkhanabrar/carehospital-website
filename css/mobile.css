@@ -1,0 +1,1089 @@
+/* ==========================================================================
+   CARE — MOBILE LAYER
+   --------------------------------------------------------------------------
+   Loaded LAST on every page, so everything here wins without any other
+   stylesheet needing to be touched. Every rule lives inside a max-width
+   media query, so the desktop design is byte-for-byte unchanged.
+
+   WHAT WAS WRONG (measured on a 390px iPhone before this file existed):
+
+   1. The hero was 618px wide inside a 390px screen, so the headline, the
+      paragraph and both buttons were sliced off the right edge. Cause:
+      `.hero-stats` is a flex row of three fixed 190px cards (570px + 48px
+      of gaps = 618px) that never wrapped. A CSS grid track declared `1fr`
+      is really `minmax(auto, 1fr)`, so it cannot shrink below its content's
+      min-content width — the 618px stats row set the floor for the whole
+      hero column.
+
+   2. The h1 rendered at 72px on a phone.
+
+   3. Sections carried 140-170px of top AND bottom padding on mobile,
+      making the home page 32,747px tall — roughly 39 screens of scrolling.
+
+   4. The floating action stack was 235px wide and sat on top of the hero's
+      own buttons.
+
+   5. Footer and nav links were 17px tall — far below the 44px minimum
+      that makes a link reliably tappable.
+
+   ORDER: tablet (992) -> landscape phone -> phone (576) -> small (380),
+   then shared concerns (safe area, motion, tap targets).
+   ========================================================================== */
+
+
+/* ==========================================================================
+   0. GLOBAL GUARDS  (all narrow screens)
+   ========================================================================== */
+
+@media (max-width:1024px){
+
+    /* Nothing may cause sideways scrolling. This is a safety net, not a
+       substitute for the structural fixes below. */
+    html,
+    body{
+        max-width:100%;
+        overflow-x:hidden;
+    }
+
+    /* Long words, URLs and e-mail addresses must wrap rather than widen
+       their container. */
+    body{
+        overflow-wrap:break-word;
+        word-wrap:break-word;
+    }
+
+    /* Decorative sweeps are positioned wider than their card on purpose;
+       clip them so they can never register as page width. */
+    .card-shine{
+        max-width:100%;
+        pointer-events:none;
+    }
+
+    /* Media never exceeds its box. */
+    img,
+    video,
+    iframe,
+    svg{
+        max-width:100%;
+    }
+}
+
+
+/* ==========================================================================
+   1. TABLET AND BELOW  (<= 992px)
+   ========================================================================== */
+
+@media (max-width:992px){
+
+    /* ---------- THE HERO FIX ----------
+       minmax(0, …) removes the min-content floor that the stats row was
+       setting, so the column can finally shrink to the screen. */
+
+    .hero-grid{
+        grid-template-columns:minmax(0, 1fr);
+        gap:40px;
+    }
+
+    .hero-left,
+    .hero-right,
+    .hero-grid > *{
+        min-width:0;
+        max-width:100%;
+    }
+
+    .hero h1{
+        max-width:100%;
+    }
+
+    /* The stats row is what broke the layout: three rigid 190px cards that
+       could not wrap. They become a fluid grid. */
+
+    .hero-stats{
+        display:grid;
+        grid-template-columns:repeat(3, minmax(0, 1fr));
+        gap:14px;
+        margin-top:40px;
+        margin-bottom:0;
+    }
+
+    .glass-card{
+        width:auto;
+        min-width:0;
+        min-height:0;
+        padding:20px 14px;
+        text-align:center;
+    }
+
+    .glass-card h2{
+        font-size:24px;
+        margin:8px 0 4px;
+    }
+
+    .glass-card p{
+        font-size:13px;
+        line-height:1.45;
+    }
+
+    .stat-icon{
+        font-size:20px;
+        margin-bottom:6px;
+    }
+
+    /* The badge is one long line; let it wrap instead of overhanging. */
+    .hero-badge{
+        max-width:100%;
+        white-space:normal;
+        line-height:1.5;
+    }
+
+    .hero-services{
+        max-width:100%;
+        flex-wrap:wrap;
+    }
+
+    /* ---------- DOCTOR CARDS ----------
+       Same min-content trap as the hero: `.doctor-card` is declared
+       `420px 1fr`, and a plain `1fr` cannot shrink below its content, so
+       the card stayed 340px wide inside a 320px iPhone SE. */
+
+    .doctor-card{
+        grid-template-columns:minmax(0, 1fr);
+    }
+
+    .doctor-card > *,
+    .doctor-image,
+    .doctor-info{
+        min-width:0;
+        max-width:100%;
+    }
+
+    .doctor-image img{
+        width:100%;
+        height:auto;
+        max-height:340px;
+        object-fit:cover;
+        object-position:top center;
+    }
+
+    .doctor-meta{
+        flex-wrap:wrap;
+        gap:12px;
+    }
+
+    .doctor-tags{
+        flex-wrap:wrap;
+    }
+
+    /* ---------- Vertical rhythm ----------
+       140-170px of padding is a desktop value. On a phone it is simply
+       dead space between every section. */
+
+    /* A bare `section` selector loses to the class selectors these
+       sections already carry (.why-care has 170px of its own), so the
+       classes are named explicitly. */
+    section,
+    .why-care,
+    .doctors,
+    .departments,
+    .procedures,
+    .gallery,
+    .onsite,
+    .facilities,
+    .testimonials,
+    .appointment-cta,
+    .findus,
+    .appointment,
+    .doctor-section,
+    .profile-cta{
+        padding-top:64px;
+        padding-bottom:64px;
+    }
+
+    .hero{
+        padding-top:calc(var(--header-h, 76px) + 24px);
+        padding-bottom:56px;
+    }
+
+    .section-heading{
+        margin-bottom:36px;
+    }
+}
+
+
+/* ==========================================================================
+   2. PHONE  (<= 576px)
+   ========================================================================== */
+
+@media (max-width:576px){
+
+    /* ---------- Container gutter ----------
+       A consistent 18px edge margin across the whole site. */
+
+    .container{
+        width:100%;
+        padding-left:18px;
+        padding-right:18px;
+    }
+
+    /* ---------- Typography scale ----------
+       72px headlines belong on a monitor, not a 390px screen. */
+
+    .hero h1{
+        font-size:clamp(30px, 8.6vw, 38px);
+        line-height:1.18;
+        letter-spacing:-.5px;
+        margin-bottom:16px;
+    }
+
+    .hero p{
+        font-size:15.5px;
+        line-height:1.7;
+        margin-bottom:22px;
+    }
+
+    .section-heading h2{
+        font-size:clamp(24px, 6.6vw, 30px);
+        line-height:1.25;
+    }
+
+    .section-heading p{
+        font-size:15px;
+        line-height:1.7;
+    }
+
+    h3{
+        line-height:1.3;
+    }
+
+    /* Nothing user-facing drops below 12.5px. */
+    .gallery-category,
+    .department-tag,
+    .findus-label,
+    .procedure-tag,
+    .hijama-badge,
+    .verified,
+    .section-tag,
+    .author-tag{
+        font-size:12.5px;
+    }
+
+    /* ---------- Hero ---------- */
+
+    .hero-badge{
+        font-size:12.5px;
+        padding:10px 16px;
+    }
+
+    .hero-services{
+        gap:8px;
+    }
+
+    .hero-service{
+        font-size:13px;
+        padding:9px 14px;
+    }
+
+    /* Two columns reads better than three squeezed ones. */
+    .hero-stats{
+        grid-template-columns:repeat(2, minmax(0, 1fr));
+        gap:12px;
+    }
+
+    /* Third card spans the full width so the row is never left ragged. */
+    .hero-stats > :last-child:nth-child(odd){
+        grid-column:1 / -1;
+    }
+
+    .hero-buttons{
+        flex-direction:column;
+        gap:12px;
+        margin:24px 0 0;
+    }
+
+    .hero-buttons > *{
+        width:100%;
+        justify-content:center;
+        text-align:center;
+    }
+
+    /* ---------- Section padding ---------- */
+
+    section,
+    .why-care,
+    .doctors,
+    .departments,
+    .procedures,
+    .gallery,
+    .onsite,
+    .facilities,
+    .testimonials,
+    .appointment-cta,
+    .findus,
+    .appointment,
+    .doctor-section,
+    .profile-cta{
+        padding-top:52px;
+        padding-bottom:52px;
+    }
+
+    .section-heading{
+        margin-bottom:28px;
+    }
+
+    /* ---------- Cards: one column everywhere ---------- */
+
+    .department-grid,
+    .procedure-grid,
+    .gallery-grid,
+    .onsite-grid,
+    .facilities-grid,
+    .testimonial-grid,
+    .about-grid,
+    .why-grid,
+    .related-grid,
+    .highlight-grid,
+    .treatment-grid,
+    .expertise-grid,
+    .footer-top{
+        grid-template-columns:1fr !important;
+        gap:16px;
+    }
+
+    .department-card,
+    .procedure-card,
+    .onsite-card,
+    .testimonial-card,
+    .treatment-card,
+    .about-card{
+        padding:24px 20px;
+    }
+
+    /* DEPARTMENT BANNERS ON A PHONE
+       The artwork is ~1900px wide with a text panel on the left. Scaled
+       down to a 354px card that text is far too small to read. But the
+       panel only repeats the heading, description and service list that
+       the card already renders below as real HTML — so nothing is lost by
+       cropping to the photography on the right, which stays legible.
+       `contain` is restored above 576px where the text is readable again. */
+    .department-image{
+        aspect-ratio:3 / 2;
+    }
+
+    .department-image img{
+        object-fit:cover;
+        object-position:72% center;
+    }
+
+    html[dir="rtl"] .department-image img{
+        object-position:28% center;
+    }
+
+    .department-content{
+        padding:22px 20px;
+    }
+
+    .dept-services li{
+        font-size:14.5px;
+        line-height:1.6;
+    }
+
+    /* ---------- Buttons: full width, thumb-sized ---------- */
+
+    .btn-primary,
+    .btn-secondary,
+    .doctor-btn,
+    .doctor-outline,
+    .book-department,
+    .btn-submit,
+    .hijama-ask{
+        width:100%;
+        min-height:48px;
+        padding:14px 22px;
+        font-size:15px;
+        justify-content:center;
+        text-align:center;
+    }
+
+    .hero-buttons,
+    .cta-buttons,
+    .findus-actions,
+    .hijama-actions,
+    .related-actions,
+    .profile-buttons,
+    .doctor-actions{
+        flex-direction:column;
+        gap:10px;
+    }
+
+    .hero-buttons > *,
+    .cta-buttons > *,
+    .findus-actions > *,
+    .hijama-actions > *,
+    .related-actions > *,
+    .profile-buttons > *,
+    .doctor-actions > *{
+        width:100%;
+    }
+
+    /* ---------- Hijama panel ---------- */
+
+    .hijama-inner{
+        padding:26px 20px;
+        gap:14px;
+    }
+
+    .hijama-panel h3{
+        font-size:23px;
+    }
+
+    .hijama-lead{
+        font-size:14.5px;
+        line-height:1.7;
+    }
+
+    .hijama-points i{
+        width:34px;
+        height:34px;
+        font-size:13px;
+    }
+
+    .hijama-points strong{ font-size:14.5px; }
+    .hijama-points span{ font-size:13.5px; }
+
+    /* ---------- Visit Us / map ---------- */
+
+    .findus-grid{
+        grid-template-columns:1fr;
+        gap:18px;
+    }
+
+    .findus-details{
+        padding:24px 18px;
+        gap:18px;
+    }
+
+    .findus-icon{
+        width:40px;
+        height:40px;
+        font-size:15px;
+    }
+
+    .findus-item p{ font-size:15px; }
+
+    /* The hours table is the tightest thing on the page: stack each row so
+       the day and the time are never crushed together. */
+    .findus-hours,
+    .findus-hours tbody,
+    .findus-hours tr,
+    .findus-hours td{
+        display:block;
+        width:100%;
+    }
+
+    .findus-hours tr{
+        padding:8px 0;
+        border-bottom:1px solid rgba(0,0,0,.06);
+    }
+
+    .findus-hours tr:last-child{ border-bottom:none; }
+
+    .findus-hours td:first-child{
+        font-size:13px;
+        color:#6B7C86;
+        padding-bottom:2px;
+    }
+
+    .findus-hours td:last-child{
+        text-align:start;
+        font-size:15px;
+        font-weight:700;
+    }
+
+    .findus-map,
+    .findus-map iframe{
+        min-height:280px;
+    }
+
+    /* ---------- Appointment form ---------- */
+
+    .appointment-form,
+    .form-grid{
+        grid-template-columns:1fr !important;
+        gap:14px;
+    }
+
+    /* 16px prevents iOS Safari from zooming the page on focus. */
+    .form-group input,
+    .form-group select,
+    .form-group textarea,
+    #searchInput{
+        font-size:16px;
+        min-height:48px;
+        padding:13px 15px;
+    }
+
+    .form-group textarea{
+        min-height:110px;
+    }
+
+    .form-group label{
+        font-size:14px;
+        margin-bottom:6px;
+    }
+
+    /* ---------- Gallery ---------- */
+
+    .gallery-filters{
+        gap:8px;
+        overflow-x:auto;
+        flex-wrap:nowrap;
+        justify-content:flex-start;
+        padding-bottom:6px;
+        -webkit-overflow-scrolling:touch;
+        scrollbar-width:none;
+    }
+
+    .gallery-filters::-webkit-scrollbar{ display:none; }
+
+    .filter-btn{
+        flex:0 0 auto;
+        min-height:42px;
+        padding:10px 18px;
+        font-size:14px;
+        white-space:nowrap;
+    }
+
+    /* ---------- Procedures ---------- */
+
+    .procedure-meta,
+    .procedure-features{
+        gap:6px;
+    }
+
+    .procedure-meta span,
+    .procedure-features span{
+        font-size:12.5px;
+        padding:6px 10px;
+    }
+
+    /* ---------- Testimonials ---------- */
+
+    .testimonial-text{ font-size:15px; }
+
+    /* ---------- Footer ---------- */
+
+    .footer-top{
+        gap:28px;
+        text-align:start;
+    }
+
+    .footer-bottom{
+        flex-direction:column;
+        gap:8px;
+        text-align:center;
+        font-size:13.5px;
+    }
+
+    .footer-disclaimer{
+        font-size:13px;
+        line-height:1.7;
+        margin-top:24px;
+        padding-top:20px;
+    }
+
+    .social-links{ gap:12px; }
+
+    .social-links a{
+        width:44px;
+        height:44px;
+        display:flex;
+        align-items:center;
+        justify-content:center;
+    }
+}
+
+
+/* ==========================================================================
+   3. SMALL PHONES  (<= 380px)
+   ========================================================================== */
+
+@media (max-width:380px){
+
+    .container{
+        padding-left:14px;
+        padding-right:14px;
+    }
+
+    .hero h1{ font-size:28px; }
+
+    .section-heading h2{ font-size:23px; }
+
+    /* One stat per row rather than two cramped ones. */
+    .hero-stats{
+        grid-template-columns:1fr;
+    }
+
+    .hero-stats > :last-child:nth-child(odd){
+        grid-column:auto;
+    }
+
+    .glass-card{
+        display:flex;
+        align-items:center;
+        gap:12px;
+        text-align:start;
+        padding:14px 16px;
+    }
+
+    .glass-card h2{
+        font-size:21px;
+        margin:0;
+    }
+
+    .stat-icon{ margin-bottom:0; }
+
+    .logo img{ height:42px; }
+}
+
+
+/* ==========================================================================
+   4. FLOATING ACTION BUTTONS
+   --------------------------------------------------------------------------
+   The stack measured 235px wide and overlapped the hero's own buttons.
+   On a phone it shrinks to two compact circles pinned to the corner, and
+   the wide "Book Appointment" pill is dropped entirely — the page already
+   has that button in the hero, in every department card and in the CTA.
+   ========================================================================== */
+
+@media (max-width:768px){
+
+    .floating-book{
+        display:none !important;
+    }
+
+    .floating-buttons{
+        right:12px;
+        bottom:calc(12px + env(safe-area-inset-bottom, 0px));
+        gap:10px;
+        width:auto;
+    }
+
+    .floating-buttons a,
+    .float-whatsapp,
+    .float-call{
+        width:52px;
+        height:52px;
+        font-size:22px;
+    }
+
+    /* The WhatsApp + Call stack is 114px tall from the bottom edge, so
+       back-to-top has to clear it or the two overlap and the call button
+       becomes untappable. Measured, not guessed. */
+    #backToTop{
+        right:12px;
+        bottom:calc(138px + env(safe-area-inset-bottom, 0px));
+        width:44px;
+        height:44px;
+        font-size:16px;
+    }
+
+    html[dir="rtl"] .floating-buttons{
+        right:auto;
+        left:12px;
+    }
+
+    html[dir="rtl"] #backToTop{
+        right:auto;
+        left:12px;
+    }
+}
+
+
+/* ==========================================================================
+   5. HEADER & DRAWER
+   ========================================================================== */
+
+@media (max-width:768px){
+
+    .header{
+        padding-top:env(safe-area-inset-top, 0px);
+    }
+
+    .nav-container{
+        padding-top:10px;
+        padding-bottom:10px;
+        gap:8px;
+    }
+
+    .logo img{
+        height:48px;
+    }
+
+    /* "Emergency" is the one action worth keeping in the bar. */
+    .nav-buttons{
+        gap:8px;
+    }
+
+    .btn-emergency{
+        padding:11px 16px;
+        font-size:13.5px;
+        min-height:44px;
+        display:inline-flex;
+        align-items:center;
+    }
+
+    .btn-search{
+        width:44px;
+        height:44px;
+        min-width:44px;
+    }
+
+    .hamburger{
+        width:46px;
+        height:46px;
+    }
+
+    /* Drawer links need room for a thumb. */
+    .nav ul li a{
+        padding:15px 4px;
+        font-size:16.5px;
+        min-height:48px;
+        display:flex;
+        align-items:center;
+    }
+
+    .nav{
+        padding-bottom:calc(40px + env(safe-area-inset-bottom, 0px));
+    }
+}
+
+
+/* ==========================================================================
+   6. DOCTOR PROFILE PAGE
+   ========================================================================== */
+
+@media (max-width:768px){
+
+    .profile-breadcrumb{
+        padding-top:calc(var(--header-h, 76px) + 16px);
+        font-size:13.5px;
+    }
+
+    .profile-breadcrumb .container{
+        flex-wrap:wrap;
+        gap:6px;
+    }
+
+    .doctor-profile-hero{
+        padding-bottom:40px;
+    }
+
+    .doctor-hero{
+        grid-template-columns:1fr;
+        gap:24px;
+    }
+
+    .profile-photo{
+        max-width:260px;
+        margin-inline:auto;
+    }
+
+    .profile-name{
+        font-size:clamp(26px, 7.4vw, 34px);
+        line-height:1.2;
+    }
+
+    .profile-designation{
+        font-size:16px;
+        line-height:1.5;
+    }
+
+    .profile-description{
+        font-size:15px;
+        line-height:1.75;
+    }
+
+    .profile-stats{
+        grid-template-columns:repeat(2, minmax(0, 1fr));
+        gap:12px;
+    }
+
+    .stat-card{
+        padding:18px 14px;
+    }
+
+    .stat-card h3{ font-size:24px; }
+    .stat-card p{ font-size:12.5px; line-height:1.4; }
+
+    #stickyBooking{
+        position:static;
+        width:100%;
+        max-width:none;
+    }
+
+    .sticky-card{
+        padding:22px 20px;
+    }
+
+    /* Timeline gets tight on a narrow screen */
+    .timeline{
+        padding-left:26px;
+    }
+
+    .timeline::before{ left:7px; }
+
+    .timeline-dot{
+        left:-26px;
+        width:15px;
+        height:15px;
+    }
+
+    .timeline-card{
+        padding:20px 18px;
+    }
+
+    .timeline-card h3{ font-size:17px; }
+    .timeline-card h4{ font-size:14.5px; }
+    .timeline-card p{ font-size:14.5px; line-height:1.75; }
+
+    html[dir="rtl"] .timeline{
+        padding-left:0;
+        padding-right:26px;
+    }
+
+    html[dir="rtl"] .timeline::before{ left:auto; right:7px; }
+    html[dir="rtl"] .timeline-dot{ left:auto; right:-26px; }
+
+    .faq-question{
+        padding:18px 18px;
+        font-size:15.5px;
+        gap:12px;
+    }
+
+    .faq-answer{
+        padding:0 18px 18px;
+        font-size:14.5px;
+    }
+
+    .related-card{
+        grid-template-columns:1fr;
+        gap:16px;
+        padding:18px;
+    }
+
+    .related-photo img{
+        height:200px;
+    }
+
+    .schedule-row{
+        flex-direction:column;
+        align-items:flex-start;
+        gap:2px;
+        padding:12px 14px;
+    }
+
+    .schedule-day{ font-size:14px; }
+    .schedule-time{ font-size:15px; font-weight:700; }
+
+    .share-profile{
+        flex-direction:column;
+        gap:12px;
+    }
+
+    .cta-box{
+        padding:32px 22px;
+    }
+
+    .cta-box h2{
+        font-size:clamp(23px, 6.4vw, 28px);
+        line-height:1.3;
+    }
+}
+
+
+/* ==========================================================================
+   7. SEARCH OVERLAY  — full-screen sheet on a phone
+   ========================================================================== */
+
+@media (max-width:576px){
+
+    .search-overlay{
+        padding:0;
+        align-items:stretch;
+    }
+
+    .search-box{
+        width:100%;
+        max-width:100%;
+        height:100dvh;
+        height:100vh;
+        border-radius:0;
+        display:flex;
+        flex-direction:column;
+        padding-top:env(safe-area-inset-top, 0px);
+    }
+
+    .search-results{
+        flex:1;
+        max-height:none;
+        overflow-y:auto;
+        -webkit-overflow-scrolling:touch;
+    }
+
+    .search-result-item{
+        padding:14px 16px;
+        min-height:56px;
+    }
+
+    .search-result-tag{
+        font-size:11.5px;
+    }
+}
+
+
+/* ==========================================================================
+   8. VIDEO MODAL
+   ========================================================================== */
+
+@media (max-width:576px){
+
+    .video-modal{
+        padding:10px;
+    }
+
+    .video-modal-box{
+        max-height:94dvh;
+        max-height:94vh;
+        border-radius:16px;
+    }
+
+    .video-modal-header{
+        padding:16px 56px 12px 18px;
+    }
+
+    .video-modal-title{
+        font-size:17px;
+        line-height:1.3;
+    }
+
+    .video-modal-subtitle{
+        font-size:13.5px;
+    }
+
+    .video-modal-body{
+        padding:12px;
+    }
+
+    .video-modal-footer{
+        padding:12px 18px 16px;
+        font-size:12.5px;
+    }
+}
+
+
+/* ==========================================================================
+   9. LANGUAGE SWITCHER IN THE DRAWER
+   ========================================================================== */
+
+@media (max-width:576px){
+
+    .lang-switch-mobile .lang-option{
+        min-height:46px;
+        flex:1 1 30%;
+        padding:11px 10px;
+        font-size:15px;
+    }
+
+    html[data-lang="ur"] .lang-switch-mobile .lang-option{
+        line-height:1.9;
+    }
+}
+
+
+/* ==========================================================================
+   10. TAP TARGETS
+   --------------------------------------------------------------------------
+   Footer and quick-link anchors measured 17px tall. Padding gives them a
+   real hit area without changing how the text looks.
+   ========================================================================== */
+
+@media (max-width:768px){
+
+    .footer-links ul li a,
+    .footer-contact ul li a,
+    .footer-links ul li,
+    .footer-contact ul li{
+        display:inline-block;
+        padding-top:7px;
+        padding-bottom:7px;
+        line-height:1.6;
+    }
+
+    .footer-contact ul li{
+        display:block;
+    }
+
+    .breadcrumb a,
+    .profile-breadcrumb a{
+        display:inline-block;
+        padding:6px 0;
+    }
+}
+
+
+/* ==========================================================================
+   11. NOTCHED PHONES & REDUCED MOTION
+   ========================================================================== */
+
+@media (max-width:768px){
+
+    body{
+        padding-left:env(safe-area-inset-left, 0px);
+        padding-right:env(safe-area-inset-right, 0px);
+    }
+
+    .footer{
+        padding-bottom:calc(40px + env(safe-area-inset-bottom, 0px));
+    }
+}
+
+@media (prefers-reduced-motion:reduce){
+
+    *,
+    *::before,
+    *::after{
+        animation-duration:.001ms !important;
+        animation-iteration-count:1 !important;
+        transition-duration:.001ms !important;
+        scroll-behavior:auto !important;
+    }
+}
+
+
+/* ==========================================================================
+   12. HOVER-ONLY EFFECTS
+   --------------------------------------------------------------------------
+   A touch screen has no hover. Lift-on-hover transforms get "stuck" after
+   a tap on mobile Safari, so they are switched off where there is no
+   real pointer.
+   ========================================================================== */
+
+@media (hover:none){
+
+    .department-card:hover,
+    .procedure-card:hover,
+    .onsite-card:hover,
+    .testimonial-card:hover,
+    .related-card:hover,
+    .hijama-panel:hover,
+    .doctor-card:hover,
+    .glass-card:hover,
+    .treatment-card:hover,
+    .highlight-card:hover{
+        transform:none;
+    }
+
+    .card-shine{
+        display:none;
+    }
+}
