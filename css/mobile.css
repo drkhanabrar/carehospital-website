@@ -141,6 +141,32 @@
         flex-wrap:wrap;
     }
 
+    /* Three-column feature grids become two on a tablet, and the tracks are
+       given a zero floor so they can actually shrink. */
+    .features-grid,
+    .why-grid,
+    .onsite-grid,
+    .facilities-grid,
+    .facility-grid,
+    .highlight-grid{
+        grid-template-columns:repeat(2, minmax(0, 1fr));
+        gap:18px;
+    }
+
+    .features-grid > *,
+    .why-grid > *,
+    .onsite-grid > *,
+    .facilities-grid > *,
+    .facility-grid > *,
+    .highlight-grid > *{
+        min-width:0;
+    }
+
+    .feature-card{
+        min-height:0;
+        padding:26px 22px;
+    }
+
     /* ---------- DOCTOR CARDS ----------
        Same min-content trap as the hero: `.doctor-card` is declared
        `420px 1fr`, and a plain `1fr` cannot shrink below its content, so
@@ -337,16 +363,41 @@
     .gallery-grid,
     .onsite-grid,
     .facilities-grid,
+    .facility-grid,
     .testimonial-grid,
     .about-grid,
     .why-grid,
+    .features-grid,
     .related-grid,
     .highlight-grid,
     .treatment-grid,
     .expertise-grid,
     .footer-top{
-        grid-template-columns:1fr !important;
+        grid-template-columns:minmax(0, 1fr) !important;
         gap:16px;
+    }
+
+    /* Grid and flex children must be allowed to shrink. A track declared
+       `1fr` is `minmax(auto, 1fr)`, so without this the track keeps its
+       min-content width and the columns march off the side of the screen
+       — which is exactly what hid four of the "Why Choose CARE" cards. */
+    .department-grid > *,
+    .procedure-grid > *,
+    .gallery-grid > *,
+    .onsite-grid > *,
+    .facilities-grid > *,
+    .facility-grid > *,
+    .testimonial-grid > *,
+    .about-grid > *,
+    .why-grid > *,
+    .features-grid > *,
+    .related-grid > *,
+    .highlight-grid > *,
+    .treatment-grid > *,
+    .expertise-grid > *,
+    .footer-top > *{
+        min-width:0;
+        max-width:100%;
     }
 
     .department-card,
