@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 840 525" width="840" height="525" role="img">
+<defs>
+<linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+<stop offset="0" stop-color="#06333F"/><stop offset=".55" stop-color="#0B7285"/><stop offset="1" stop-color="#128A88"/>
+</linearGradient>
+<linearGradient id="acc" x1="0" y1="0" x2="1" y2="0">
+<stop offset="0" stop-color="#0B7285"/><stop offset="1" stop-color="#00C2B5"/>
+</linearGradient>
+<filter id="sh" x="-20%" y="-20%" width="140%" height="140%">
+<feDropShadow dx="0" dy="14" stdDeviation="20" flood-color="#082b36" flood-opacity=".28"/>
+</filter>
+</defs>
+<rect width="840" height="525" fill="url(#bg)"/>
+<circle cx="770" cy="-40" r="210" fill="#ffffff" opacity=".055"/>
+<circle cx="40" cy="555" r="150" fill="#ffffff" opacity=".05"/>
+<g filter="url(#sh)">
+<rect x="56" y="54" width="728" height="417" rx="18" fill="#ffffff"/>
+<path d="M56 72a18 18 0 0 1 18-18h692a18 18 0 0 1 18 18v26H56z" fill="#F7FBFC"/>
+<rect x="56" y="54" width="728" height="4" rx="2" fill="url(#acc)"/>
+<circle cx="84" cy="84" r="5" fill="#E2777A"/><circle cx="102" cy="84" r="5" fill="#E8C468"/><circle cx="120" cy="84" r="5" fill="#6FCF97"/>
+<text x="144" y="89" font-family="Inter,Arial,sans-serif" font-size="13" font-weight="700" fill="#123949" opacity=".72">CARE Pediatric Dose Calculator</text>
+<rect x="84" y="124" width="672" height="30" rx="5" fill="#0B7285" opacity="0.08"/><text x="100" y="144" font-family="Inter,Arial,sans-serif" font-size="12" font-weight="800" fill="#0B7285" text-anchor="start">Paediatric dosing</text><text x="100" y="196" font-family="Inter,Arial,sans-serif" font-size="10" font-weight="800" fill="#5E6E78" text-anchor="start">CHILD'S WEIGHT</text><rect x="96" y="206" width="250" height="46" rx="5" fill="#ffffff" opacity="1"/><rect x="96" y="206" width="250" height="46" rx="5" fill="none" stroke="#0B7285" stroke-opacity=".45" stroke-width="2"/><text x="116" y="238" font-family="Inter,Arial,sans-serif" font-size="24" font-weight="800" fill="#123949" text-anchor="start">12.5</text><text x="190" y="238" font-family="Inter,Arial,sans-serif" font-size="14" font-weight="700" fill="#5E6E78" text-anchor="start">kg</text><text x="100" y="286" font-family="Inter,Arial,sans-serif" font-size="10" font-weight="800" fill="#5E6E78" text-anchor="start">DRUG</text><rect x="96" y="296" width="250" height="42" rx="5" fill="#ffffff" opacity="1"/><rect x="96" y="296" width="250" height="42" rx="5" fill="none" stroke="rgba(11,114,133,.14)"/><text x="116" y="323" font-family="Inter,Arial,sans-serif" font-size="13" font-weight="700" fill="#123949" text-anchor="start">Paracetamol syrup</text><text x="100" y="370" font-family="Inter,Arial,sans-serif" font-size="10" font-weight="800" fill="#5E6E78" text-anchor="start">STRENGTH</text><rect x="96" y="380" width="250" height="38" rx="5" fill="#ffffff" opacity="1"/><rect x="96" y="380" width="250" height="38" rx="5" fill="none" stroke="rgba(11,114,133,.14)"/><text x="116" y="405" font-family="Inter,Arial,sans-serif" font-size="12" font-weight="700" fill="#5E6E78" text-anchor="start">125 mg / 5 mL</text><rect x="382" y="186" width="374" height="232" rx="5" fill="#00C2B5" opacity="0.1"/><rect x="382" y="186" width="374" height="232" rx="7" fill="none" stroke="#00C2B5" stroke-opacity=".4"/><text x="406" y="220" font-family="Inter,Arial,sans-serif" font-size="10" font-weight="800" fill="#0B7285" text-anchor="start">CALCULATED DOSE</text><text x="406" y="266" font-family="Inter,Arial,sans-serif" font-size="30" font-weight="800" fill="#0B7285" text-anchor="start">187.5 mg</text><rect x="406" y="286" width="326" height="1" rx="0" fill="#0B7285" opacity="0.2"/><text x="406" y="318" font-family="Inter,Arial,sans-serif" font-size="10" font-weight="800" fill="#0B7285" text-anchor="start">GIVE</text><text x="406" y="360" font-family="Inter,Arial,sans-serif" font-size="30" font-weight="800" fill="#123949" text-anchor="start">7.5 mL</text><text x="406" y="392" font-family="Inter,Arial,sans-serif" font-size="11" font-weight="600" fill="#5E6E78" text-anchor="start">every 6 hours as required</text>
+</g>
+</svg>
