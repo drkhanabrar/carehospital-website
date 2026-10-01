@@ -446,3 +446,19 @@ FOOTER
     line-height:1.8;
     text-align:center;
 }
+
+
+/* ==========================================================================
+   SOCIAL PLACEHOLDERS
+   --------------------------------------------------------------------------
+   Accounts that do not exist yet point at "#". They are shown dimmed and
+   are not clickable, so nobody lands on a dead page. Replace the href in
+   index.html and in the SOCIAL list at the top of js/site-chrome.js, then
+   remove data-social-pending.
+   ========================================================================== */
+
+.social-links a[data-social-pending]{
+    opacity:.42;
+    cursor:default;
+    pointer-events:none;
+}

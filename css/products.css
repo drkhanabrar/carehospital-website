@@ -1,0 +1,1522 @@
+/* ==========================================================================
+   CARE — RESEARCH & DEVELOPMENT  (products hub + product detail pages)
+   --------------------------------------------------------------------------
+   Uses the existing design tokens only — the teal palette from base.css,
+   Inter, the 22-28px card radius and the same shadow language as the
+   department and on-site cards. Nothing here changes any existing page.
+
+   Mobile rules live at the bottom of this file AND in css/mobile.css, which
+   loads after it.
+   ========================================================================== */
+
+
+/* ==========================================================================
+   1. R&D HERO
+   ========================================================================== */
+
+.rd-hero{
+    position:relative;
+    overflow:hidden;
+    padding:calc(var(--header-h, 88px) + 72px) 0 84px;
+    background:linear-gradient(135deg, #052A3A 0%, #0B7285 45%, #16A8A8 100%);
+    color:#fff;
+}
+
+.rd-hero::before{
+    content:"";
+    position:absolute;
+    width:900px;
+    height:900px;
+    inset-inline-end:-280px;
+    top:-250px;
+    border-radius:50%;
+    background:rgba(255,255,255,.05);
+    filter:blur(40px);
+    pointer-events:none;
+}
+
+.rd-hero::after{
+    content:"";
+    position:absolute;
+    width:500px;
+    height:500px;
+    inset-inline-start:-200px;
+    bottom:-180px;
+    border-radius:50%;
+    background:rgba(255,255,255,.05);
+    filter:blur(30px);
+    pointer-events:none;
+}
+
+.rd-hero .container{
+    position:relative;
+    z-index:2;
+}
+
+.rd-eyebrow{
+    display:inline-flex;
+    align-items:center;
+    gap:10px;
+    padding:11px 20px;
+    border-radius:999px;
+    background:rgba(255,255,255,.13);
+    border:1px solid rgba(255,255,255,.16);
+    backdrop-filter:blur(18px);
+    -webkit-backdrop-filter:blur(18px);
+    color:#B9F5EF;
+    font-size:12.5px;
+    font-weight:800;
+    letter-spacing:.12em;
+    text-transform:uppercase;
+}
+
+.rd-hero h1{
+    margin:26px 0 18px;
+    max-width:17ch;
+    font-size:clamp(34px, 5vw, 62px);
+    font-weight:900;
+    line-height:1.08;
+    letter-spacing:-1.6px;
+    color:#fff;
+}
+
+.rd-hero .rd-lead{
+    max-width:62ch;
+    color:rgba(255,255,255,.90);
+    font-size:clamp(16px, 1.6vw, 19px);
+    line-height:1.8;
+}
+
+.rd-hero-meta{
+    display:flex;
+    flex-wrap:wrap;
+    gap:14px;
+    margin-top:34px;
+}
+
+.rd-chip{
+    display:inline-flex;
+    align-items:center;
+    gap:9px;
+    padding:12px 20px;
+    border-radius:50px;
+    background:rgba(255,255,255,.12);
+    border:1px solid rgba(255,255,255,.16);
+    color:#fff;
+    font-size:14px;
+    font-weight:600;
+}
+
+.rd-chip i{ color:#9EF8F1; }
+
+
+/* ==========================================================================
+   2. FILTER BAR
+   ========================================================================== */
+
+.rd-filters{
+    display:flex;
+    flex-wrap:wrap;
+    gap:10px;
+    justify-content:center;
+    margin-top:44px;
+}
+
+.rd-filter{
+    padding:11px 22px;
+    border:1px solid rgba(11,114,133,.18);
+    border-radius:50px;
+    background:#fff;
+    color:#21404E;
+    font-family:inherit;
+    font-size:14.5px;
+    font-weight:600;
+    cursor:pointer;
+    transition:background .3s ease, color .3s ease, border-color .3s ease, transform .3s ease;
+}
+
+.rd-filter:hover{
+    background:#EEF8FA;
+    transform:translateY(-2px);
+}
+
+.rd-filter.is-active{
+    background:var(--primary, #0B7285);
+    border-color:var(--primary, #0B7285);
+    color:#fff;
+}
+
+.rd-filter:focus-visible{
+    outline:3px solid #00A7A0;
+    outline-offset:3px;
+}
+
+
+/* ==========================================================================
+   3. PRODUCT GRID
+   ========================================================================== */
+
+.rd-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit, minmax(min(100%, 380px), 1fr));
+    gap:30px;
+    margin-top:46px;
+}
+
+.rd-grid > *{ min-width:0; }
+
+.rd-card{
+    position:relative;
+    display:flex;
+    flex-direction:column;
+    overflow:hidden;
+    border:1px solid rgba(11,114,133,.10);
+    border-radius:26px;
+    background:#fff;
+    box-shadow:0 14px 36px rgba(9,40,52,.07);
+    transition:transform .42s cubic-bezier(.22,.61,.36,1),
+               box-shadow .42s ease,
+               border-color .35s ease;
+}
+
+.rd-card:hover{
+    transform:translateY(-8px);
+    border-color:rgba(0,194,181,.30);
+    box-shadow:0 30px 68px rgba(9,40,52,.14);
+}
+
+.rd-card.is-hidden{ display:none; }
+
+/* ---------- Card media ---------- */
+
+.rd-card-media{
+    position:relative;
+    aspect-ratio:840 / 525;
+    overflow:hidden;
+    background:#06333F;
+}
+
+.rd-card-media img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    display:block;
+    transition:transform .6s ease;
+}
+
+.rd-card:hover .rd-card-media img{ transform:scale(1.03); }
+
+/* ---------- Status badge ---------- */
+
+.rd-status{
+    position:absolute;
+    top:16px;
+    inset-inline-start:16px;
+    z-index:2;
+    display:inline-flex;
+    align-items:center;
+    gap:7px;
+    padding:7px 14px;
+    border-radius:999px;
+    font-size:11.5px;
+    font-weight:800;
+    letter-spacing:.08em;
+    text-transform:uppercase;
+    backdrop-filter:blur(12px);
+    -webkit-backdrop-filter:blur(12px);
+}
+
+.rd-status::before{
+    content:"";
+    width:7px;
+    height:7px;
+    border-radius:50%;
+    background:currentColor;
+}
+
+.rd-status.is-available{
+    background:rgba(0,194,181,.92);
+    color:#04343A;
+}
+
+.rd-status.is-development{
+    background:rgba(255,255,255,.92);
+    color:#9A6B10;
+}
+
+.rd-status.is-planned{
+    background:rgba(255,255,255,.88);
+    color:#4A5C66;
+}
+
+/* "Learning system" marker */
+
+.rd-learn{
+    position:absolute;
+    top:16px;
+    inset-inline-end:16px;
+    z-index:2;
+    display:inline-flex;
+    align-items:center;
+    gap:7px;
+    padding:7px 14px;
+    border-radius:999px;
+    background:rgba(9,40,52,.62);
+    border:1px solid rgba(255,255,255,.22);
+    backdrop-filter:blur(12px);
+    -webkit-backdrop-filter:blur(12px);
+    color:#9EF8F1;
+    font-size:11px;
+    font-weight:800;
+    letter-spacing:.06em;
+    text-transform:uppercase;
+}
+
+/* ---------- Card body ---------- */
+
+.rd-card-body{
+    display:flex;
+    flex-direction:column;
+    gap:12px;
+    flex:1;
+    padding:28px 26px 26px;
+}
+
+.rd-card-cat{
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    align-self:flex-start;
+    padding:6px 14px;
+    border-radius:999px;
+    background:#EEF8FA;
+    color:var(--primary, #0B7285);
+    font-size:11.5px;
+    font-weight:800;
+    letter-spacing:.09em;
+    text-transform:uppercase;
+}
+
+.rd-card h3{
+    color:#123949;
+    font-size:1.32rem;
+    font-weight:800;
+    line-height:1.3;
+}
+
+.rd-card-tagline{
+    color:var(--primary, #0B7285);
+    font-size:.97rem;
+    font-weight:600;
+    line-height:1.6;
+}
+
+.rd-card-summary{
+    color:#5E6E78;
+    font-size:.95rem;
+    line-height:1.78;
+}
+
+.rd-card-platforms{
+    display:flex;
+    flex-wrap:wrap;
+    gap:7px;
+    margin-top:2px;
+}
+
+.rd-plat{
+    padding:5px 12px;
+    border:1px solid rgba(11,114,133,.14);
+    border-radius:999px;
+    color:#5E6E78;
+    font-size:12px;
+    font-weight:600;
+}
+
+.rd-card-actions{
+    display:flex;
+    flex-wrap:wrap;
+    gap:10px;
+    margin-top:auto;
+    padding-top:18px;
+}
+
+.rd-card-actions .doctor-btn,
+.rd-card-actions .doctor-outline{
+    min-width:0;
+    height:auto;
+    padding:13px 24px;
+    font-size:14.5px;
+}
+
+
+/* ==========================================================================
+   4. "MORE COMING" CARD — room for future products
+   ========================================================================== */
+
+.rd-card-soon{
+    display:flex;
+    flex-direction:column;
+    align-items:flex-start;
+    justify-content:center;
+    gap:14px;
+    padding:40px 32px;
+    border:2px dashed rgba(11,114,133,.22);
+    border-radius:26px;
+    background:
+        linear-gradient(180deg, rgba(0,194,181,.04), rgba(11,114,133,.05));
+    box-shadow:none;
+}
+
+.rd-card-soon:hover{
+    transform:none;
+    border-color:rgba(0,194,181,.42);
+    box-shadow:none;
+}
+
+.rd-card-soon .rd-soon-icon{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    width:58px;
+    height:58px;
+    border-radius:18px;
+    background:linear-gradient(135deg, rgba(11,114,133,.12), rgba(0,194,181,.18));
+    color:var(--primary, #0B7285);
+    font-size:22px;
+}
+
+.rd-card-soon h3{ font-size:1.2rem; }
+
+.rd-card-soon p{
+    color:#5E6E78;
+    font-size:.95rem;
+    line-height:1.76;
+}
+
+
+/* ==========================================================================
+   5. PRODUCT DETAIL PAGE
+   ========================================================================== */
+
+.product-hero{
+    position:relative;
+    overflow:hidden;
+    padding:calc(var(--header-h, 88px) + 56px) 0 72px;
+    background:linear-gradient(135deg, #052A3A 0%, #0B7285 48%, #16A8A8 100%);
+    color:#fff;
+}
+
+.product-hero::before{
+    content:"";
+    position:absolute;
+    width:820px;
+    height:820px;
+    inset-inline-end:-260px;
+    top:-280px;
+    border-radius:50%;
+    background:rgba(255,255,255,.055);
+    filter:blur(40px);
+    pointer-events:none;
+}
+
+.product-hero .container{
+    position:relative;
+    z-index:2;
+}
+
+.product-hero-grid{
+    display:grid;
+    grid-template-columns:minmax(0, 1fr) minmax(0, 1.08fr);
+    gap:52px;
+    align-items:center;
+}
+
+.product-badges{
+    display:flex;
+    flex-wrap:wrap;
+    gap:10px;
+    margin-bottom:22px;
+}
+
+.product-badge{
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    padding:8px 16px;
+    border-radius:999px;
+    background:rgba(255,255,255,.14);
+    border:1px solid rgba(255,255,255,.18);
+    color:#fff;
+    font-size:12px;
+    font-weight:800;
+    letter-spacing:.08em;
+    text-transform:uppercase;
+}
+
+.product-badge.is-available{ background:rgba(0,194,181,.9); color:#04343A; border-color:transparent; }
+.product-badge.is-development{ background:rgba(255,255,255,.92); color:#9A6B10; border-color:transparent; }
+.product-badge.is-planned{ background:rgba(255,255,255,.88); color:#4A5C66; border-color:transparent; }
+
+.product-hero h1{
+    font-size:clamp(30px, 4.3vw, 54px);
+    font-weight:900;
+    line-height:1.1;
+    letter-spacing:-1.3px;
+    color:#fff;
+}
+
+.product-tagline{
+    margin-top:16px;
+    color:#9EF8F1;
+    font-size:clamp(16px, 1.8vw, 21px);
+    font-weight:600;
+    line-height:1.55;
+}
+
+.product-summary{
+    margin-top:20px;
+    max-width:56ch;
+    color:rgba(255,255,255,.88);
+    font-size:16px;
+    line-height:1.85;
+}
+
+.product-hero-actions{
+    display:flex;
+    flex-wrap:wrap;
+    gap:14px;
+    margin-top:32px;
+}
+
+.product-hero-actions .btn-primary{
+    background:#fff;
+    color:var(--primary, #0B7285);
+    box-shadow:0 16px 36px rgba(0,0,0,.18);
+}
+
+.product-hero-actions .btn-primary:hover{ background:#EAFBF9; }
+
+.product-shot{
+    border-radius:24px;
+    overflow:hidden;
+    border:1px solid rgba(255,255,255,.22);
+    box-shadow:0 34px 76px rgba(0,0,0,.26);
+}
+
+.product-shot img{
+    display:block;
+    width:100%;
+    height:auto;
+}
+
+.product-platforms{
+    display:flex;
+    flex-wrap:wrap;
+    gap:9px;
+    margin-top:22px;
+}
+
+.product-platforms span{
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    padding:8px 16px;
+    border-radius:999px;
+    background:rgba(255,255,255,.12);
+    border:1px solid rgba(255,255,255,.16);
+    color:#fff;
+    font-size:13px;
+    font-weight:600;
+}
+
+
+/* ---------- Highlights strip ---------- */
+
+.product-highlights{
+    display:grid;
+    grid-template-columns:repeat(auto-fit, minmax(min(100%, 230px), 1fr));
+    gap:22px;
+    margin-top:-54px;
+    position:relative;
+    z-index:5;
+}
+
+.product-highlights > *{ min-width:0; }
+
+.highlight-tile{
+    display:flex;
+    flex-direction:column;
+    gap:11px;
+    padding:28px 24px;
+    border:1px solid rgba(11,114,133,.09);
+    border-radius:22px;
+    background:#fff;
+    box-shadow:0 18px 44px rgba(9,40,52,.09);
+}
+
+.highlight-tile .tile-icon{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    width:52px;
+    height:52px;
+    border-radius:16px;
+    background:linear-gradient(135deg, rgba(11,114,133,.10), rgba(0,194,181,.17));
+    color:var(--primary, #0B7285);
+    font-size:20px;
+}
+
+.highlight-tile h3{
+    color:#123949;
+    font-size:1.03rem;
+    font-weight:800;
+    line-height:1.4;
+}
+
+.highlight-tile p{
+    color:#5E6E78;
+    font-size:.92rem;
+    line-height:1.72;
+}
+
+
+/* ---------- Feature list ---------- */
+
+.feature-list{
+    display:grid;
+    grid-template-columns:repeat(auto-fit, minmax(min(100%, 340px), 1fr));
+    gap:22px;
+}
+
+.feature-list > *{ min-width:0; }
+
+.feature-row{
+    display:flex;
+    align-items:flex-start;
+    gap:16px;
+    padding:24px 22px;
+    border:1px solid rgba(11,114,133,.09);
+    border-radius:20px;
+    background:#fff;
+    transition:border-color .3s ease, box-shadow .3s ease;
+}
+
+.feature-row:hover{
+    border-color:rgba(0,194,181,.28);
+    box-shadow:0 16px 38px rgba(9,40,52,.07);
+}
+
+.feature-row > i{
+    flex-shrink:0;
+    margin-top:3px;
+    color:var(--secondary, #00C2B5);
+    font-size:17px;
+}
+
+.feature-row h3{
+    margin-bottom:6px;
+    color:#123949;
+    font-size:1.03rem;
+    font-weight:800;
+    line-height:1.4;
+}
+
+.feature-row p{
+    color:#5E6E78;
+    font-size:.94rem;
+    line-height:1.76;
+}
+
+
+/* ---------- Learning explainer ---------- */
+
+.learning-panel{
+    position:relative;
+    overflow:hidden;
+    padding:46px 44px;
+    border-radius:26px;
+    background:linear-gradient(150deg, #06333F 0%, #0B7285 58%, #128A88 100%);
+    color:#fff;
+}
+
+.learning-panel::before{
+    content:"";
+    position:absolute;
+    width:440px;
+    height:440px;
+    top:-180px;
+    inset-inline-end:-150px;
+    border-radius:50%;
+    background:rgba(255,255,255,.07);
+    filter:blur(38px);
+    pointer-events:none;
+}
+
+.learning-panel > *{ position:relative; z-index:2; }
+
+.learning-panel h2{
+    margin:16px 0 14px;
+    color:#fff;
+    font-size:clamp(24px, 2.6vw, 33px);
+    font-weight:900;
+    line-height:1.22;
+}
+
+.learning-panel > p{
+    max-width:64ch;
+    color:rgba(255,255,255,.88);
+    font-size:16px;
+    line-height:1.85;
+}
+
+.learning-steps{
+    display:grid;
+    grid-template-columns:repeat(auto-fit, minmax(min(100%, 210px), 1fr));
+    gap:18px;
+    margin-top:32px;
+}
+
+.learning-steps > *{ min-width:0; }
+
+.learning-step{
+    padding:22px 20px;
+    border-radius:18px;
+    background:rgba(255,255,255,.10);
+    border:1px solid rgba(255,255,255,.14);
+}
+
+.learning-step .step-no{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    width:34px;
+    height:34px;
+    margin-bottom:13px;
+    border-radius:11px;
+    background:rgba(255,255,255,.16);
+    color:#9EF8F1;
+    font-size:14px;
+    font-weight:800;
+}
+
+.learning-step h3{
+    margin-bottom:6px;
+    color:#fff;
+    font-size:1rem;
+    font-weight:800;
+    line-height:1.4;
+}
+
+.learning-step p{
+    color:rgba(255,255,255,.80);
+    font-size:.9rem;
+    line-height:1.7;
+}
+
+
+/* ---------- Spec table ---------- */
+
+.spec-table{
+    width:100%;
+    border-collapse:collapse;
+    border:1px solid rgba(11,114,133,.10);
+    border-radius:18px;
+    overflow:hidden;
+    background:#fff;
+}
+
+.spec-table tr{
+    border-bottom:1px solid rgba(11,114,133,.08);
+}
+
+.spec-table tr:last-child{ border-bottom:none; }
+
+.spec-table td{
+    padding:17px 22px;
+    font-size:.96rem;
+    line-height:1.65;
+    vertical-align:top;
+}
+
+.spec-table td:first-child{
+    width:34%;
+    color:#6B7C86;
+    font-size:12px;
+    font-weight:800;
+    letter-spacing:.09em;
+    text-transform:uppercase;
+}
+
+.spec-table td:last-child{
+    color:#21404E;
+    font-weight:600;
+}
+
+
+/* ---------- Audience list ---------- */
+
+.audience-list{
+    display:grid;
+    gap:14px;
+}
+
+.audience-list li{
+    display:flex;
+    align-items:flex-start;
+    gap:14px;
+    padding:18px 20px;
+    border-radius:16px;
+    background:#fff;
+    border:1px solid rgba(11,114,133,.09);
+    color:#21404E;
+    font-size:.98rem;
+    font-weight:600;
+    line-height:1.65;
+}
+
+.audience-list li i{
+    flex-shrink:0;
+    margin-top:3px;
+    color:var(--secondary, #00C2B5);
+}
+
+
+/* ==========================================================================
+   6. ENQUIRY / PURCHASE PANEL
+   ========================================================================== */
+
+.enquire{
+    position:relative;
+    overflow:hidden;
+    padding:96px 0;
+    background:#F7FBFC;
+}
+
+.enquire-box{
+    position:relative;
+    overflow:hidden;
+    padding:52px 48px;
+    border-radius:28px;
+    background:linear-gradient(145deg, #06333F 0%, #0B7285 55%, #138E8C 100%);
+    color:#fff;
+    box-shadow:0 30px 70px rgba(9,40,52,.18);
+}
+
+.enquire-box::before{
+    content:"";
+    position:absolute;
+    width:520px;
+    height:520px;
+    top:-220px;
+    inset-inline-end:-180px;
+    border-radius:50%;
+    background:rgba(255,255,255,.07);
+    filter:blur(40px);
+    pointer-events:none;
+}
+
+.enquire-grid{
+    position:relative;
+    z-index:2;
+    display:grid;
+    grid-template-columns:minmax(0, 1.05fr) minmax(0, .95fr);
+    gap:46px;
+    align-items:center;
+}
+
+.enquire-grid > *{ min-width:0; }
+
+.enquire h2{
+    color:#fff;
+    font-size:clamp(25px, 2.9vw, 36px);
+    font-weight:900;
+    line-height:1.2;
+}
+
+.enquire p{
+    margin-top:14px;
+    max-width:52ch;
+    color:rgba(255,255,255,.88);
+    font-size:16px;
+    line-height:1.82;
+}
+
+.enquire-points{
+    display:grid;
+    gap:11px;
+    margin-top:24px;
+}
+
+.enquire-points li{
+    display:flex;
+    align-items:flex-start;
+    gap:11px;
+    color:rgba(255,255,255,.90);
+    font-size:14.6px;
+    line-height:1.65;
+}
+
+.enquire-points i{
+    flex-shrink:0;
+    margin-top:4px;
+    color:#9EF8F1;
+    font-size:13px;
+}
+
+/* ---------- Contact card ---------- */
+
+.enquire-card{
+    padding:34px 30px;
+    border-radius:22px;
+    background:rgba(255,255,255,.10);
+    border:1px solid rgba(255,255,255,.18);
+    backdrop-filter:blur(16px);
+    -webkit-backdrop-filter:blur(16px);
+}
+
+.enquire-card h3{
+    margin-bottom:6px;
+    color:#fff;
+    font-size:1.1rem;
+    font-weight:800;
+}
+
+.enquire-card > p{
+    margin:0 0 22px;
+    color:rgba(255,255,255,.78);
+    font-size:13.6px;
+    line-height:1.7;
+}
+
+.enquire-contact{
+    display:flex;
+    flex-direction:column;
+    gap:12px;
+}
+
+.enquire-contact a{
+    display:flex;
+    align-items:center;
+    gap:14px;
+    padding:14px 16px;
+    border-radius:14px;
+    background:rgba(255,255,255,.10);
+    border:1px solid rgba(255,255,255,.14);
+    color:#fff;
+    font-size:14.5px;
+    font-weight:600;
+    transition:background .3s ease, transform .3s ease, border-color .3s ease;
+}
+
+.enquire-contact a:hover{
+    background:rgba(255,255,255,.18);
+    border-color:rgba(255,255,255,.3);
+    transform:translateY(-2px);
+}
+
+.enquire-contact a:focus-visible{
+    outline:3px solid #fff;
+    outline-offset:3px;
+}
+
+.enquire-contact i{
+    flex-shrink:0;
+    width:34px;
+    height:34px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    border-radius:11px;
+    background:rgba(255,255,255,.14);
+    color:#9EF8F1;
+    font-size:14px;
+}
+
+.enquire-contact .ec-label{
+    display:block;
+    color:rgba(255,255,255,.62);
+    font-size:10.5px;
+    font-weight:800;
+    letter-spacing:.11em;
+    text-transform:uppercase;
+}
+
+.enquire-contact .ec-value{
+    display:block;
+    margin-top:2px;
+    word-break:break-word;
+}
+
+/* E-mail and phone must not be reordered by the RTL algorithm */
+html[dir="rtl"] .enquire-contact .ec-value,
+html[dir="rtl"] .spec-table td:last-child{
+    direction:ltr;
+    unicode-bidi:plaintext;
+    text-align:start;
+}
+
+
+/* ==========================================================================
+   7. CLINICAL-USE NOTICE
+   --------------------------------------------------------------------------
+   Shown on products that suggest clinical content. These tools assist the
+   clinician; they do not replace clinical judgement, and saying so plainly
+   is both honest and what buyers of medical software expect to see.
+   ========================================================================== */
+
+.clinical-note{
+    display:flex;
+    align-items:flex-start;
+    gap:18px;
+    max-width:920px;
+    margin:0 auto;
+    padding:26px 28px;
+    border:1px solid rgba(11,114,133,.16);
+    border-inline-start:4px solid var(--primary, #0B7285);
+    border-radius:16px;
+    background:#fff;
+}
+
+.clinical-note i{
+    flex-shrink:0;
+    margin-top:2px;
+    color:var(--primary, #0B7285);
+    font-size:19px;
+}
+
+.clinical-note strong{
+    display:block;
+    margin-bottom:5px;
+    color:#123949;
+    font-size:.98rem;
+    font-weight:800;
+}
+
+.clinical-note p{
+    color:#5E6E78;
+    font-size:.92rem;
+    line-height:1.78;
+}
+
+
+/* ==========================================================================
+   8. RELATED PRODUCTS
+   ========================================================================== */
+
+.related-products{
+    display:grid;
+    grid-template-columns:repeat(auto-fit, minmax(min(100%, 280px), 1fr));
+    gap:22px;
+}
+
+.related-products > *{ min-width:0; }
+
+.rp-card{
+    display:flex;
+    flex-direction:column;
+    gap:10px;
+    padding:26px 24px;
+    border:1px solid rgba(11,114,133,.10);
+    border-radius:20px;
+    background:#fff;
+    box-shadow:0 14px 34px rgba(9,40,52,.06);
+    transition:transform .38s ease, box-shadow .38s ease, border-color .3s ease;
+}
+
+.rp-card:hover{
+    transform:translateY(-6px);
+    border-color:rgba(0,194,181,.28);
+    box-shadow:0 26px 58px rgba(9,40,52,.12);
+}
+
+.rp-icon{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    width:48px;
+    height:48px;
+    border-radius:15px;
+    background:linear-gradient(135deg, rgba(11,114,133,.10), rgba(0,194,181,.17));
+    color:var(--primary, #0B7285);
+    font-size:18px;
+}
+
+.rp-card h3{
+    color:#123949;
+    font-size:1.06rem;
+    font-weight:800;
+    line-height:1.35;
+}
+
+.rp-card p{
+    flex:1;
+    color:#5E6E78;
+    font-size:.92rem;
+    line-height:1.72;
+}
+
+.rp-card a{
+    margin-top:4px;
+    color:var(--primary, #0B7285);
+    font-size:.92rem;
+    font-weight:700;
+}
+
+.rp-card a:hover{ text-decoration:underline; }
+
+
+/* ==========================================================================
+   9. BREADCRUMB
+   ========================================================================== */
+
+.rd-breadcrumb{
+    padding:22px 0 0;
+    font-size:14px;
+}
+
+.rd-breadcrumb .container{
+    display:flex;
+    flex-wrap:wrap;
+    align-items:center;
+    gap:9px;
+    color:#6B7C86;
+}
+
+.rd-breadcrumb a{
+    color:#6B7C86;
+    transition:color .3s ease;
+}
+
+.rd-breadcrumb a:hover{ color:var(--primary, #0B7285); }
+
+.rd-breadcrumb strong{ color:#123949; }
+
+
+/* ==========================================================================
+   10. SCRIPT-SPECIFIC TYPOGRAPHY
+   ========================================================================== */
+
+html[data-lang="hi"] .rd-hero h1,
+html[data-lang="hi"] .product-hero h1{ line-height:1.35; letter-spacing:0; }
+
+html[data-lang="ur"] .rd-hero h1,
+html[data-lang="ur"] .product-hero h1{ line-height:1.9; letter-spacing:0; }
+
+html[data-lang="ur"] .rd-card h3,
+html[data-lang="ur"] .highlight-tile h3,
+html[data-lang="ur"] .feature-row h3,
+html[data-lang="ur"] .learning-step h3,
+html[data-lang="ur"] .rp-card h3{ line-height:1.95; }
+
+html[data-lang="ur"] .rd-eyebrow,
+html[data-lang="ur"] .rd-status,
+html[data-lang="ur"] .rd-learn,
+html[data-lang="ur"] .product-badge,
+html[data-lang="ur"] .rd-card-cat{ letter-spacing:0; line-height:1.7; }
+
+
+/* ==========================================================================
+   11. TABLET
+   ========================================================================== */
+
+@media (max-width:992px){
+
+    .rd-hero{ padding:calc(var(--header-h, 88px) + 44px) 0 60px; }
+
+    .product-hero{ padding:calc(var(--header-h, 88px) + 36px) 0 56px; }
+
+    .product-hero-grid{
+        grid-template-columns:minmax(0, 1fr);
+        gap:34px;
+    }
+
+    .enquire-grid{
+        grid-template-columns:minmax(0, 1fr);
+        gap:32px;
+    }
+
+    .enquire{ padding:64px 0; }
+
+    .enquire-box{ padding:40px 32px; }
+
+    .learning-panel{ padding:36px 30px; }
+
+    .product-highlights{ margin-top:-30px; }
+}
+
+
+/* ==========================================================================
+   12. PHONE
+   ========================================================================== */
+
+@media (max-width:576px){
+
+    .rd-hero{ padding:calc(var(--header-h, 76px) + 30px) 0 44px; }
+
+    .rd-hero h1{ font-size:clamp(27px, 7.8vw, 34px); letter-spacing:-.5px; }
+
+    .rd-hero .rd-lead{ font-size:15.5px; line-height:1.76; }
+
+    .rd-hero-meta{ gap:10px; margin-top:24px; }
+
+    .rd-chip{ padding:10px 15px; font-size:13px; }
+
+    .rd-filters{
+        gap:8px;
+        margin-top:28px;
+        flex-wrap:nowrap;
+        overflow-x:auto;
+        justify-content:flex-start;
+        padding-bottom:6px;
+        -webkit-overflow-scrolling:touch;
+        scrollbar-width:none;
+    }
+
+    .rd-filters::-webkit-scrollbar{ display:none; }
+
+    .rd-filter{
+        flex:0 0 auto;
+        min-height:42px;
+        padding:10px 17px;
+        font-size:13.6px;
+        white-space:nowrap;
+    }
+
+    .rd-grid{
+        grid-template-columns:minmax(0, 1fr);
+        gap:18px;
+        margin-top:28px;
+    }
+
+    .rd-card-body{ padding:22px 19px 20px; gap:10px; }
+
+    .rd-card h3{ font-size:1.17rem; }
+
+    .rd-card-actions{ flex-direction:column; gap:9px; padding-top:14px; }
+
+    .rd-card-actions > *{ width:100%; justify-content:center; }
+
+    .rd-card-soon{ padding:30px 22px; }
+
+    /* ---- detail page ---- */
+
+    .product-hero{ padding:calc(var(--header-h, 76px) + 26px) 0 44px; }
+
+    .product-hero h1{ font-size:clamp(26px, 7.4vw, 33px); letter-spacing:-.4px; }
+
+    .product-tagline{ font-size:16px; margin-top:12px; }
+
+    .product-summary{ font-size:15px; line-height:1.78; }
+
+    .product-hero-actions{ flex-direction:column; gap:10px; margin-top:24px; }
+
+    .product-hero-actions > *{ width:100%; justify-content:center; }
+
+    .product-highlights{
+        grid-template-columns:minmax(0, 1fr);
+        gap:14px;
+        margin-top:-20px;
+    }
+
+    .highlight-tile{ padding:22px 19px; }
+
+    .feature-list{ grid-template-columns:minmax(0, 1fr); gap:14px; }
+
+    .feature-row{ padding:20px 18px; gap:13px; }
+
+    .learning-panel{ padding:28px 21px; border-radius:20px; }
+
+    .learning-steps{ grid-template-columns:minmax(0, 1fr); gap:12px; margin-top:24px; }
+
+    /* The spec table stacks: a two-column table at 390px crushes both sides */
+    .spec-table,
+    .spec-table tbody,
+    .spec-table tr,
+    .spec-table td{
+        display:block;
+        width:100%;
+    }
+
+    .spec-table{ border-radius:16px; }
+
+    .spec-table tr{ padding:14px 18px; }
+
+    .spec-table td{
+        padding:0;
+    }
+
+    .spec-table td:first-child{
+        width:100%;
+        margin-bottom:4px;
+        font-size:11px;
+    }
+
+    .spec-table td:last-child{ font-size:.95rem; }
+
+    .audience-list li{ padding:16px 17px; font-size:.95rem; }
+
+    .enquire{ padding:52px 0; }
+
+    .enquire-box{ padding:30px 21px; border-radius:20px; }
+
+    .enquire-card{ padding:26px 20px; }
+
+    .enquire-contact a{ padding:13px 14px; font-size:14px; }
+
+    .clinical-note{
+        flex-direction:column;
+        gap:12px;
+        padding:22px 20px;
+    }
+
+    .related-products{ grid-template-columns:minmax(0, 1fr); gap:14px; }
+
+    .rd-breadcrumb{ font-size:13px; }
+}
+
+
+/* ==========================================================================
+   13. TOUCH — no hover lift (it sticks after a tap on mobile Safari)
+   ========================================================================== */
+
+@media (hover:none){
+
+    .rd-card:hover,
+    .rp-card:hover,
+    .feature-row:hover,
+    .enquire-contact a:hover{
+        transform:none;
+    }
+
+    .rd-card:hover .rd-card-media img{ transform:none; }
+}
+
+
+/* ==========================================================================
+   14. BUTTON DEFINITIONS FOR THE R&D PAGES
+   --------------------------------------------------------------------------
+   .btn-primary and .btn-secondary are defined in css/hero.css, which these
+   pages deliberately do not load (it carries the whole home-page hero
+   layout with it). Without this block the hero buttons rendered as bare
+   underlined text. Same visual result, none of the hero baggage.
+   ========================================================================== */
+
+.product-hero .btn-primary,
+.product-hero .btn-secondary,
+.rd-hero .btn-primary,
+.rd-hero .btn-secondary{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    padding:17px 36px;
+    border-radius:60px;
+    font-size:16px;
+    font-weight:700;
+    text-align:center;
+    transition:transform .35s ease, box-shadow .35s ease,
+               background .35s ease, color .35s ease;
+}
+
+.product-hero .btn-primary,
+.rd-hero .btn-primary{
+    background:#ffffff;
+    color:var(--primary, #0B7285);
+    border:2px solid transparent;
+    box-shadow:0 16px 36px rgba(0,0,0,.18);
+}
+
+.product-hero .btn-primary:hover,
+.rd-hero .btn-primary:hover{
+    background:#EAFBF9;
+    transform:translateY(-4px);
+    box-shadow:0 24px 50px rgba(0,0,0,.24);
+}
+
+.product-hero .btn-secondary,
+.rd-hero .btn-secondary{
+    background:transparent;
+    color:#ffffff;
+    border:2px solid rgba(255,255,255,.85);
+}
+
+.product-hero .btn-secondary:hover,
+.rd-hero .btn-secondary:hover{
+    background:#ffffff;
+    color:var(--primary, #0B7285);
+    transform:translateY(-4px);
+}
+
+.product-hero .btn-primary:focus-visible,
+.product-hero .btn-secondary:focus-visible,
+.rd-hero .btn-primary:focus-visible,
+.rd-hero .btn-secondary:focus-visible{
+    outline:3px solid #ffffff;
+    outline-offset:4px;
+}
+
+/* The hub and detail pages use .doctor-btn / .doctor-outline on cards.
+   Those come from css/doctors.css, which both pages DO load — but the
+   outline variant needs its border restating outside a .doctor-card. */
+
+.rd-card-actions .doctor-outline,
+.rd-card-soon .doctor-outline,
+.findus-actions .doctor-outline{
+    border:1.6px solid rgba(11,114,133,.34);
+    color:var(--primary, #0B7285);
+    background:transparent;
+}
+
+.rd-card-actions .doctor-outline:hover,
+.rd-card-soon .doctor-outline:hover{
+    background:#EEF8FA;
+    border-color:var(--primary, #0B7285);
+}
+
+@media (max-width:576px){
+
+    .product-hero .btn-primary,
+    .product-hero .btn-secondary,
+    .rd-hero .btn-primary,
+    .rd-hero .btn-secondary{
+        width:100%;
+        padding:15px 24px;
+        font-size:15px;
+        min-height:48px;
+    }
+}
+
+
+/* ==========================================================================
+   15. FREE-TRIAL BUTTON
+   --------------------------------------------------------------------------
+   The download URL in assets/data/products.js is "#" until a real link is
+   pasted in. While it is a placeholder the button still renders — so the
+   page can be reviewed as it will look — but it is marked
+   data-trial-pending, cannot be clicked, and carries a small "link coming"
+   cue so it is obvious at a glance which products are still waiting.
+
+   Paste the URL over the "#" and all of that disappears on its own.
+   ========================================================================== */
+
+.trial-btn{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    gap:10px;
+}
+
+.trial-btn i{
+    font-size:.92em;
+}
+
+/* ---------- Placeholder state ---------- */
+
+.trial-btn[data-trial-pending]{
+    position:relative;
+    cursor:default;
+    opacity:.78;
+}
+
+.trial-btn[data-trial-pending]::after{
+    content:"soon";
+    margin-inline-start:2px;
+    padding:3px 8px;
+    border-radius:999px;
+    background:rgba(0,0,0,.10);
+    font-size:10px;
+    font-weight:800;
+    letter-spacing:.08em;
+    text-transform:uppercase;
+    opacity:.85;
+}
+
+/* On the dark hero the chip needs a light wash instead */
+.product-hero .trial-btn[data-trial-pending]::after{
+    background:rgba(11,114,133,.14);
+}
+
+.trial-btn[data-trial-pending]:hover{
+    transform:none;
+}
+
+/* ---------- Note under the hero buttons ---------- */
+
+.trial-note{
+    display:flex;
+    align-items:flex-start;
+    gap:9px;
+    margin-top:16px;
+    color:rgba(255,255,255,.76);
+    font-size:13.4px;
+    line-height:1.65;
+}
+
+.trial-note i{
+    flex-shrink:0;
+    margin-top:3px;
+    color:#9EF8F1;
+    font-size:12px;
+}
+
+/* ---------- Secondary "enquire" line on a hub card ---------- */
+
+.rd-card-enquire{
+    display:inline-block;
+    margin-top:12px;
+    color:var(--primary, #0B7285);
+    font-size:.92rem;
+    font-weight:700;
+}
+
+.rd-card-enquire:hover{
+    text-decoration:underline;
+}
+
+/* The trial button on a card sits beside "View details"; keep both legible
+   when the label is long. */
+
+.rd-card-actions .trial-btn{
+    flex:1 1 auto;
+    padding-inline:18px;
+    font-size:13.6px;
+    text-align:center;
+}
+
+@media (max-width:576px){
+
+    .trial-note{
+        font-size:12.8px;
+        margin-top:14px;
+    }
+
+    .rd-card-actions .trial-btn{
+        width:100%;
+        font-size:14.5px;
+    }
+
+    .rd-card-enquire{
+        display:block;
+        min-height:44px;
+        padding-top:12px;
+        text-align:center;
+    }
+}
+
+
+/* ---------- Card CTA stack ----------
+   "View details" and the trial button wrapped onto separate lines at most
+   card widths, leaving one narrow and one full-width. Stacking them
+   deliberately reads as an intentional block instead of an accident. */
+
+.rd-card-actions{
+    flex-direction:column;
+    align-items:stretch;
+    gap:9px;
+}
+
+.rd-card-actions > *{
+    width:100%;
+    justify-content:center;
+    text-align:center;
+}
