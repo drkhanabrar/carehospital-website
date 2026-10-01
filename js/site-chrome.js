@@ -17,8 +17,53 @@
 
 (function () {
 
-    var PHONE = "+919370111449";
-    var WHATSAPP = "919370111449";
+    /* ======================================================================
+       SITE CONFIG — edit these, and every page updates.
+    ====================================================================== */
+
+    var PHONE     = "+919370111449";
+    var WHATSAPP  = "919370111449";
+
+    /* Enquiry addresses. The software pages also read these from
+       assets/data/products.js — keep the two in step. */
+    var EMAIL     = "admin@carehospital.in";
+    var EMAIL_ALT = "dr.khanabrar@gmail.com";
+
+    /* --------------------------------------------------------------------
+       SOCIAL LINKS — PLACEHOLDERS
+       Replace the "#" values with the real page URLs when the accounts are
+       live. A link left as "#" is rendered but marked so it is obvious it
+       is not yet wired up; set `enabled:false` to hide one entirely.
+       -------------------------------------------------------------------- */
+
+    var SOCIAL = [
+        { key: "facebook",  icon: "fab fa-facebook-f",  label: "Facebook",
+          url: "https://www.facebook.com/carehospital.in", enabled: true  },
+
+        { key: "instagram", icon: "fab fa-instagram",   label: "Instagram",
+          url: "#", enabled: true  },          /* TODO: paste Instagram URL */
+
+        { key: "youtube",   icon: "fab fa-youtube",     label: "YouTube",
+          url: "#", enabled: true  },          /* TODO: paste YouTube URL   */
+
+        { key: "linkedin",  icon: "fab fa-linkedin-in", label: "LinkedIn",
+          url: "#", enabled: false }           /* hidden until it exists    */
+    ];
+
+    function socialHTML() {
+
+        return SOCIAL.filter(function (s) { return s.enabled; }).map(function (s) {
+
+            var pending = !s.url || s.url === "#";
+
+            return '<a href="' + (pending ? "#" : s.url) + '"' +
+                   (pending ? ' data-social-pending="true" aria-disabled="true"'
+                            : ' target="_blank" rel="noopener"') +
+                   ' aria-label="CARE on ' + s.label + '">' +
+                       '<i class="' + s.icon + '"></i>' +
+                   '</a>';
+        }).join("");
+    }
 
     /* Anchor links have to be absolute-to-index from a sub-page, or they
        would just jump around the current page. */
@@ -46,6 +91,7 @@
                     '<li><a href="' + link("doctors") + '" data-nav="doctors">Doctors</a></li>' +
                     '<li><a href="' + link("departments") + '">Departments</a></li>' +
                     '<li><a href="' + link("treatments") + '">Treatments</a></li>' +
+                    '<li><a href="products.html" data-nav="products">R&amp;D</a></li>' +
                     '<li><a href="' + link("gallery") + '">Gallery</a></li>' +
                     '<li><a href="' + link("findus") + '">Visit Us</a></li>' +
                     '<li><a href="' + link("contact") + '">Contact</a></li>' +
@@ -136,15 +182,7 @@
                     '<p>CARE brings together experienced specialists, advanced technology ' +
                        'and compassionate healthcare for the entire family.</p>' +
                     '<div class="social-links">' +
-                        '<a href="https://www.facebook.com/carehospital.in" target="_blank"' +
-                           ' rel="noopener" aria-label="CARE on Facebook">' +
-                            '<i class="fab fa-facebook-f"></i></a>' +
-                        '<a href="https://www.instagram.com/" target="_blank"' +
-                           ' rel="noopener" aria-label="CARE on Instagram">' +
-                            '<i class="fab fa-instagram"></i></a>' +
-                        '<a href="https://www.youtube.com/" target="_blank"' +
-                           ' rel="noopener" aria-label="CARE on YouTube">' +
-                            '<i class="fab fa-youtube"></i></a>' +
+                        socialHTML() +
                     '</div>' +
                 '</div>' +
 
@@ -156,6 +194,7 @@
                         '<li><a href="' + link("doctors") + '">Doctors</a></li>' +
                         '<li><a href="' + link("departments") + '">Departments</a></li>' +
                         '<li><a href="' + link("gallery") + '">Gallery</a></li>' +
+                        '<li><a href="products.html">Research &amp; Development</a></li>' +
                         '<li><a href="' + link("contact") + '">Contact</a></li>' +
                     '</ul>' +
                 '</div>' +
@@ -176,7 +215,8 @@
                     '<ul>' +
                         '<li>Police Station Road, Chikhli, Buldhana District, Maharashtra – 443201</li>' +
                         '<li><a href="tel:' + PHONE + '">+91 9370111449</a></li>' +
-                        '<li><a href="mailto:careclinic.admin@gmail.com">careclinic.admin@gmail.com</a></li>' +
+                        '<li><a href="mailto:' + EMAIL + '">' + EMAIL + '</a></li>' +
+                        '<li><a href="mailto:' + EMAIL_ALT + '">' + EMAIL_ALT + '</a></li>' +
                         '<li>Mon – Sat : 11:30 AM – 9:00 PM</li>' +
                         '<li>Sunday : Emergency Only</li>' +
                     '</ul>' +
@@ -250,6 +290,12 @@
             var current = document.querySelector('.nav a[data-nav="' + page + '"]');
             if (current) current.setAttribute("aria-current", "page");
         }
+
+        /* Placeholder social links must not navigate anywhere. */
+        document.addEventListener("click", function (event) {
+            var a = event.target.closest('a[data-social-pending]');
+            if (a) event.preventDefault();
+        });
 
         document.dispatchEvent(new CustomEvent("care:chromeready"));
     }
