@@ -136,8 +136,16 @@ hi: {
 "Every clinic application behind one window.": "क्लिनिक के सभी अनुप्रयोग एक ही विंडो में।",
 "Slide analysis and report drafting for histopathology.": "हिस्टोपैथोलॉजी हेतु स्लाइड विश्लेषण एवं रिपोर्ट प्रारूपण।",
 "Weight-based paediatric dosing, native on Windows.": "वज़न-आधारित बाल खुराक गणना, Windows पर मूल रूप से।",
-"Live view and recording for USB otoscope and endoscope cameras.": "USB ओटोस्कोप एवं एंडोस्कोप कैमरों हेतु सजीव दृश्य एवं रिकॉर्डिंग।"
+"Live view and recording for USB otoscope and endoscope cameras.": "USB ओटोस्कोप एवं एंडोस्कोप कैमरों हेतु सजीव दृश्य एवं रिकॉर्डिंग।",
 
+/* --- AI & API section --- */
+"AI & API": "AI एवं API",
+"How the intelligence works": "यह बुद्धिमत्ता किस प्रकार कार्य करती है",
+"Plainly stated, so you know what runs on your own machine, what needs a connection, and what we would be asking you to trust.": "स्पष्ट शब्दों में — ताकि आप जान सकें कि क्या आपकी अपनी मशीन पर चलता है, किसके लिए इंटरनेट चाहिए, और हम आपसे किस बात पर भरोसा करने को कह रहे हैं।",
+"AI engine": "AI इंजन",
+"API key": "API कुंजी",
+"Internet needed": "इंटरनेट आवश्यक",
+"Where data goes": "डेटा कहाँ जाता है",
 },
 
 /* ======================================================================
@@ -257,8 +265,16 @@ ur: {
 "Every clinic application behind one window.": "کلینک کی تمام ایپلیکیشنز ایک ہی ونڈو میں۔",
 "Slide analysis and report drafting for histopathology.": "ہسٹوپیتھالوجی کے لیے سلائیڈ تجزیہ اور رپورٹ کی تیاری۔",
 "Weight-based paediatric dosing, native on Windows.": "وزن کی بنیاد پر بچوں کی خوراک، Windows پر براہِ راست۔",
-"Live view and recording for USB otoscope and endoscope cameras.": "USB اوٹوسکوپ اور اینڈوسکوپ کیمروں کے لیے براہِ راست منظر اور ریکارڈنگ۔"
+"Live view and recording for USB otoscope and endoscope cameras.": "USB اوٹوسکوپ اور اینڈوسکوپ کیمروں کے لیے براہِ راست منظر اور ریکارڈنگ۔",
 
+/* --- AI & API section --- */
+"AI & API": "AI اور API",
+"How the intelligence works": "یہ ذہانت کس طرح کام کرتی ہے",
+"Plainly stated, so you know what runs on your own machine, what needs a connection, and what we would be asking you to trust.": "صاف الفاظ میں — تاکہ آپ جان سکیں کہ کیا آپ کی اپنی مشین پر چلتا ہے، کس کے لیے انٹرنیٹ درکار ہے، اور ہم آپ سے کس بات پر اعتماد کرنے کو کہہ رہے ہیں۔",
+"AI engine": "AI انجن",
+"API key": "API کلید",
+"Internet needed": "انٹرنیٹ درکار",
+"Where data goes": "ڈیٹا کہاں جاتا ہے",
 }
 
     };
