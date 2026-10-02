@@ -1520,3 +1520,210 @@ html[data-lang="ur"] .rd-card-cat{ letter-spacing:0; line-height:1.7; }
     justify-content:center;
     text-align:center;
 }
+
+
+/* ==========================================================================
+   16. AI & API SECTION
+   --------------------------------------------------------------------------
+   Rendered from the `ai` block in assets/data/products.js on every product
+   detail page.
+
+   Two layers, deliberately:
+
+     .ai-facts   a four-item key/value strip — engine, key, connectivity,
+                 data. Short, scannable, the questions a buyer or a hospital
+                 IT person asks first.
+     .ai-points  longer prose cards underneath for the reasoning.
+
+   The strip uses minmax(min(100%, 260px), 1fr) rather than a bare 1fr.
+   A plain 1fr track cannot shrink below its own content, which is exactly
+   how the "Why Choose CARE" cards ended up positioned off the side of the
+   screen on a phone. min(100%, …) lets the track collapse to the container
+   when the container is the smaller of the two.
+   ========================================================================== */
+
+.ai-facts{
+    display:grid;
+    grid-template-columns:repeat(auto-fit, minmax(min(100%, 260px), 1fr));
+    gap:16px;
+    margin-top:34px;
+}
+
+.ai-facts > *{ min-width:0; }
+
+.ai-fact{
+    display:flex;
+    align-items:flex-start;
+    gap:14px;
+    padding:20px 22px;
+    border:1px solid rgba(11,114,133,.14);
+    border-radius:18px;
+    background:
+        linear-gradient(
+            180deg,
+            rgba(255,255,255,.96),
+            rgba(240,253,252,.92)
+        );
+}
+
+.ai-fact i{
+    flex:0 0 auto;
+    width:38px;
+    height:38px;
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    border-radius:12px;
+    background:linear-gradient(135deg, var(--secondary), var(--primary));
+    color:#fff;
+    font-size:15px;
+}
+
+.ai-fact > div{ min-width:0; }
+
+.ai-fact-label{
+    display:block;
+    margin-bottom:5px;
+    font-size:12px;
+    font-weight:800;
+    letter-spacing:.09em;
+    text-transform:uppercase;
+    color:var(--primary);
+}
+
+.ai-fact p{
+    margin:0;
+    font-size:14.5px;
+    line-height:1.65;
+    color:#3A5260;
+    /* Long provider names and URLs must not push the card wider than its
+       track — they wrap instead. */
+    overflow-wrap:anywhere;
+}
+
+/* ---------- Reasoning cards ---------- */
+
+.ai-points{
+    display:grid;
+    grid-template-columns:repeat(auto-fit, minmax(min(100%, 280px), 1fr));
+    gap:18px;
+    margin-top:22px;
+}
+
+.ai-points > *{ min-width:0; }
+
+.ai-point{
+    padding:24px 24px 26px;
+    border-radius:20px;
+    background:#fff;
+    border:1px solid rgba(11,114,133,.10);
+    box-shadow:0 14px 34px rgba(18,57,73,.06);
+    transition:transform .35s ease, box-shadow .35s ease;
+}
+
+.ai-point:hover{
+    transform:translateY(-4px);
+    box-shadow:0 22px 46px rgba(18,57,73,.10);
+}
+
+.ai-point i{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    width:44px;
+    height:44px;
+    margin-bottom:14px;
+    border-radius:14px;
+    background:rgba(0,194,181,.10);
+    color:var(--primary);
+    font-size:17px;
+}
+
+.ai-point h3{
+    margin:0 0 8px;
+    font-size:17px;
+    font-weight:700;
+    color:var(--dark);
+    line-height:1.35;
+}
+
+.ai-point p{
+    margin:0;
+    font-size:14.5px;
+    line-height:1.75;
+    color:#4A6270;
+}
+
+/* ---------- Caveat line ---------- */
+
+.ai-note{
+    display:flex;
+    align-items:flex-start;
+    gap:12px;
+    margin:24px 0 0;
+    padding:16px 20px;
+    border-radius:16px;
+    border:1px solid rgba(214,158,46,.28);
+    background:rgba(255,248,230,.75);
+    font-size:14px;
+    line-height:1.7;
+    color:#6B5320;
+}
+
+.ai-note i{
+    flex:0 0 auto;
+    margin-top:3px;
+    color:#B7791F;
+}
+
+/* ---------- Tablet ---------- */
+
+@media (max-width:1024px){
+
+    .ai-fact{ padding:18px; }
+    .ai-point{ padding:22px; }
+}
+
+/* ---------- Phone ---------- */
+
+@media (max-width:600px){
+
+    .ai-facts,
+    .ai-points{
+        grid-template-columns:1fr;
+        gap:14px;
+        margin-top:24px;
+    }
+
+    .ai-fact{ padding:16px; gap:12px; }
+
+    .ai-fact i{ width:34px; height:34px; font-size:14px; }
+
+    .ai-fact p,
+    .ai-point p{ font-size:14px; }
+
+    .ai-point{ padding:20px; }
+
+    .ai-point i{ width:40px; height:40px; font-size:16px; }
+
+    .ai-point h3{ font-size:16px; }
+
+    .ai-note{ padding:14px 16px; font-size:13.5px; }
+}
+
+/* ---------- Urdu / Hindi ---------- */
+
+html[data-lang="ur"] .ai-fact-label{ letter-spacing:0; }
+
+/* Product prose that has no Urdu entry yet stays in English. Inside an RTL
+   paragraph an English sentence renders with its full stop thrown to the
+   left (".anything else"). `plaintext` lets each paragraph take its
+   direction from its own first strong character, so English reads
+   left-to-right and anything translated still reads right-to-left. */
+html[data-lang="ur"] .ai-fact p,
+html[data-lang="ur"] .ai-point p,
+html[data-lang="ur"] .ai-note{ unicode-bidi:plaintext; }
+html[data-lang="ur"] .ai-fact p,
+html[data-lang="ur"] .ai-point p{ line-height:2.1; }
+html[data-lang="hi"] .ai-fact p,
+html[data-lang="hi"] .ai-point p{ line-height:1.85; }

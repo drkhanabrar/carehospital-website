@@ -132,12 +132,23 @@ transition:.35s ease;
 
     align-items:center;
 
+    /* A nav link that wraps onto a second line ("Visit / Us") makes the
+       whole row taller than its siblings, which pushes the active-page
+       underline away from the text and leaves the header looking
+       mis-aligned. The row must stay on one line at every width; below
+       1250px the drawer takes over anyway. */
+    flex-wrap:nowrap;
+
     gap:26px;
 
     margin:0;
 
     padding:0;
 
+}
+
+.nav ul li{
+    flex:0 0 auto;
 }
 
 /* ==========================================================
@@ -157,6 +168,11 @@ transition:.35s ease;
     font-weight:600;
 
     letter-spacing:.2px;
+
+    /* "Visit Us" is the only two-word link; without this it breaks in half
+       as soon as the row is a few pixels short, which is exactly what a
+       scrollbar or a slightly narrower laptop causes. */
+    white-space:nowrap;
 
     color:#21404E;
 

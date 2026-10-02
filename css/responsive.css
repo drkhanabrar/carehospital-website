@@ -103,6 +103,38 @@
 
 
 /* ==========================================================================
+   EXTRA-TIGHT HEADER  (1250px – 1439px)
+   --------------------------------------------------------------------------
+   The compact tier above was measured for EIGHT nav links. Adding the R&D
+   link made nine, and nine links now need 762px where the container can
+   only spare ~641px at 1255px. The row used to absorb that by letting
+   "Visit Us" break in half, which made the whole header look crooked and
+   dragged the active-page underline below the text.
+
+   Wrapping is now forbidden (css/header.css), so the width has to come out
+   of the padding instead. These numbers are measured, not guessed: at
+   1255px this leaves the row fitting with room to spare, and above 1440px
+   the roomier compact tier is used unchanged.
+   ========================================================================== */
+
+@media (min-width:1251px) and (max-width:1439px){
+
+    .nav ul{ gap:4px; }
+
+    .nav a{ padding:11px 6px; font-size:14.5px; }
+
+    .nav a::after{ left:6px; right:6px; }
+
+    .btn-book,
+    .btn-emergency{ padding:12px 13px; font-size:14px; }
+
+    .lang-toggle{ padding:0 10px; }
+
+    .logo{ margin-right:6px; }
+}
+
+
+/* ==========================================================================
    >>> NAVIGATION COLLAPSES HERE (1250px) <<<
    --------------------------------------------------------------------------
    Even compacted, the seven links plus Search, Language, Book Appointment
