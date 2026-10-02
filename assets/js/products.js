@@ -462,6 +462,69 @@
             }).join("");
         }
 
+        /* ---------- AI & API ---------- */
+
+        var ai = $("productAI");
+
+        if (ai) {
+
+            if (p.ai) {
+
+                var facts = [
+                    ["fa-solid fa-microchip",       "AI engine",       p.ai.engine],
+                    ["fa-solid fa-key",             "API key",         p.ai.apiKey],
+                    ["fa-solid fa-wifi",            "Internet needed", p.ai.network],
+                    ["fa-solid fa-shield-halved",   "Where data goes", p.ai.data]
+                ].filter(function (f) { return f[2]; });
+
+                ai.innerHTML =
+                    '<div class="section-heading">' +
+                        /* The dictionary key is the text as it RENDERS ("AI &
+                           API"), not the escaped source — looking up the
+                           escaped form would never match and the tag would
+                           silently stay English on the Hindi and Urdu pages. */
+                        '<span class="section-tag">' + esc(t("AI & API")) + '</span>' +
+                        '<h2>' + esc(t("How the intelligence works")) + '</h2>' +
+                        '<p>' + esc(t("Plainly stated, so you know what runs on your own machine, what needs a connection, and what we would be asking you to trust.")) + '</p>' +
+                    '</div>' +
+
+                    '<div class="ai-facts">' +
+                        facts.map(function (f) {
+                            return '<div class="ai-fact">' +
+                                       '<i class="' + f[0] + '" aria-hidden="true"></i>' +
+                                       '<div>' +
+                                           '<span class="ai-fact-label">' + esc(t(f[1])) + '</span>' +
+                                           '<p>' + esc(f[2]) + '</p>' +
+                                       '</div>' +
+                                   '</div>';
+                        }).join("") +
+                    '</div>' +
+
+                    (p.ai.points && p.ai.points.length
+                        ? '<div class="ai-points">' +
+                              p.ai.points.map(function (pt) {
+                                  return '<div class="ai-point">' +
+                                             '<i class="' + safeIcon(pt.icon) + '" aria-hidden="true"></i>' +
+                                             '<h3>' + esc(pt.title) + '</h3>' +
+                                             '<p>' + esc(pt.text) + '</p>' +
+                                         '</div>';
+                              }).join("") +
+                          '</div>'
+                        : "") +
+
+                    (p.ai.note
+                        ? '<p class="ai-note">' +
+                              '<i class="fa-solid fa-circle-info" aria-hidden="true"></i>' +
+                              esc(p.ai.note) +
+                          '</p>'
+                        : "");
+
+            } else {
+                var aiSec = ai.closest("section");
+                if (aiSec) aiSec.hidden = true;
+            }
+        }
+
         /* ---------- Learning explainer ---------- */
 
         var ln = $("productLearning");
