@@ -119,10 +119,24 @@
 </section>
 
 <!-- ==========================================================
-     LEARNING SYSTEM  (hidden automatically when not applicable)
+     AI & API
+     --------------------------------------------------------
+     Rendered from the `ai` block in assets/data/products.js.
+     Every product carries one, including the hardware and the
+     dose calculator — "this product uses no AI" is an answer a
+     buyer needs just as much as "it uses Gemini".
+     The whole section hides itself if a product has `ai: null`.
 ========================================================== -->
 
 <section class="doctor-section alt">
+    <div class="container" id="productAI"></div>
+</section>
+
+<!-- ==========================================================
+     LEARNING SYSTEM  (hidden automatically when not applicable)
+========================================================== -->
+
+<section class="doctor-section">
     <div class="container" id="productLearning"></div>
 </section>
 
