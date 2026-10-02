@@ -92,6 +92,30 @@ window.CARE_PRODUCTS = {
         ["Languages",       "English interface"]
     ],
 
+
+    /* ---- AI & API -------------------------------------------------------
+       Keep this honest and specific. A clinic buying clinical software has
+       to be able to answer "what leaves my machine, and to whom" before IT
+       or a medical council asks. `ai: null` hides the whole section. */
+    ai: {
+        engine:  "Google Gemini, via its public API. OpenRouter is supported as an alternative, so you can point the app at a different model without changing anything else.",
+        apiKey:  "Bring your own. You paste your key into Settings once; it is stored on that machine and never shown again.",
+        network: "Only for AI suggestions. Writing reports, numbering them and exporting the PDF all work with the network unplugged.",
+        data:    "Nothing is uploaded in the background. Text is sent to your chosen provider only at the moment you ask for a suggestion.",
+
+        points: [
+            { icon: "fa-solid fa-key", title: "Your key, your account",
+              text: "We do not resell AI usage or add a subscription on top of it. You hold the provider account, you see the usage, and you can revoke the key at any time. A normal clinic list sits comfortably inside Gemini's free tier." },
+            { icon: "fa-solid fa-right-left", title: "Not locked to one provider",
+              text: "Gemini is the default because it is free to start with. Switching to OpenRouter is a settings change, not a new version of the software, so you are not stranded if a provider changes its pricing." },
+            { icon: "fa-solid fa-toggle-off", title: "The AI is optional",
+              text: "Leave the key blank and you still have a complete offline endoscopy reporting tool. Nothing in the core workflow depends on the assistant being switched on." },
+            { icon: "fa-solid fa-user-shield", title: "You decide what is sent",
+              text: "Suggestions work from the clinical text, not from patient identifiers. Leaving the name and registration number out of the field you send costs you nothing in the quality of the draft." }
+        ],
+
+        note: "Before using any cloud AI with identifiable patient information, read your provider's data-use terms — free tiers in particular may retain submitted content to improve their services. Sending de-identified text avoids the question entirely."
+    },
     faq: [
         { q: "Does the AI replace the doctor's judgement?",
           a: "No. It drafts wording for you to review, edit or discard. The report is not saved until the clinician accepts it, and the responsibility for the clinical content stays with the clinician." },
@@ -175,6 +199,25 @@ window.CARE_PRODUCTS = {
         ["Template languages", "English, Hindi, Marathi"]
     ],
 
+
+    /* ---- AI & API ---- */
+    ai: {
+        engine:  "None of its own. The Workstation is the shell that holds your applications; the intelligence lives in the modules it launches.",
+        apiKey:  "Not entered here. Each module keeps its own provider and key, exactly as it would if you ran it on its own.",
+        network: "The shell runs offline. A connection is needed only by HealthPlix and by whichever module you have given an AI key to.",
+        data:    "Patient data stays on the hospital's own server PC and client PCs. The Workstation does not send clinical data anywhere.",
+
+        points: [
+            { icon: "fa-solid fa-layer-group", title: "A shell, not a middleman",
+              text: "The Workstation does not read, store or forward the clinical content passing through its tabs. Each application keeps working exactly as it does standalone — one window instead of nine." },
+            { icon: "fa-solid fa-sliders", title: "Per-module AI settings",
+              text: "ENT Scope AI keeps its own key and provider; changing it does not disturb any other module. A module with no AI simply has nothing to configure." },
+            { icon: "fa-solid fa-network-wired", title: "Runs on your own network",
+              text: "Server PC plus client machines in the cabins, endoscopy room and reception. There is no cloud service in the middle that can go down and take the clinic with it." },
+            { icon: "fa-solid fa-puzzle-piece", title: "Room for what comes next",
+              text: "The settings area accepts further applications as modules, so a tool added in two years' time appears as another tab rather than another icon on the desktop." }
+        ]
+    },
     faq: [
         { q: "Do my existing applications have to change?",
           a: "No. The workstation holds them as they are. It adds the shared patient bar and the single window around them without altering how each application works." },
@@ -249,6 +292,29 @@ window.CARE_PRODUCTS = {
         ["Review",         "Pathologist review and sign-out required"]
     ],
 
+
+    /* ---- AI & API ----
+       This product is still in development; everything below is stated as
+       intent, not as a shipped specification. Revise it at release. */
+    ai: {
+        engine:  "A vision-capable model reading the slide image. Two routes are being built and tested: a cloud API, and a model running locally on the machine's own graphics card.",
+        apiKey:  "Needed for the cloud route only. The local route runs without a key and without an account.",
+        network: "The cloud route needs a connection. The local route is designed to work with no internet at all.",
+        data:    "On the local route, slide images never leave the machine. On the cloud route, the image you submit goes to your chosen provider.",
+
+        points: [
+            { icon: "fa-solid fa-desktop", title: "Local GPU option",
+              text: "Being developed against an NVIDIA card with about 8 GB of video memory — ordinary reporting-desk hardware, not a server. The point is that a laboratory can run it with the network cable out." },
+            { icon: "fa-solid fa-cloud", title: "Cloud option",
+              text: "For laboratories without a suitable graphics card. You supply your own API key, as with our other tools, so the usage and the account stay yours." },
+            { icon: "fa-solid fa-pen-to-square", title: "It drafts, it does not diagnose",
+              text: "The output is a draft description and a suggested structure for the report. The pathologist reads the slide, edits the draft and signs it out. The software has no authority over the diagnosis." },
+            { icon: "fa-solid fa-flask", title: "Under active development",
+              text: "Model choice, hardware requirements and supported stains are still moving. We would rather say so than publish a specification we might have to withdraw." }
+        ],
+
+        note: "In development. Do not plan a purchase or a workflow around these details until the release specification is published."
+    },
     faq: [
         { q: "Does it make the diagnosis?",
           a: "No. It drafts observations and a suggested structure for a pathologist to examine, correct and sign out. The diagnosis is the pathologist's, and the tool is built so the basis for every suggestion can be inspected." },
@@ -321,6 +387,29 @@ window.CARE_PRODUCTS = {
         ["Drug list",    "Full paediatric working list"]
     ],
 
+
+    /* ---- AI & API ----
+       Deliberately an anti-AI entry. For a dosing tool, "no model is
+       involved" is a selling point, not a gap. */
+    ai: {
+        engine:  "None. Every dose is plain arithmetic from the drug table — weight, age band and the mg/kg figure for that drug.",
+        apiKey:  "Not required. There is no account and no provider.",
+        network: "Never. It runs entirely offline, including the first time you open it.",
+        data:    "Nothing leaves the machine. No patient weight, no drug, no usage statistics.",
+
+        points: [
+            { icon: "fa-solid fa-equals", title: "Deliberately not an AI tool",
+              text: "A paediatric dose has to be reproducible and auditable. The same child's weight and the same drug must give the same number today, next month and in front of a medical board. A language model cannot promise that; a formula can." },
+            { icon: "fa-solid fa-eye", title: "The working is shown",
+              text: "You see the mg/kg basis, the calculated dose and the volume to draw up — not just a final figure. If the number looks wrong, you can see immediately which part of it is wrong." },
+            { icon: "fa-solid fa-list-check", title: "Your own drug list",
+              text: "Carries the full list used in practice rather than a short demonstration set, so you are not dropping out to a book or a phone halfway through a paediatric OPD." },
+            { icon: "fa-solid fa-plug-circle-xmark", title: "Nothing to go down",
+              text: "No server, no key to expire, no subscription to lapse. It is a native Windows application that works on a clinic PC with no internet at all." }
+        ],
+
+        note: "The calculator does the arithmetic. Choosing the drug, checking the indication and confirming the dose remain entirely the prescriber's responsibility."
+    },
     faq: [
         { q: "Does it replace checking the dose?",
           a: "No. It is a calculator that removes the arithmetic, not the clinical decision. The prescribing doctor remains responsible for confirming that the drug, dose and route suit the child in front of them." },
@@ -391,6 +480,25 @@ window.CARE_PRODUCTS = {
         ["Works offline", "Yes"]
     ],
 
+
+    /* ---- AI & API ---- */
+    ai: {
+        engine:  "None. This is capture and viewing — the image is shown and recorded as it comes off the camera, with nothing interpreting it.",
+        apiKey:  "Not required.",
+        network: "Never. Capture, review and saving all run offline.",
+        data:    "Stills and recordings are written to a folder on your own machine.",
+
+        points: [
+            { icon: "fa-solid fa-video", title: "No processing in the way",
+              text: "What you see is the camera's own image. Nothing is enhanced, inferred or reconstructed between the scope and the screen, which matters when the picture is the evidence." },
+            { icon: "fa-solid fa-link", title: "Feeds ENT Scope AI Pro",
+              text: "Captured stills drop straight into the endoscopy report, so the picture and the findings stay with the same patient instead of living in two separate places." },
+            { icon: "fa-solid fa-folder-open", title: "Ordinary files on your disk",
+              text: "Recordings are standard video and image files in a folder you choose. No proprietary library, no export step, nothing that traps your archive inside the application." },
+            { icon: "fa-solid fa-user-lock", title: "No account, no cloud",
+              text: "There is nothing to sign in to and nothing that phones home. The camera and the PC are the whole system." }
+        ]
+    },
     faq: [
         { q: "Which cameras does it support?",
           a: "Standard USB scope cameras of the kind used in ENT clinics. Tell us the model you have and we will confirm before you buy." },
@@ -474,6 +582,25 @@ window.CARE_PRODUCTS = {
         ["Supplied",      "Configured and tested with the CARE software"]
     ],
 
+
+    /* ---- AI & API ---- */
+    ai: {
+        engine:  "None. The camera captures and transmits the image; any interpretation happens in the software you point at it.",
+        apiKey:  "Not required.",
+        network: "It creates its own Wi-Fi link between the camera and your PC, tablet or phone. That link is local — it is not an internet connection.",
+        data:    "Images and recordings are saved on the device you are viewing on.",
+
+        points: [
+            { icon: "fa-solid fa-wifi", title: "Its own local Wi-Fi",
+              text: "The camera broadcasts to the viewing device directly, so it works in a room with no internet and no hospital network access at all." },
+            { icon: "fa-solid fa-laptop-medical", title: "Works with our software",
+              text: "Compatible with ENT Scope AI Pro and the CARE scope viewer, so a still captured at the bedside can go into the report without being moved by hand." },
+            { icon: "fa-solid fa-mobile-screen", title: "PC, tablet or phone",
+              text: "Useful where a trolley and a desktop will not go — a ward round, a side room, a camp clinic." },
+            { icon: "fa-solid fa-user-lock", title: "Nothing leaves the room",
+              text: "A local link with no cloud service behind it. There is no account to create and no server holding your images." }
+        ]
+    },
     faq: [
         { q: "Do I have to buy the camera from you?",
           a: "No. CARE ENT Scope Camera works with standard USB scope cameras as well. We offer this one for clinics that would rather receive hardware already known to work with the software than source and configure it themselves." },
