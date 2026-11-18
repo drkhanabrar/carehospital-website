@@ -1,0 +1,39 @@
+/* ==========================================================
+   💬 CARE website assistant (js/care-assistant.js)
+   Bottom-LEFT, so it never covers the Book / Call / WhatsApp
+   buttons on the right.
+========================================================== */
+.care-asst{ position:fixed; left:15px; bottom:20px; z-index:1150; font-family:inherit; }
+.care-asst-fab{ width:62px; height:62px; border-radius:50%; border:0; cursor:pointer; font-size:28px; color:#fff;
+  background:linear-gradient(135deg,var(--primary,#0B7285),var(--accent,#15A3A5)); box-shadow:0 10px 30px rgba(0,0,0,.2); transition:transform .25s ease; }
+.care-asst-fab:hover{ transform:scale(1.06); }
+.care-asst-fab:focus-visible, .care-asst button:focus-visible, .care-asst input:focus-visible{ outline:3px solid #f59e0b; outline-offset:2px; }
+.care-asst.open .care-asst-fab{ display:none; }
+.care-asst-panel{ width:min(370px, calc(100vw - 30px)); height:min(560px, calc(100vh - 40px)); background:#fff; color:#17262b; border-radius:18px;
+  box-shadow:0 20px 60px rgba(0,0,0,.28); display:flex; flex-direction:column; overflow:hidden; }
+.care-asst-panel[hidden]{ display:none; }
+.care-asst-head{ display:flex; align-items:center; justify-content:space-between; gap:10px; padding:12px 14px; color:#fff;
+  background:linear-gradient(135deg,var(--primary,#0B7285),var(--accent,#15A3A5)); }
+.care-asst-head b{ display:block; font-size:16px; } .care-asst-head small{ opacity:.9; font-size:12px; }
+.care-asst-x{ background:rgba(255,255,255,.18); color:#fff; border:0; border-radius:50%; width:32px; height:32px; cursor:pointer; font-size:15px; }
+.care-asst-log{ flex:1; overflow-y:auto; padding:12px; display:flex; flex-direction:column; gap:8px; background:#f4f8f8; }
+.ca-msg{ max-width:88%; padding:9px 12px; border-radius:14px; font-size:14.5px; line-height:1.5; word-wrap:break-word; }
+.ca-msg p{ margin:0 0 6px; } .ca-msg p:last-child{ margin:0; } .ca-msg ul{ margin:4px 0 6px; padding-inline-start:18px; }
+.ca-msg a{ color:var(--primary,#0B7285); font-weight:600; }
+.ca-bot{ align-self:flex-start; background:#fff; border:1px solid #dbe5e7; border-end-start-radius:4px; }
+.ca-me{ align-self:flex-end; background:var(--primary,#0B7285); color:#fff; border-end-end-radius:4px; }
+.care-asst-chips{ display:flex; gap:6px; overflow-x:auto; padding:8px 10px 0; scrollbar-width:none; }
+.care-asst-chips button{ flex:none; border:1px solid #cfe3e5; background:#fff; color:var(--primary,#0B7285); border-radius:16px; padding:6px 11px; font:inherit; font-size:13px; cursor:pointer; }
+.care-asst-form{ display:flex; gap:6px; padding:8px 10px; }
+.care-asst-form input{ flex:1; min-width:0; border:1px solid #cbd5e1; border-radius:12px; padding:10px 12px; font:inherit; font-size:15px; }
+.care-asst-form button{ border:0; border-radius:12px; padding:0 14px; background:var(--primary,#0B7285); color:#fff; font:inherit; font-weight:700; cursor:pointer; }
+.care-asst-foot{ display:flex; flex-wrap:wrap; align-items:center; gap:8px; padding:0 10px 10px; }
+.care-asst-foot a{ font-size:13px; font-weight:700; text-decoration:none; color:var(--primary,#0B7285); border:1px solid #cfe3e5; border-radius:14px; padding:5px 10px; }
+.care-asst-foot small{ flex-basis:100%; color:#5b6d73; font-size:11.5px; }
+@media (max-width:600px){
+  .care-asst{ left:10px; bottom:14px; }
+  .care-asst-fab{ width:56px; height:56px; font-size:25px; }
+  .care-asst.open{ left:8px; right:8px; bottom:8px; }
+  .care-asst-panel{ width:100%; height:min(560px, calc(100vh - 16px)); }
+}
+@media print{ .care-asst{ display:none !important; } }

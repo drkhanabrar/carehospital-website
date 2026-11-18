@@ -189,3 +189,30 @@ approach is deliberately the one that cannot break unattended.
 
 The embed always renders in Latin script regardless of site language, so it
 is excluded from translation rather than being half-translated at the edges.
+
+---
+
+## 💬 Website assistant (CARE 3.22.0)
+
+`js/care-assistant.js` + `css/care-assistant.css` add a 💬 button at the
+bottom-left of every page (it never covers Book / Call / WhatsApp on the right).
+
+**Basic mode — works as soon as the files are uploaded.** It answers timings,
+address, phone, doctors, departments, procedures, facilities and how to book,
+using the text of the page itself. Nothing is sent anywhere. Urgent words
+(chest pain, breathlessness…) get the emergency message; medicine questions get
+"please book a consultation".
+
+**AI mode — optional.** The CARE server answers in the visitor's own words and
+language, but it knows *only clinic facts*: no patient records, appointments,
+bills or staff tools, and the questions are not stored.
+
+1. CARE Workstation (server PC) → Settings → 📱 Patient app → **🌐 Website
+   assistant** → tick it, check the allowed websites
+   (`https://carehospital.in, https://www.carehospital.in`), add the OPD timings,
+   Save. The patient app's internet address must be set (cloud / Cloudflare).
+2. In `index.html`, `doctor.html`, `product.html` and `products.html` put that
+   address in the script tag:
+   `<script src="js/care-assistant.js" data-server="https://YOUR-CARE-ADDRESS" defer></script>`
+3. Upload the website again. If the server is off, the widget silently falls
+   back to the basic answers.
