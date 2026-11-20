@@ -192,27 +192,12 @@ is excluded from translation rather than being half-translated at the edges.
 
 ---
 
-## 💬 Website assistant (CARE 3.22.0)
-
-`js/care-assistant.js` + `css/care-assistant.css` add a 💬 button at the
-bottom-left of every page (it never covers Book / Call / WhatsApp on the right).
-
-**Basic mode — works as soon as the files are uploaded.** It answers timings,
-address, phone, doctors, departments, procedures, facilities and how to book,
-using the text of the page itself. Nothing is sent anywhere. Urgent words
-(chest pain, breathlessness…) get the emergency message; medicine questions get
-"please book a consultation".
-
-**AI mode — optional.** The CARE server answers in the visitor's own words and
-language, but it knows *only clinic facts*: no patient records, appointments,
-bills or staff tools, and the questions are not stored.
-
-1. CARE Workstation (server PC) → Settings → 📱 Patient app → **🌐 Website
-   assistant** → tick it, check the allowed websites
-   (`https://carehospital.in, https://www.carehospital.in`), add the OPD timings,
-   Save. The patient app's internet address must be set (cloud / Cloudflare).
-2. In `index.html`, `doctor.html`, `product.html` and `products.html` put that
-   address in the script tag:
-   `<script src="js/care-assistant.js" data-server="https://YOUR-CARE-ADDRESS" defer></script>`
-3. Upload the website again. If the server is off, the widget silently falls
-   back to the basic answers.
+## 💬 Website assistant "Care Saathi" (v2)
+`js/care-assistant.js` + `css/care-assistant.css`, included on index.html, doctor.html, product.html and products.html.
+- Answers from the website's own data: doctors (education, milestones, expertise, treatments, timings, reviews), Research & Development products, departments, procedures, facilities, timings, address.
+- English / हिन्दी / اردو — follows the language chosen on the site (or the script the visitor types in).
+- Books appointments in the chat (department → doctor → day → time → name → mobile → problem) and sends them on WhatsApp in the same format as the appointment form.
+- 🔊 soft Indian female voice (the visitor's own device voice) and 🎤 ask by speaking. 👍/👎 on every answer.
+- Virtual assistant: no medical advice, emergency words → call +91 93701 11449 / 108 / 112.
+- Optional CARE server (smarter AI + learning from Admin-approved answers + direct booking):
+  `<script src="js/care-assistant.js" data-server="https://YOUR-CARE-SERVER" defer></script>`

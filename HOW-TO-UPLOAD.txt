@@ -1,0 +1,21 @@
+CARE website 3.23.0 — upload ONCE by hand (about 5 minutes)
+==========================================================
+What it adds: the new 💬 assistant "Care Saathi" (instant answers from your website, Hindi / Urdu, voice,
+booking, works on phones in light and dark mode), the "Patient App" page + menu item + home-page section with the
+Android download, and a fix: footer links on phones each on their own line.
+Nothing else on the website is changed (pages keep their exact text and line endings).
+
+1. Open https://github.com/drkhanabrar/carehospital-website and sign in.
+2. Click "Add file" -> "Upload files".
+3. Open this zip's folder "carehospital-website-3.23.0" and drag EVERYTHING inside it (the folders js, css, assets,
+   downloads and the files app.html, index.html, doctor.html, product.html, products.html, sitemap.xml, README.md)
+   onto the GitHub page. GitHub keeps the folders.
+   (Not needed: changes.patch and this HOW-TO file — leave them out.)
+4. At the bottom write "Website 3.23.0" and press "Commit changes".
+5. Wait 2 minutes. Open www.carehospital.in on the phone and the PC (refresh: Ctrl+F5) and check:
+   - 💬 bottom-left → it says you can talk in your own language → ask "Dr Abrar education" (instant answer);
+   - menu → Patient App → "Download for Android";
+   - footer → links one under the other on the phone.
+6. CARE server (after installing CARE 3.23.0): Settings → 📱 Patient app → 🌐 Website assistant ON, Websites allowed:
+   https://www.carehospital.in, https://carehospital.in ; then Settings → 🌐 Website & Facebook.
+   From then on CARE can update the assistant and the Care-Connect app on the website for you (only those files).
