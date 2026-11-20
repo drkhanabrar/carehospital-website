@@ -1,0 +1,50 @@
+/* ==========================================================
+   📲 Care-Connect patient app — app.html + the band on the home page
+   Own class names (pa-…) so nothing else on the site is affected.
+   Fluid at every width: no fixed widths, everything wraps.
+========================================================== */
+.pa-band{ padding:clamp(40px,7vw,80px) 0; background:linear-gradient(135deg,#e6f6f6,#f4fbfb); overflow:hidden; }
+.pa-wrap{ display:grid; grid-template-columns:minmax(0,1.25fr) minmax(0,.75fr); gap:clamp(24px,4vw,56px); align-items:center; }
+.pa-copy h2{ font-size:clamp(1.6rem,3.4vw,2.4rem); line-height:1.25; margin:.3em 0 .4em; color:#0f2f35; overflow-wrap:anywhere; }
+.pa-copy p{ color:#3e5a60; font-size:clamp(1rem,1.6vw,1.1rem); line-height:1.7; margin:0 0 1em; overflow-wrap:anywhere; }
+.pa-list{ list-style:none; padding:0; margin:0 0 1.4em; display:grid; grid-template-columns:repeat(auto-fit,minmax(min(100%,220px),1fr)); gap:10px 18px; }
+.pa-list li{ display:flex; gap:10px; align-items:flex-start; color:#17363c; line-height:1.5; min-width:0; overflow-wrap:anywhere; }
+.pa-list li i{ flex:none; color:var(--primary,#0B7285); margin-top:4px; width:18px; text-align:center; }
+.pa-actions{ display:flex; flex-wrap:wrap; gap:12px; align-items:center; }
+.pa-btn{ display:inline-flex; align-items:center; justify-content:center; gap:10px; min-height:52px; padding:12px 22px; border-radius:14px; font-weight:700; font-size:1.05rem; text-decoration:none; line-height:1.3; text-align:center; max-width:100%; }
+.pa-btn-main{ background:linear-gradient(135deg,var(--primary,#0B7285),var(--accent,#15A3A5)); color:#fff !important; box-shadow:0 10px 26px rgba(11,114,133,.28); }
+.pa-btn-main:hover{ transform:translateY(-2px); }
+.pa-btn-alt{ background:#fff; color:var(--primary,#0B7285) !important; border:2px solid #cfe3e5; }
+.pa-meta{ display:block; width:100%; color:#5b6d73; font-size:.9rem; margin-top:4px; }
+.pa-phone{ justify-self:center; width:min(100%,260px); aspect-ratio:9/17; border-radius:34px; background:#0f2f35; padding:12px; box-shadow:0 24px 60px rgba(0,0,0,.25); }
+.pa-screen{ height:100%; border-radius:24px; background:linear-gradient(180deg,#064e3b,#0b6b52 38%,#f4fbfb 38%); display:flex; flex-direction:column; align-items:center; padding:22px 14px; gap:10px; color:#fff; text-align:center; overflow:hidden; }
+.pa-screen .pa-logo{ width:58px; height:58px; border-radius:16px; background:#fff; display:flex; align-items:center; justify-content:center; color:#0b6b52; font-size:28px; }
+.pa-screen b{ font-size:1.1rem; } .pa-screen small{ opacity:.9; font-size:.8rem; }
+.pa-tile{ width:100%; background:#fff; color:#17363c; border-radius:12px; padding:9px 10px; font-size:.82rem; display:flex; gap:8px; align-items:center; box-shadow:0 4px 12px rgba(0,0,0,.06); text-align:start; }
+.pa-tile i{ color:#0b6b52; width:16px; text-align:center; }
+
+/* app.html */
+.pa-steps{ display:grid; grid-template-columns:repeat(auto-fit,minmax(min(100%,250px),1fr)); gap:18px; margin-top:24px; }
+.pa-card{ background:#fff; border:1px solid #dbe9eb; border-radius:18px; padding:22px; min-width:0; box-shadow:0 8px 24px rgba(15,47,53,.06); }
+.pa-card h3{ margin:0 0 10px; font-size:1.15rem; color:#0f2f35; display:flex; gap:10px; align-items:center; }
+.pa-card ol, .pa-card ul{ margin:0; padding-inline-start:20px; line-height:1.75; color:#3e5a60; }
+.pa-card li{ overflow-wrap:anywhere; }
+.pa-addr{ display:flex; flex-wrap:wrap; gap:8px; align-items:center; margin-top:10px; }
+.pa-addr code{ flex:1 1 180px; min-width:0; background:#f1f7f8; border:1px dashed #9cc7cc; border-radius:10px; padding:9px 11px; font-size:.95rem; overflow-wrap:anywhere; direction:ltr; text-align:left; }
+.pa-addr button{ border:0; border-radius:10px; padding:9px 14px; background:var(--primary,#0B7285); color:#fff; font:inherit; font-weight:700; cursor:pointer; }
+.pa-note{ margin-top:22px; padding:14px 16px; border-radius:14px; background:#fff8e6; border:1px solid #f5d98b; color:#5b4a14; line-height:1.6; overflow-wrap:anywhere; }
+.pa-hero{ padding:clamp(110px,14vw,150px) 0 clamp(30px,5vw,50px); }
+
+[dir="rtl"] .pa-btn i{ transform:scaleX(-1); }
+[dir="rtl"] .pa-addr code{ text-align:left; }
+
+@media (max-width:860px){
+  .pa-wrap{ grid-template-columns:minmax(0,1fr); }
+  .pa-phone{ width:min(70%,230px); order:-1; }
+}
+@media (max-width:480px){
+  .pa-actions{ flex-direction:column; align-items:stretch; }
+  .pa-btn{ width:100%; }
+  .pa-card{ padding:18px; }
+}
+.pa-addr[hidden], .pa-btn[hidden], [data-app-web][hidden]{ display:none !important; }
