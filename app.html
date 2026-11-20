@@ -67,82 +67,166 @@
 
 <main id="app-main">
 
-<!-- ==========================================================
-PATIENT APP — Care-Connect (download)
-========================================================== -->
-
 <section class="pa-band pa-hero" id="patient-app" aria-labelledby="pa-title">
     <div class="container">
         <div class="pa-wrap">
-            <div class="pa-copy reveal">
+            <div class="pa-copy">
                 <span class="section-tag">Patient App</span>
-                <h1 id="pa-title" style="font-size:clamp(1.7rem,3.8vw,2.6rem)">Your health records on your phone</h1>
+                <h1 id="pa-title">Your health records on your phone</h1>
                 <p>Download Care-Connect, the free app of CARE Hospital. See your prescriptions and reports, book appointments and follow your token — in English, हिन्दी, मराठी and اردو.</p>
-                <ul class="pa-list">
-                    <li><i class="fa-solid fa-file-prescription" aria-hidden="true"></i><span>Prescriptions and lab reports</span></li>
-                    <li><i class="fa-solid fa-calendar-check" aria-hidden="true"></i><span>Book and change appointments</span></li>
-                    <li><i class="fa-solid fa-ticket" aria-hidden="true"></i><span>Live OPD token</span></li>
-                    <li><i class="fa-solid fa-bell" aria-hidden="true"></i><span>Medicine reminders</span></li>
-                    <li><i class="fa-solid fa-video" aria-hidden="true"></i><span>Online consultation</span></li>
-                    <li><i class="fa-solid fa-comments" aria-hidden="true"></i><span>Chat with the hospital</span></li>
-                </ul>
-                <div class="pa-actions">
-                    <a class="pa-btn pa-btn-main" data-app-apk href="downloads/Care-Connect.apk" download="Care-Connect.apk"><i class="fa-brands fa-android" aria-hidden="true"></i><span>Download for Android</span></a>
-                    <a class="pa-btn pa-btn-alt" href="#install"><i class="fa-solid fa-circle-info" aria-hidden="true"></i><span>How to install</span></a>
+                <div class="pa-dl">
+                    <a class="pa-btn pa-btn-main pa-btn-xl" data-app-apk href="downloads/Care-Connect.apk" download="Care-Connect.apk"><i class="fa-brands fa-android" aria-hidden="true"></i><span>Download for Android</span></a>
                     <small class="pa-meta" data-app-meta>Android · free</small>
+                    <p class="pa-direct"><span>Direct link:</span> <a data-app-apk href="downloads/Care-Connect.apk" download="Care-Connect.apk" dir="ltr">carehospital.in/downloads/Care-Connect.apk</a></p>
+                </div>
+                <div class="pa-qr">
+                    <img src="images/app/qr-download.svg" alt="QR code: download Care-Connect" width="132" height="132">
+                    <p><b>On a computer?</b><span>Scan this code with your phone's camera to download the app on the phone.</span></p>
                 </div>
             </div>
-            <div class="pa-phone" aria-hidden="true">
-                <div class="pa-screen">
-                    <div class="pa-logo"><i class="fa-solid fa-heart-pulse"></i></div>
-                    <b>Care-Connect</b><small>CARE Hospital</small>
-                    <div class="pa-tile"><i class="fa-solid fa-file-prescription"></i><span>Prescriptions</span></div>
-                    <div class="pa-tile"><i class="fa-solid fa-calendar-check"></i><span>Appointments</span></div>
-                    <div class="pa-tile"><i class="fa-solid fa-ticket"></i><span>Live OPD token</span></div>
-                    <div class="pa-tile"><i class="fa-solid fa-flask"></i><span>Lab reports</span></div>
+            <figure class="pa-shot pa-hero-shot"><img src="images/app/use-03-home.webp" alt="Care-Connect home screen" width="540" height="1080" decoding="async"></figure>
+        </div>
+    </div>
+</section>
+
+<section class="pa-sec" id="install">
+    <div class="container">
+        <div class="pa-head"><span class="section-tag">Install</span><h2>Install in 5 easy steps</h2><p>Android phones and tablets (Android 7 or newer) — a normal phone, no rooting needed. It takes about one minute.</p></div>
+        <ol class="pa-steps-img">
+            <li class="pa-step"><figure class="pa-shot"><img src="images/app/install-1.webp" alt="Install step 1 (illustration)" width="540" height="1080" loading="lazy" decoding="async"></figure><p><b>1</b><span>Tap “Download for Android”.</span></p></li>
+            <li class="pa-step"><figure class="pa-shot"><img src="images/app/install-2.webp" alt="Install step 2 (illustration)" width="540" height="1080" loading="lazy" decoding="async"></figure><p><b>2</b><span>When the download is complete, tap “Open”.</span></p></li>
+            <li class="pa-step"><figure class="pa-shot"><img src="images/app/install-3.webp" alt="Install step 3 (illustration)" width="540" height="1080" loading="lazy" decoding="async"></figure><p><b>3</b><span>If the phone asks, open Settings and switch on “Allow from this source”, then go back.</span></p></li>
+            <li class="pa-step"><figure class="pa-shot"><img src="images/app/install-4.webp" alt="Install step 4 (illustration)" width="540" height="1080" loading="lazy" decoding="async"></figure><p><b>4</b><span>Tap “Install”. If Play Protect stops it, see the help just below.</span></p></li>
+            <li class="pa-step"><figure class="pa-shot"><img src="images/app/install-5.webp" alt="Install step 5 (illustration)" width="540" height="1080" loading="lazy" decoding="async"></figure><p><b>5</b><span>Open Care-Connect from your home screen.</span></p></li>
+        </ol>
+        <p class="pa-small">The pictures are illustrations — your phone's screens may look a little different.</p>
+        <p class="pa-update"><i class="fa-solid fa-rotate" aria-hidden="true"></i><span>We add new features to Care-Connect regularly. When a new version is ready, the app shows “⬆️ Update” — tap it to get the latest app from the hospital. On iPhone (Safari way) you always have the latest version by itself.</span></p>
+        <div class="pa-card pa-way pa-jb" id="play-protect">
+            <h3><span class="pa-badge">!</span><span>Phone says “Blocked by Play Protect”?</span></h3>
+            <div class="pa-pp">
+                <div>
+                    <p>On some phones Google Play Protect stops apps that are not from the Play Store. Care-Connect comes from the hospital's own website, so it is safe to install.</p>
+                    <ol>
+                        <li>First try: tap “More details”, then “Install anyway”.</li>
+                        <li>If there is no “Install anyway”: open the Play Store → tap your photo (top right) → Play Protect → ⚙ settings → switch OFF “Scan apps with Play Protect” for a short time.</li>
+                        <li>Install Care-Connect again (open the downloaded file).</li>
+                        <li>Then go back to Play Protect and switch it ON again.</li>
+                    </ol>
                 </div>
+                <figure class="pa-shot"><img src="images/app/playprotect-1.webp" alt="Blocked by Play Protect — Install anyway (illustration)" width="540" height="1080" loading="lazy" decoding="async"></figure>
+                <figure class="pa-shot"><img src="images/app/playprotect-2.webp" alt="Play Protect settings — switch off for a short time (illustration)" width="540" height="1080" loading="lazy" decoding="async"></figure>
             </div>
         </div>
     </div>
 </section>
 
-
-<section class="doctor-section" id="install">
+<section class="pa-sec pa-alt" id="first-time">
     <div class="container">
-        <div class="section-heading">
-            <span class="section-tag">Install</span>
-            <h2>How to install</h2>
-        </div>
-        <div class="pa-steps">
+        <div class="pa-head"><span class="section-tag">First time</span><h2>Open the app the first time</h2></div>
+        <div class="pa-first">
+            <figure class="pa-shot"><img src="images/app/use-01-start.webp" alt="Care-Connect start screen" width="540" height="1080" loading="lazy" decoding="async"></figure>
+            <figure class="pa-shot"><img src="images/app/use-02-code.webp" alt="Typing the patient code" width="540" height="1080" loading="lazy" decoding="async"></figure>
             <div class="pa-card">
-                <h3><i class="fa-brands fa-android" aria-hidden="true"></i><span>Android phone or tablet</span></h3>
                 <ol>
-                    <li>Tap “Download for Android”.</li>
-                    <li>Open the downloaded file Care-Connect.apk.</li>
-                    <li>If the phone asks, allow “Install unknown apps” for Chrome or Files.</li>
-                    <li>Tap Install, then Open.</li>
-                </ol>
-            </div>
-            <div class="pa-card">
-                <h3><i class="fa-solid fa-key" aria-hidden="true"></i><span>First time in the app</span></h3>
-                <ol>
+                    <li>Choose your language at the top: English, हिन्दी, मराठी or اردو.</li>
+                    <li>Coming for the first time? Tap “Book an appointment” — no code is needed.</li>
+                    <li>Already a patient? Tap “Scan the QR code on your prescription”, or type the 8-letter patient code printed on it.</li>
                     <li>If the app asks for the hospital's address, it is printed on your prescription, next to the QR code.</li>
-                    <li>Type your 8-letter patient code from the prescription.</li>
-                    <li>Confirm with the last 4 digits of your registered mobile number.</li>
+                    <li>Tap “Open”. The app remembers you — next time it opens straight away.</li>
                 </ol>
-                <div class="pa-addr" data-app-addr hidden><code></code><button type="button">Copy</button></div>
-            </div>
-            <div class="pa-card">
-                <h3><i class="fa-brands fa-apple" aria-hidden="true"></i><span>iPhone or iPad</span></h3>
-                <ol>
-                    <li>Open the hospital's app address in Safari.</li>
-                    <li>Tap Share, then “Add to Home Screen”.</li>
-                    <li>Open the new Care-Connect icon and type your patient code.</li>
-                </ol>
-                <p style="margin-top:12px"><a class="pa-btn pa-btn-alt" data-app-web href="#" hidden><i class="fa-solid fa-globe" aria-hidden="true"></i><span>Open in Safari</span></a></p>
+                <p class="pa-note">Don't have a patient code yet? Ask at the reception, or call / WhatsApp +91 93701 11449. The app is free. Your records are kept by the hospital — the app only shows them to you.</p>
             </div>
         </div>
-        <p class="pa-note">Don't have a patient code yet? Ask at the reception, or call / WhatsApp +91 93701 11449. The app is free. Your records are kept by the hospital — the app only shows them to you.</p>
+    </div>
+</section>
+
+<section class="pa-sec" id="how-to-use">
+    <div class="container">
+        <div class="pa-head"><span class="section-tag">How to use</span><h2>Everything the app does</h2><p>Real screens of Care-Connect with a sample (demo) patient.</p></div>
+        <div class="pa-uses">
+            <article class="pa-use">
+                <figure class="pa-shot"><img src="images/app/use-03-home.webp" alt="Home — Care-Connect screen" width="540" height="1080" loading="lazy" decoding="async"></figure>
+                <div class="pa-use-t"><h3><i class="fa-solid fa-house" aria-hidden="true"></i><span>Home</span></h3><p>Your name and patient number (UHID), a health tip for today, and quick buttons for everything below.</p></div>
+            </article>
+            <article class="pa-use">
+                <figure class="pa-shot"><img src="images/app/use-04-token.webp" alt="Live OPD token — Care-Connect screen" width="540" height="1080" loading="lazy" decoding="async"></figure>
+                <div class="pa-use-t"><h3><i class="fa-solid fa-ticket" aria-hidden="true"></i><span>Live OPD token</span></h3><p>On the day of your visit you see your token number, the number now being called and how many patients are before you — it updates by itself, so you can wait comfortably.</p></div>
+            </article>
+            <article class="pa-use">
+                <figure class="pa-shot"><img src="images/app/use-05-records.webp" alt="Prescriptions & lab reports — Care-Connect screen" width="540" height="1080" loading="lazy" decoding="async"></figure>
+                <div class="pa-use-t"><h3><i class="fa-solid fa-file-prescription" aria-hidden="true"></i><span>Prescriptions & lab reports</span></h3><p>Every prescription and lab report of every visit, newest first. Use the buttons to show only prescriptions or only lab reports.</p></div>
+            </article>
+            <article class="pa-use">
+                <figure class="pa-shot"><img src="images/app/use-06-prescription.webp" alt="Open a prescription — Care-Connect screen" width="540" height="1080" loading="lazy" decoding="async"></figure>
+                <div class="pa-use-t"><h3><i class="fa-solid fa-file-pdf" aria-hidden="true"></i><span>Open a prescription</span></h3><p>Tap a visit to see the full prescription, read it in English, हिन्दी, मराठी or اردو, open the PDF, or switch on medicine reminders.</p></div>
+            </article>
+            <article class="pa-use">
+                <figure class="pa-shot"><img src="images/app/use-07-book.webp" alt="Book an appointment — Care-Connect screen" width="540" height="1080" loading="lazy" decoding="async"></figure>
+                <div class="pa-use-t"><h3><i class="fa-solid fa-calendar-check" aria-hidden="true"></i><span>Book an appointment</span></h3><p>Choose the doctor, the day and a free time. You get a confirmation, and you can change or cancel it from the app.</p></div>
+            </article>
+            <article class="pa-use">
+                <figure class="pa-shot"><img src="images/app/use-08-medicines.webp" alt="Medicine reminders — Care-Connect screen" width="540" height="1080" loading="lazy" decoding="async"></figure>
+                <div class="pa-use-t"><h3><i class="fa-solid fa-bell" aria-hidden="true"></i><span>Medicine reminders</span></h3><p>“Remind me for all these medicines” sets an alarm for every dose of your prescription — with the time of day, before or after food.</p></div>
+            </article>
+            <article class="pa-use">
+                <figure class="pa-shot"><img src="images/app/use-09-health.webp" alt="Health readings — Care-Connect screen" width="540" height="1080" loading="lazy" decoding="async"></figure>
+                <div class="pa-use-t"><h3><i class="fa-solid fa-heart-pulse" aria-hidden="true"></i><span>Health readings</span></h3><p>Note your blood sugar, blood pressure, weight or insulin. Your doctor sees the readings at your next visit.</p></div>
+            </article>
+            <article class="pa-use">
+                <figure class="pa-shot"><img src="images/app/use-10-chat.webp" alt="Chat with the hospital — Care-Connect screen" width="540" height="1080" loading="lazy" decoding="async"></figure>
+                <div class="pa-use-t"><h3><i class="fa-solid fa-comments" aria-hidden="true"></i><span>Chat with the hospital</span></h3><p>Write to the doctor, reception, laboratory, pharmacy or nurses. Replies come back in the app.</p></div>
+            </article>
+            <article class="pa-use">
+                <figure class="pa-shot"><img src="images/app/use-11-feedback.webp" alt="Feedback — Care-Connect screen" width="540" height="1080" loading="lazy" decoding="async"></figure>
+                <div class="pa-use-t"><h3><i class="fa-solid fa-star" aria-hidden="true"></i><span>Feedback</span></h3><p>Rate your visit with stars and a few words, or talk to the hospital management. Every complaint gets a number you can follow.</p></div>
+            </article>
+            <article class="pa-use">
+                <figure class="pa-shot"><img src="images/app/use-12-family.webp" alt="Family & language — Care-Connect screen" width="540" height="1080" loading="lazy" decoding="async"></figure>
+                <div class="pa-use-t"><h3><i class="fa-solid fa-users" aria-hidden="true"></i><span>Family & language</span></h3><p>Add your family members with their own patient codes and switch between them with one tap. Change the language any time.</p></div>
+            </article>
+        </div>
+    </div>
+</section>
+
+<section class="pa-sec" id="updates">
+    <div class="container">
+        <div class="pa-card pa-narrow pa-upd">
+            <h3><i class="fa-solid fa-rotate" aria-hidden="true"></i><span>Keep the app updated</span></h3>
+            <p>We add new features to Care-Connect regularly. When a new version is ready, the app shows “⬆️ A new version of the app is ready” — please tap it and install the update (same steps as above). Your records and settings stay.</p>
+            <p>You can also download the latest version from this page at any time. iPhone users of way A always get the newest version by themselves.</p>
+        </div>
+    </div>
+</section>
+
+<section class="pa-sec pa-alt" id="iphone">
+    <div class="container">
+        <div class="pa-head"><span class="section-tag">iPhone &amp; iPad</span><h2>iPhone or iPad</h2><p>Two ways — choose the one for your iPhone / iPad.</p></div>
+
+        <div class="pa-card pa-way">
+            <h3><span class="pa-badge">A</span><span>Every iPhone and iPad (normal, not jailbroken)</span></h3>
+            <p>No download needed: open Care-Connect in Safari and add it to your home screen. It then opens like an app. This also works on old iPads (iPad 2, iPad 3, iPad 4).</p>
+            <ol class="pa-steps-img pa-steps-4"><li class="pa-step"><figure class="pa-shot"><img src="images/app/ios-1.webp" alt="iPhone step 1 (illustration)" width="540" height="1080" loading="lazy" decoding="async"></figure><p><b>1</b><span>Open the hospital’s app address in Safari.</span></p></li><li class="pa-step"><figure class="pa-shot"><img src="images/app/ios-2.webp" alt="iPhone step 2 (illustration)" width="540" height="1080" loading="lazy" decoding="async"></figure><p><b>2</b><span>Tap the Share button (the square with the arrow), then “Add to Home Screen”.</span></p></li><li class="pa-step"><figure class="pa-shot"><img src="images/app/ios-3.webp" alt="iPhone step 3 (illustration)" width="540" height="1080" loading="lazy" decoding="async"></figure><p><b>3</b><span>Tap “Add”.</span></p></li><li class="pa-step"><figure class="pa-shot"><img src="images/app/ios-4.webp" alt="iPhone step 4 (illustration)" width="540" height="1080" loading="lazy" decoding="async"></figure><p><b>4</b><span>Open Care-Connect from your home screen, like any app.</span></p></li></ol>
+            <div class="pa-addr" data-app-addr hidden><code></code><button type="button">Copy</button></div>
+            <p class="pa-mt"><a class="pa-btn pa-btn-main" data-app-web href="#" hidden><i class="fa-brands fa-safari" aria-hidden="true"></i><span>Open Care-Connect in Safari</span></a></p>
+            <p class="pa-small pa-left">The app address is also printed on your prescription, next to the QR code.</p>
+        </div>
+
+        <div class="pa-card pa-way pa-jb">
+            <h3><span class="pa-badge">B</span><span>Only for jailbroken iPhone / iPad — app file (.ipa) to sideload</span></h3>
+            <div class="pa-jb-in">
+                <div>
+                    <p class="pa-warn">⚠ This file is only for jailbroken devices (or for people who sideload apps with their own Apple ID). If your iPhone is normal, use way A — it is easier.</p>
+                    <ul>
+                        <li>For 64-bit iPhones and iPads with iOS 8 or newer: iPhone 5s, 6, 6s, 7, 8, X and newer, iPad Air, iPad mini 2 and newer.</li>
+                        <li>Old 32-bit devices (iPad 2, iPad 3, iPad 4, iPad mini 1, iPhone 5 / 5c) cannot run this file — use way A.</li>
+                        <li>Jailbroken: install with AppSync Unified + Filza (or TrollStore): open the file and tap “Install”.</li>
+                        <li>Not jailbroken: Sideloadly or AltStore on a computer can install it with your own Apple ID.</li>
+                    </ul>
+                    <p class="pa-mt"><a class="pa-btn pa-btn-alt" data-app-ipa href="downloads/Care-Connect-iOS-arm64.ipa" download="Care-Connect-iOS-arm64.ipa"><i class="fa-brands fa-apple" aria-hidden="true"></i><span>Download for jailbroken iPhone / iPad (.ipa)</span></a></p>
+                </div>
+                <figure class="pa-shot"><img src="images/app/ios-5.webp" alt="Installing the .ipa with Filza (illustration)" width="540" height="1080" loading="lazy" decoding="async"></figure>
+            </div>
+        </div>
     </div>
 </section>
 

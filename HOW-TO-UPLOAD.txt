@@ -1,21 +1,31 @@
-CARE website 3.23.0 — upload ONCE by hand (about 5 minutes)
-==========================================================
-What it adds: the new 💬 assistant "Care Saathi" (instant answers from your website, Hindi / Urdu, voice,
-booking, works on phones in light and dark mode), the "Patient App" page + menu item + home-page section with the
-Android download, and a fix: footer links on phones each on their own line.
-Nothing else on the website is changed (pages keep their exact text and line endings).
+CARE HOSPITAL WEBSITE — UPDATE 2 (20 Nov 2026)
+================================================
+What is new
+ - Care-Connect page (app.html): big DOWNLOAD button, direct link and a QR code
+ - Pictures for every install step + help for "Play Protect" (pause it for a minute if it blocks)
+ - Real pictures of the app, showing how to use every part
+ - iPhone / iPad: (A) normal iPhone - Safari "Add to Home Screen" with pictures
+                  (B) ONLY jailbroken iPhone/iPad - the .ipa app file to sideload
+ - Patient Reviews: dummy reviews removed. Only REAL reviews are shown
+   (until you add some, visitors see "Read our reviews on Google" / "Write a review")
+ - The red Emergency button in the top bar is no longer cut off
+ - All new text in Hindi and Urdu (everyday spoken language)
 
-1. Open https://github.com/drkhanabrar/carehospital-website and sign in.
-2. Click "Add file" -> "Upload files".
-3. Open this zip's folder "carehospital-website-3.23.0" and drag EVERYTHING inside it (the folders js, css, assets,
-   downloads and the files app.html, index.html, doctor.html, product.html, products.html, sitemap.xml, README.md)
-   onto the GitHub page. GitHub keeps the folders.
-   (Not needed: changes.patch and this HOW-TO file — leave them out.)
-4. At the bottom write "Website 3.23.0" and press "Commit changes".
-5. Wait 2 minutes. Open www.carehospital.in on the phone and the PC (refresh: Ctrl+F5) and check:
-   - 💬 bottom-left → it says you can talk in your own language → ask "Dr Abrar education" (instant answer);
-   - menu → Patient App → "Download for Android";
-   - footer → links one under the other on the phone.
-6. CARE server (after installing CARE 3.23.0): Settings → 📱 Patient app → 🌐 Website assistant ON, Websites allowed:
-   https://www.carehospital.in, https://carehospital.in ; then Settings → 🌐 Website & Facebook.
-   From then on CARE can update the assistant and the Care-Connect app on the website for you (only those files).
+How to upload (same as last time)
+ 1. Unzip this file. Open the folder "carehospital-website-update".
+ 2. Open github.com/drkhanabrar/carehospital-website
+ 3. Click "Add file" -> "Upload files".
+ 4. Drag ALL folders and files from inside "carehospital-website-update"
+    (app.html, index.html, doctor.html, assets, css, js, images, downloads)
+    into the upload box. GitHub keeps the folders and replaces the old files.
+    (Do NOT drag this HOW-TO-UPLOAD.txt — it does no harm, but it is not needed.)
+ 5. Write "Website update 2" in the message box and click "Commit changes".
+ 6. Wait 1-2 minutes, open carehospital.in and press Ctrl+F5.
+
+Adding real reviews
+ Open assets/data/reviews.js (on GitHub: click it, then the pencil icon).
+ Copy a REAL Google review into the items list, like this:
+   { name:"Ramesh P.", rating:5, text:"(the patient's own words)", date:"Nov 2026",
+     source:"Google", doctor:"abrar-khan" },
+ Never write reviews yourself. In Google Business Profile click "Ask for reviews",
+ copy that link and put it in  writeUrl: ""  (or send it to me).

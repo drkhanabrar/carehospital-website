@@ -215,7 +215,7 @@ HEADER
 
 <li><a href="products.html">R&amp;D</a></li>
 
-<li><a href="app.html" data-nav="app">Patient App</a></li>
+<li class="nav-app"><a href="app.html" data-nav="app">Patient App</a></li>
 
 <li><a href="#gallery">Gallery</a></li>
 
@@ -2327,172 +2327,14 @@ What Our Patients Say
 
 <p>
 
-Patient satisfaction is our greatest achievement.
-Here are a few experiences shared by our patients.
+Real experiences shared by our patients.
 
 </p>
 
 </div>
 
-<div class="testimonial-grid">
-
-<!-- Review 1 -->
-
-<div class="testimonial-card premium-card">
-
-<div class="card-shine"></div>
-
-    <div class="quote-icon">
-        ❝
-    </div>
-
-    <div class="stars">
-        ★★★★★
-    </div>
-
-    <p>
-        Dr. Abrar explained every step of my treatment with patience and professionalism. My hearing problem improved significantly, and the entire experience was smooth from consultation to follow-up.
-    </p>
-
-    <div class="patient">
-
-        <div class="patient-avatar">
-            RS
-        </div>
-
-        <div class="patient-info">
-
-            <h4>
-                Rahul S.
-            </h4>
-
-            <span class="verified">
-                ✓ Verified Patient
-            </span>
-
-            <div class="patient-meta">
-
-                <span class="department-tag">
-                    ENT
-                </span>
-
-                <span>
-                    April 2026
-                </span>
-
-            </div>
-
-        </div>
-
-    </div>
-
-</div>
-
-<!-- Review 2 -->
-
-<div class="testimonial-card">
-
-<div class="card-shine"></div>
-
-    <div class="quote-icon">
-        ❝
-    </div>
-
-    <div class="stars">
-        ★★★★★
-    </div>
-
-    <p>
-        Throughout my pregnancy, I received exceptional care. Every concern was addressed with compassion, and I always felt safe and well-informed during each visit.
-    </p>
-
-    <div class="patient">
-
-        <div class="patient-avatar">
-            FK
-        </div>
-
-        <div class="patient-info">
-
-            <h4>
-                Farah K.
-            </h4>
-
-            <span class="verified">
-                ✓ Verified Patient
-            </span>
-
-            <div class="patient-meta">
-
-                <span class="department-tag">
-                    Women's Health
-                </span>
-
-                <span>
-                    May 2026
-                </span>
-
-            </div>
-
-        </div>
-
-    </div>
-
-</div>
-
-<!-- Review 3 -->
-
-<div class="testimonial-card">
-
-<div class="card-shine"></div>
-
-    <div class="quote-icon">
-        ❝
-    </div>
-
-    <div class="stars">
-        ★★★★★
-    </div>
-
-    <p>
-        The dermatology consultation exceeded my expectations. Modern facilities, excellent hygiene, and visible improvement in my skin after the recommended treatment.
-    </p>
-
-    <div class="patient">
-
-        <div class="patient-avatar">
-            NP
-        </div>
-
-        <div class="patient-info">
-
-            <h4>
-                Neha P.
-            </h4>
-
-            <span class="verified">
-                ✓ Verified Patient
-            </span>
-
-            <div class="patient-meta">
-
-                <span class="department-tag">
-                    Dermatology
-                </span>
-
-                <span>
-                    March 2026
-                </span>
-
-            </div>
-
-        </div>
-
-    </div>
-
-</div>
-
-</div>
+<!-- Only REAL reviews: assets/data/reviews.js (filled from patients who agreed, or copied from Google). -->
+<div class="testimonial-grid" data-reviews></div>
 
 </div>
 
@@ -2732,20 +2574,11 @@ PATIENT APP — Care-Connect (download)
                 </ul>
                 <div class="pa-actions">
                     <a class="pa-btn pa-btn-main" data-app-apk href="downloads/Care-Connect.apk" download="Care-Connect.apk"><i class="fa-brands fa-android" aria-hidden="true"></i><span>Download for Android</span></a>
-                    <a class="pa-btn pa-btn-alt" href="app.html"><i class="fa-solid fa-circle-info" aria-hidden="true"></i><span>How to install</span></a>
+                    <a class="pa-btn pa-btn-alt" href="app.html"><i class="fa-solid fa-circle-info" aria-hidden="true"></i><span>How to install &amp; use</span></a>
                     <small class="pa-meta" data-app-meta>Android · free</small>
                 </div>
             </div>
-            <div class="pa-phone" aria-hidden="true">
-                <div class="pa-screen">
-                    <div class="pa-logo"><i class="fa-solid fa-heart-pulse"></i></div>
-                    <b>Care-Connect</b><small>CARE Hospital</small>
-                    <div class="pa-tile"><i class="fa-solid fa-file-prescription"></i><span>Prescriptions</span></div>
-                    <div class="pa-tile"><i class="fa-solid fa-calendar-check"></i><span>Appointments</span></div>
-                    <div class="pa-tile"><i class="fa-solid fa-ticket"></i><span>Live OPD token</span></div>
-                    <div class="pa-tile"><i class="fa-solid fa-flask"></i><span>Lab reports</span></div>
-                </div>
-            </div>
+            <figure class="pa-shot pa-hero-shot"><img src="images/app/use-03-home.webp" alt="Care-Connect home screen" width="540" height="1080" loading="lazy" decoding="async"></figure>
         </div>
     </div>
 </section>
@@ -3448,6 +3281,8 @@ Emergency :
 </div>
 
 <!-- 💬 website assistant: basic answers from this page; AI answers when data-server is the CARE server address (see README) -->
+<script src="assets/data/reviews.js" defer></script>
+<script src="js/reviews.js" defer></script>
 <script src="assets/data/patient-app.js" defer></script>
 <script src="js/patient-app.js" defer></script>
 <script src="js/care-assistant.js" data-server="" defer></script>
