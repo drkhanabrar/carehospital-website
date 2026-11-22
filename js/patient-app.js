@@ -18,6 +18,7 @@
         for (var k = 0; k < addr.length; k++) {
             var box = addr[k];
             if (!A.address) { box.hidden = true; continue; }
+            box.hidden = false;
             var code = box.querySelector("code"), btn = box.querySelector("button");
             if (code) code.textContent = A.address;
             if (btn) btn.onclick = function () {
@@ -26,8 +27,10 @@
                 try { navigator.clipboard.writeText(A.address).then(done, done); } catch (e) { done(); }
             };
         }
+        var ipa = document.querySelectorAll("[data-app-ipa]");
+        for (var q = 0; q < ipa.length; q++) if (A.ipa) ipa[q].setAttribute("href", A.ipa);
         var iphone = document.querySelectorAll("[data-app-web]");
-        for (var m = 0; m < iphone.length; m++) { if (A.address) iphone[m].setAttribute("href", A.address); else iphone[m].hidden = true; }
+        for (var m = 0; m < iphone.length; m++) { if (A.address) { iphone[m].setAttribute("href", A.address); iphone[m].hidden = false; } else iphone[m].hidden = true; }
     }
     if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", run); else run();
 })();
