@@ -80,6 +80,7 @@
             status: { available: "Available", development: "In development", planned: "Planned" },
             hoursIntro: "🕒 Our timings:", addrIntro: "📍 We're at:", mapOpen: "🗺 Open in Google Maps", contactIntro: "📞 Phone & WhatsApp:", emailIntro: "✉ Email:",
             fees: "Consultation fees can change with the type of visit, so please confirm with the reception on {p} — they'll tell you exactly. 🙂",
+            noReviews: "We show only real reviews from our patients. You can read what patients say about CARE on Google, or share your own experience.", revGoogle: "⭐ Read our reviews on Google", revWrite: "✍ Write a review",
             whyIntro: "Why patients choose CARE:", reviewsIntro: "A few words from our patients:",
             askBook: "Would you like me to book an appointment?", yesBook: "📅 Yes, book it", moreQ: "❓ Another question",
             // booking
@@ -101,20 +102,21 @@
             chips: ["👨‍⚕️ हमारे डॉक्टर", "🏥 विभाग", "🕒 समय", "📍 पता", "📅 अपॉइंटमेंट बुक करें", "📲 मरीज़ ऐप", "🔬 रिसर्च और डेवलपमेंट"],
             thanks: ["आपका स्वागत है! 😊 और कुछ मदद करूँ?", "खुशी हुई मदद करके! 🙏 और कुछ?"],
             bye: ["अपना ख़याल रखिए! 🙏 जब चाहें मुझसे फिर पूछ लीजिए।", "धन्यवाद! स्वस्थ रहिए। 😊"],
-            who: "मैं {n} हूँ, CARE ENT क्लिनिक और मैटरनिटी होम, चिखली का वर्चुअल सहायक। मुझे हमारे डॉक्टर, विभाग, इलाज, समय और रिसर्च की जानकारी है — और मैं अपॉइंटमेंट बुक कर सकती हूँ। चिकित्सा सलाह के लिए हमारे डॉक्टर ही सही हैं। 🙂",
+            who: "मैं {n} हूँ, CARE ENT क्लिनिक और मैटरनिटी होम, चिखली का वर्चुअल सहायक। मुझे हमारे डॉक्टर, विभाग, इलाज, समय और रिसर्च की जानकारी है — और मैं अपॉइंटमेंट बुक कर सकती हूँ। दवा-इलाज की सलाह के लिए हमारे डॉक्टर ही सही हैं। 🙂",
             emergency: "🚑 यह इमरजेंसी लगती है। चैट का इंतज़ार न करें — अभी {p} पर कॉल करें, या 108 / 112 पर कॉल करें, या नज़दीकी इमरजेंसी में जाएँ।",
-            medical: "मैं चिकित्सा सलाह, दवा या खुराक नहीं बता सकती — इसके लिए डॉक्टर को आपको देखना ज़रूरी है। मैं अभी आपका परामर्श बुक कर दूँ?",
+            medical: "मैं डॉक्टरी सलाह, दवा या डोज़ नहीं बता सकती — इसके लिए डॉक्टर को आपको देखना ज़रूरी है। मैं अभी आपका अपॉइंटमेंट बुक कर दूँ?",
             records: "आपकी रिपोर्ट, पर्चे और टोकन Care-Connect मरीज़ ऐप में हैं (या रिसेप्शन {p} से पूछें)। मुझे केवल अस्पताल की सार्वजनिक जानकारी दिखती है।",
             unsure: ["हम्म, इस बारे में मुझे पक्का नहीं पता। 🤔 रिसेप्शन सही बताएगा — {p} पर कॉल या व्हाट्सऐप करें।", "अच्छा सवाल! यह जानकारी अभी मेरे पास नहीं है। कृपया {p} पर कॉल या व्हाट्सऐप करें।"],
             didYouMean: "क्या आप इनमें से कुछ पूछ रहे थे?",
             doctorsIntro: ["CARE में हमारे {k} विशेषज्ञ हैं:", "हमारे डॉक्टर:"],
             yrs: "साल का अनुभव", patientsTreated: "मरीज़ों का इलाज", speaks: "भाषाएँ", viewProfile: "पूरी प्रोफ़ाइल देखें",
-            eduTitle: "{d} की शिक्षा और उपलब्धियाँ:", expTitle: "{d} का ख़ास अनुभव:", treatTitle: "{d} के साथ इलाज:", timeTitle: "{d} का ओपीडी समय:", revTitle: "{d} के बारे में मरीज़ क्या कहते हैं:",
+            eduTitle: "{d} की पढ़ाई और उपलब्धियाँ:", expTitle: "{d} का ख़ास अनुभव:", treatTitle: "{d} के साथ इलाज:", timeTitle: "{d} का ओपीडी समय:", revTitle: "{d} के बारे में मरीज़ क्या कहते हैं:",
             deptIntro: "CARE के विभाग:", deptDoctors: "डॉक्टर", servicesTitle: "सेवाएँ", procIntro: "हमारे आधुनिक प्रोसीजर:", facIntro: "CARE की सुविधाएँ:",
             rndIntro: "जी हाँ! 🔬 मरीज़ों की देखभाल के साथ CARE अपने खुद के हेल्थकेयर सॉफ़्टवेयर और डिवाइस भी बनाता है (रिसर्च और डेवलपमेंट):", rndMore: "किसी के बारे में विस्तार से पूछिए।",
             status: { available: "उपलब्ध", development: "विकास में", planned: "योजना में" },
             hoursIntro: "🕒 हमारा समय:", addrIntro: "📍 हमारा पता:", mapOpen: "🗺 गूगल मैप्स में खोलें", contactIntro: "📞 फ़ोन और व्हाट्सऐप:", emailIntro: "✉ ईमेल:",
-            fees: "परामर्श फ़ीस विज़िट के प्रकार के अनुसार बदल सकती है, कृपया रिसेप्शन {p} से पुष्टि करें — वे सही बताएँगे। 🙂",
+            fees: "कंसल्टेशन फ़ीस विज़िट के प्रकार के अनुसार बदल सकती है, कृपया रिसेप्शन {p} से पुष्टि करें — वे सही बताएँगे। 🙂",
+            noReviews: "हम केवल मरीज़ों की असली समीक्षाएँ दिखाते हैं। गूगल पर पढ़िए कि मरीज़ CARE के बारे में क्या कहते हैं, या अपना अनुभव लिखिए।", revGoogle: "⭐ गूगल पर हमारी समीक्षाएँ पढ़ें", revWrite: "✍ समीक्षा लिखें",
             whyIntro: "मरीज़ CARE क्यों चुनते हैं:", reviewsIntro: "हमारे मरीज़ों के कुछ शब्द:",
             askBook: "क्या मैं आपका अपॉइंटमेंट बुक कर दूँ?", yesBook: "📅 हाँ, बुक करें", moreQ: "❓ और सवाल",
             bStart: "ज़रूर! चलिए अपॉइंटमेंट बुक करते हैं। 📅 किस विभाग में दिखाना है?", bDoctor: "किस डॉक्टर को दिखाना चाहेंगे?", bDay: "कौन सा दिन ठीक रहेगा? (रविवार को सिर्फ़ इमरजेंसी।)",
@@ -126,7 +128,7 @@
             appIntro: "📲 हमारा मुफ़्त मरीज़ ऐप <b>Care-Connect</b>: आपके पर्चे, लैब रिपोर्ट, अपॉइंटमेंट, लाइव ओपीडी टोकन, दवा की याद और ऑनलाइन परामर्श — English, हिन्दी, मराठी और اردو में।", appDl: "⬇ Android के लिए डाउनलोड करें", appHow: "इंस्टॉल कैसे करें / iPhone", appCode: "पहली बार आपको अपना मरीज़ कोड चाहिए होगा (पर्चे पर छपा है)।",
             langNote: "🌐 आप मुझसे अपनी भाषा में बात कर सकते हैं — हिन्दी, English या اردو (मराठी और Hinglish शब्द भी चलेंगे)। भाषा चुनें या सीधे लिखें:",
             feedbackThanks: "आपकी राय के लिए धन्यवाद! 🙏", feedbackBad: "माफ़ कीजिए। मैंने नोट कर लिया है ताकि अस्पताल मेरा जवाब बेहतर कर सके। आप {p} पर कॉल भी कर सकते हैं।",
-            note: "वर्चुअल सहायक · सिर्फ़ सामान्य जानकारी, चिकित्सा सलाह नहीं। यहाँ अपनी निजी स्वास्थ्य जानकारी न लिखें।"
+            note: "वर्चुअल सहायक · सिर्फ़ आम जानकारी, डॉक्टरी सलाह नहीं। यहाँ अपनी निजी स्वास्थ्य जानकारी न लिखें।"
         },
         ur: {
             sub: "ورچوئل مددگار · فوری جواب", type: "اسپتال کے بارے میں کچھ بھی پوچھیں…", send: "بھیجیں", call: "کال", wa: "واٹس ایپ", typing: "لکھ رہی ہے",
@@ -137,7 +139,7 @@
             bye: ["اپنا خیال رکھیں! 🙏 جب چاہیں مجھ سے پھر پوچھ لیں۔", "خدا حافظ! صحت مند رہیں۔ 😊"],
             who: "میں {n} ہوں، CARE ENT کلینک اینڈ میٹرنٹی ہوم، چکھلی کا ورچوئل مددگار۔ مجھے ہمارے ڈاکٹر، شعبوں، علاج، اوقات اور ریسرچ کی معلومات ہیں — اور میں اپائنٹمنٹ بک کر سکتی ہوں۔ طبی مشورے کے لیے ہمارے ڈاکٹر ہی صحیح ہیں۔ 🙂",
             emergency: "🚑 یہ ایمرجنسی لگتی ہے۔ چیٹ کا انتظار نہ کریں — ابھی {p} پر کال کریں، یا 108 / 112 پر کال کریں، یا قریبی ایمرجنسی میں جائیں۔",
-            medical: "میں طبی مشورہ، دوا یا خوراک نہیں بتا سکتی — اس کے لیے ڈاکٹر کا آپ کو دیکھنا ضروری ہے۔ کیا میں ابھی آپ کا مشورہ بک کر دوں؟",
+            medical: "میں ڈاکٹری مشورہ، دوا یا خوراک نہیں بتا سکتی — اس کے لیے ڈاکٹر کا آپ کو دیکھنا ضروری ہے۔ کیا میں ابھی آپ کا مشورہ بک کر دوں؟",
             records: "آپ کی رپورٹ، نسخے اور ٹوکن Care-Connect مریض ایپ میں ہیں (یا ریسیپشن {p} سے پوچھیں)۔ مجھے صرف ہسپتال کی عوامی معلومات دکھتی ہیں۔",
             unsure: ["ہمم، اس بارے میں مجھے یقین نہیں۔ 🤔 ریسیپشن صحیح بتائے گا — {p} پر کال یا واٹس ایپ کریں۔", "اچھا سوال! یہ معلومات ابھی میرے پاس نہیں۔ براہ کرم {p} پر کال یا واٹس ایپ کریں۔"],
             didYouMean: "کیا آپ ان میں سے کچھ پوچھ رہے تھے؟",
@@ -149,6 +151,7 @@
             status: { available: "دستیاب", development: "تیاری میں", planned: "منصوبے میں" },
             hoursIntro: "🕒 ہمارے اوقات:", addrIntro: "📍 ہمارا پتہ:", mapOpen: "🗺 گوگل میپس میں کھولیں", contactIntro: "📞 فون اور واٹس ایپ:", emailIntro: "✉ ای میل:",
             fees: "مشورہ فیس ملاقات کی قسم کے مطابق بدل سکتی ہے، براہ کرم ریسیپشن {p} سے تصدیق کریں۔ 🙂",
+            noReviews: "ہم صرف مریضوں کے اصلی ریویو دکھاتے ہیں۔ گوگل پر پڑھیں کہ مریض CARE کے بارے میں کیا کہتے ہیں، یا اپنا تجربہ لکھیں۔", revGoogle: "⭐ گوگل پر ہمارے ریویو پڑھیں", revWrite: "✍ ریویو لکھیں",
             whyIntro: "مریض CARE کیوں چنتے ہیں:", reviewsIntro: "ہمارے مریضوں کے چند الفاظ:",
             askBook: "کیا میں آپ کی اپائنٹمنٹ بک کر دوں؟", yesBook: "📅 ہاں، بک کریں", moreQ: "❓ اور سوال",
             bStart: "ضرور! آئیے اپائنٹمنٹ بک کرتے ہیں۔ 📅 کس شعبے میں دکھانا ہے؟", bDoctor: "کس ڈاکٹر کو دکھانا چاہیں گے؟", bDay: "کون سا دن ٹھیک رہے گا؟ (اتوار کو صرف ایمرجنسی۔)",
@@ -160,7 +163,7 @@
             appIntro: "📲 ہماری مفت مریض ایپ <b>Care-Connect</b>: آپ کے نسخے، لیب رپورٹس، اپائنٹمنٹ، لائیو او پی ڈی ٹوکن، دوا کی یاد دہانی اور آن لائن مشورہ — English، हिन्दी، मराठी اور اردو میں۔", appDl: "⬇ Android کے لیے ڈاؤن لوڈ کریں", appHow: "انسٹال کیسے کریں / iPhone", appCode: "پہلی بار آپ کو اپنا مریض کوڈ چاہیے ہوگا (نسخے پر چھپا ہے)۔",
             langNote: "🌐 آپ مجھ سے اپنی زبان میں بات کر سکتے ہیں — اردو، हिन्दी یا English (مراٹھی اور Hinglish الفاظ بھی چلیں گے)۔ زبان چنیں یا سیدھا لکھیں:",
             feedbackThanks: "آپ کی رائے کا شکریہ! 🙏", feedbackBad: "معذرت۔ میں نے نوٹ کر لیا ہے تاکہ ہسپتال میرا جواب بہتر کر سکے۔ آپ {p} پر کال بھی کر سکتے ہیں۔",
-            note: "ورچوئل مددگار · صرف عمومی معلومات، طبی مشورہ نہیں۔ یہاں اپنی ذاتی صحت کی معلومات نہ لکھیں۔"
+            note: "ورچوئل مددگار · صرف عمومی معلومات، ڈاکٹری مشورہ نہیں۔ یہاں اپنی ذاتی صحت کی معلومات نہ لکھیں۔"
         }
     };
     function TA(k) { var v = (W[LANG] && W[LANG][k]) || W.en[k]; return Array.isArray(v) ? v.slice() : [v]; }
@@ -226,8 +229,6 @@
         KB.procs = cards(doc.querySelector("#treatments"), ".procedure-card");
         KB.facil = cards(doc, ".onsite-card, .facility-card");
         KB.why = cards(doc.querySelector("#about"), ".feature-card");
-        var rv = doc.querySelectorAll(".testimonial-card, .testimonials .card, .testimonial");
-        for (var i = 0; i < rv.length && KB.reviews.length < 8; i++) { var t = txt(rv[i].querySelector("p")) || txt(rv[i]); var who = txt(rv[i].querySelector("h4, h3, strong, .name")); if (t) KB.reviews.push({ text: t.slice(0, 220), who: who }); }
         var items = doc.querySelectorAll(".findus-item");
         for (var k = 0; k < items.length; k++) {
             var lab = txt(items[k].querySelector(".findus-label")).toLowerCase();
@@ -243,6 +244,7 @@
         if (!window.CARE_DOCTORS) jobs.push(loadScript("assets/data/doctors.js"));
         if (!window.CARE_PRODUCTS) jobs.push(loadScript("assets/data/products.js"));
         if (!window.CARE_APP) jobs.push(loadScript("assets/data/patient-app.js"));
+        if (!window.CARE_REVIEWS) jobs.push(loadScript("assets/data/reviews.js"));
         // the home page in English (the visitor may be on another page, or the page may be shown in Hindi / Urdu)
         jobs.push(fetch(BASE + "index.html", { credentials: "omit" }).then(function (r) { return r.ok ? r.text() : ""; }).then(function (h) { if (h) fromDoc(new DOMParser().parseFromString(h, "text/html")); }).catch(function () { /* file:// */ }));
         return Promise.all(jobs).then(function () {
@@ -380,7 +382,7 @@
         medical: function () { return { html: "<p>" + esc(T("medical")) + "</p>", chips: [T("yesBook"), T("moreQ")] }; },
         records: function () { return { html: "<p>" + esc(T("records")) + "</p>" }; },
         doctors: function () { return { html: "<p>" + esc(T("doctorsIntro", { k: KB.doctors.length })) + "</p>" + KB.doctors.map(docCard).join("<hr>"), chips: KB.doctors.map(function (d) { return "🎓 " + tr(d.name); }).concat([T("yesBook")]) }; },
-        doctor: function (it) { var d = it.doc; CTX.doctor = d; return { html: docCard(d), chips: [LANG === "en" ? "🎓 Education & milestones" : LANG === "hi" ? "🎓 शिक्षा और उपलब्धियाँ" : "🎓 تعلیم اور کامیابیاں", LANG === "en" ? "🩺 Treatments" : LANG === "hi" ? "🩺 इलाज" : "🩺 علاج", LANG === "en" ? "🕒 Timings" : LANG === "hi" ? "🕒 समय" : "🕒 اوقات", T("yesBook")], ctxDoc: d }; },
+        doctor: function (it) { var d = it.doc; CTX.doctor = d; return { html: docCard(d), chips: [LANG === "en" ? "🎓 Education & milestones" : LANG === "hi" ? "🎓 पढ़ाई और उपलब्धियाँ" : "🎓 تعلیم اور کامیابیاں", LANG === "en" ? "🩺 Treatments" : LANG === "hi" ? "🩺 इलाज" : "🩺 علاج", LANG === "en" ? "🕒 Timings" : LANG === "hi" ? "🕒 समय" : "🕒 اوقات", T("yesBook")], ctxDoc: d }; },
         "doc-edu": function (it) {
             var d = it.doc; if (!d) return A.doctors(); CTX.doctor = d;
             var edu = (d.education || []).map(function (e) { return "<b>" + esc(tr(e.degree)) + "</b> — " + esc(tr(e.institute)) + (e.year ? " <small>(" + esc(tr(e.year)) + ")</small>" : ""); });
@@ -393,7 +395,7 @@
             return { html: "<p><b>" + esc(T("expTitle", { d: tr(d.name) })) + "</b> " + (d.expertise || []).map(function (x) { return esc(tr(x)); }).join(", ") + "</p><p><b>" + esc(T("treatTitle", { d: tr(d.name) })) + "</b></p>" + ul(tr2), chips: [T("yesBook")] };
         },
         "doc-time": function (it) { var d = it.doc; CTX.doctor = d; return { html: "<p><b>" + esc(T("timeTitle", { d: tr(d.name) })) + "</b></p>" + ul((d.schedule || []).map(function (s) { return esc(tr(s.day)) + ": " + esc(tr(s.time)); })), chips: [T("yesBook")] }; },
-        "doc-rev": function (it) { var d = it.doc; CTX.doctor = d; return { html: "<p><b>" + esc(T("revTitle", { d: tr(d.name) })) + "</b></p>" + ul((d.testimonials || []).slice(0, 4).map(function (t) { return "“" + esc(tr(t.comment)) + "” — <i>" + esc(t.name) + "</i> " + "★".repeat(Math.max(0, Math.min(5, t.rating || 5))); })), chips: [T("yesBook")] }; },
+        "doc-rev": function (it) { var d = it.doc; CTX.doctor = d; var L = realReviews(d.id); if (!L.length) return A.reviews(); return { html: "<p><b>" + esc(T("revTitle", { d: tr(d.name) })) + "</b></p>" + ul(L.slice(0, 4).map(function (t) { return "“" + esc(t.text) + "” — <i>" + esc(t.name) + "</i> " + "★".repeat(Math.max(1, Math.min(5, +t.rating || 5))); })) + reviewLinks(), chips: [T("yesBook")] }; },
         depts: function () { return { html: "<p><b>" + esc(T("deptIntro")) + "</b></p>" + ul(KB.depts.map(function (d) { return "<b>" + esc(tr(d.title)) + "</b> — " + esc(tr(d.text)); })), chips: KB.depts.slice(0, 5).map(function (d) { return tr(d.title); }) }; },
         dept: function (it) {
             var d = it.item, docs = deptDoctors(d.title);
@@ -404,7 +406,7 @@
         proc: function (it) { var d = it.item; return { html: "<p><b>" + esc(tr(d.title)) + "</b></p><p>" + esc(tr(d.text)) + "</p>" + (d.extra ? "<p><small>" + esc(d.extra) + "</small></p>" : ""), chips: [T("yesBook")] }; },
         facil: function () { return { html: "<p><b>" + esc(T("facIntro")) + "</b></p>" + ul(KB.facil.map(function (d) { return "<b>" + esc(tr(d.title)) + "</b>" + (d.text ? " — " + esc(tr(d.text)) : ""); })) }; },
         why: function () { return { html: "<p><b>" + esc(T("whyIntro")) + "</b></p>" + ul(KB.why.map(function (d) { return "<b>" + esc(tr(d.title)) + "</b> — " + esc(tr(d.text)); })), chips: [T("yesBook")] }; },
-        reviews: function () { var r = KB.reviews.length ? KB.reviews : [].concat.apply([], KB.doctors.map(function (d) { return (d.testimonials || []).map(function (t) { return { text: t.comment, who: t.name }; }); })); return { html: "<p><b>" + esc(T("reviewsIntro")) + "</b></p>" + ul(r.slice(0, 5).map(function (x) { return "“" + esc(tr(x.text)) + "”" + (x.who ? " — <i>" + esc(x.who) + "</i>" : ""); })) }; },
+        reviews: function () { var r = realReviews(); if (!r.length) return { html: "<p>" + esc(T("noReviews")) + "</p>" + reviewLinks() }; return { html: "<p><b>" + esc(T("reviewsIntro")) + "</b></p>" + ul(r.slice(0, 5).map(function (x) { return "“" + esc(x.text) + "” — <i>" + esc(x.name) + "</i>"; })) + reviewLinks() }; },
         rnd: function () { return { html: "<p>" + esc(T("rndIntro")) + "</p>" + ul(KB.products.map(function (p) { return '<a href="' + BASE + "product.html?id=" + encodeURIComponent(p.id) + '"><b>' + esc(tr(p.name)) + "</b></a> — " + esc(tr(p.tagline)) + ' <span class="ca-tag">' + esc((T("status") || {})[p.status] || p.status) + "</span>"; })) + "<p>" + esc(T("rndMore")) + "</p>", chips: KB.products.slice(0, 4).map(function (p) { return "🔬 " + p.name; }) }; },
         product: function (it) {
             var p = it.prod;
@@ -421,6 +423,9 @@
         },
         learned: function (it) { return { html: "<p>" + esc(it.a).replace(/\n/g, "<br>") + "</p>" }; }
     };
+    // only real reviews (assets/data/reviews.js) — never made-up ones
+    function realReviews(docId) { var R = window.CARE_REVIEWS || {}; return (R.items || []).filter(function (r) { return r && r.text && r.name && (!docId || r.doctor === docId); }); }
+    function reviewLinks() { var R = window.CARE_REVIEWS || {}, g = R.googleUrl || "", w = R.writeUrl || g; return g ? '<p><a class="ca-btn" target="_blank" rel="noopener" href="' + esc(g) + '">' + esc(T("revGoogle")) + "</a> " + (w ? '<a target="_blank" rel="noopener" href="' + esc(w) + '">' + esc(T("revWrite")) + "</a>" : "") + "</p>" : ""; }
     function deptDoctors(title) {
         var t = String(title).toLowerCase();
         return KB.doctors.filter(function (d) {
