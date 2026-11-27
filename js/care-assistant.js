@@ -88,7 +88,7 @@
             bTime: "What time works for you on {d}?", bName: "May I have the patient's full name?", bMobile: "And a 10-digit mobile number to confirm the appointment?", bProblem: "In a few words, what is the problem? (or tap Skip)",
             bSkip: "Skip", bSummary: "Please check:", bSend: "✅ Confirm on WhatsApp", bBook: "✅ Confirm booking", bEdit: "✏️ Change", bCancel: "Cancel",
             bSunday: "Sunday is emergency-only, so please pick another day. 🙂", bNoSlots: "No more slots that day — please choose another day.", bBadMobile: "That doesn't look like a 10-digit mobile number. Could you type it again?", bBadName: "Please type the full name (at least 3 letters).",
-            bDoneWa: "Great! 🎉 WhatsApp is opening with your request — just press Send there. The reception will confirm your appointment shortly.", bDone: "Done! 🎉 Your appointment is booked for {d} at {t} with {doc}. Please come 15 minutes early.",
+            bDoneWa: "📝 Your request is ready — it is NOT booked yet. WhatsApp is opening: please press Send there. The reception will call or message you to confirm the time. (In a hurry? Call +91 93701 11449.)", bDone: "Done! 🎉 Your appointment is booked for {d} at {t} with {doc}. Please come 15 minutes early.",
             bDept: "Department", bDoc: "Doctor", bDate: "Date", bTimeL: "Time", bNameL: "Name", bMobL: "Mobile", bProbL: "Problem", today: "Today", tomorrow: "Tomorrow", pickDate: "📅 Another date",
             appIntro: "📲 Our free patient app <b>Care-Connect</b>: your prescriptions, lab reports, appointments, live OPD token, medicine reminders and online consultation — in English, Hindi, Marathi and Urdu.", appDl: "⬇ Download for Android", appHow: "How to install / iPhone", appCode: "You'll need your patient code (printed on your prescription) the first time.",
             langNote: "🌐 You can talk to me in your own language — English, हिन्दी or اردو (Marathi and Hinglish words are fine too). Tap a language or just type:",
@@ -123,9 +123,9 @@
             bTime: "{d} को कौन सा समय ठीक रहेगा?", bName: "मरीज़ का पूरा नाम बताइए?", bMobile: "अपॉइंटमेंट की पुष्टि के लिए 10 अंकों का मोबाइल नंबर?", bProblem: "कुछ शब्दों में तकलीफ़ बताइए (या छोड़ें दबाएँ)",
             bSkip: "छोड़ें", bSummary: "कृपया जाँच लें:", bSend: "✅ व्हाट्सऐप पर पक्का करें", bBook: "✅ बुकिंग पक्की करें", bEdit: "✏️ बदलें", bCancel: "रद्द करें",
             bSunday: "रविवार को सिर्फ़ इमरजेंसी होती है, कृपया दूसरा दिन चुनें। 🙂", bNoSlots: "उस दिन और समय नहीं बचा — कृपया दूसरा दिन चुनें।", bBadMobile: "यह 10 अंकों का मोबाइल नंबर नहीं लगता। फिर से लिखेंगे?", bBadName: "कृपया पूरा नाम लिखें (कम से कम 3 अक्षर)।",
-            bDoneWa: "बढ़िया! 🎉 व्हाट्सऐप आपकी रिक्वेस्ट के साथ खुल रहा है — वहाँ बस भेजें दबाएँ। रिसेप्शन जल्द ही अपॉइंटमेंट पक्का करेगा।", bDone: "हो गया! 🎉 आपका अपॉइंटमेंट {d} को {t} बजे {doc} के साथ बुक है। कृपया 15 मिनट पहले आएँ।",
+            bDoneWa: "📝 आपकी रिक्वेस्ट तैयार है — अभी अपॉइंटमेंट पक्का नहीं हुआ है। WhatsApp खुल रहा है: वहाँ Send दबाएँ। रिसेप्शन आपको कॉल या मैसेज करके समय पक्का करेगा। (जल्दी है? +91 93701 11449 पर कॉल करें।)", bDone: "हो गया! 🎉 आपका अपॉइंटमेंट {d} को {t} बजे {doc} के साथ बुक है। कृपया 15 मिनट पहले आएँ।",
             bDept: "विभाग", bDoc: "डॉक्टर", bDate: "तारीख", bTimeL: "समय", bNameL: "नाम", bMobL: "मोबाइल", bProbL: "तकलीफ़", today: "आज", tomorrow: "कल", pickDate: "📅 दूसरी तारीख",
-            appIntro: "📲 हमारा मुफ़्त मरीज़ ऐप <b>Care-Connect</b>: आपके पर्चे, लैब रिपोर्ट, अपॉइंटमेंट, लाइव ओपीडी टोकन, दवा की याद और ऑनलाइन परामर्श — English, हिन्दी, मराठी और اردو में।", appDl: "⬇ Android के लिए डाउनलोड करें", appHow: "इंस्टॉल कैसे करें / iPhone", appCode: "पहली बार आपको अपना मरीज़ कोड चाहिए होगा (पर्चे पर छपा है)।",
+            appIntro: "📲 हमारा मुफ़्त मरीज़ ऐप <b>Care-Connect</b>: आपके पर्चे, लैब रिपोर्ट, अपॉइंटमेंट, लाइव ओपीडी टोकन, दवा की याद और ऑनलाइन परामर्श — English, हिन्दी, मराठी और اردو में।", appDl: "⬇ Android के लिए डाउनलोड करें", appHow: "इंस्टॉल कैसे करें / iPhone", appCode: "पहली बार आपको अपना Care-Connect कोड चाहिए होगा (पर्चे पर छपा है)।",
             langNote: "🌐 आप मुझसे अपनी भाषा में बात कर सकते हैं — हिन्दी, English या اردو (मराठी और Hinglish शब्द भी चलेंगे)। भाषा चुनें या सीधे लिखें:",
             feedbackThanks: "आपकी राय के लिए धन्यवाद! 🙏", feedbackBad: "माफ़ कीजिए। मैंने नोट कर लिया है ताकि अस्पताल मेरा जवाब बेहतर कर सके। आप {p} पर कॉल भी कर सकते हैं।",
             note: "वर्चुअल सहायक · सिर्फ़ आम जानकारी, डॉक्टरी सलाह नहीं। यहाँ अपनी निजी स्वास्थ्य जानकारी न लिखें।"
@@ -158,9 +158,9 @@
             bTime: "{d} کو کون سا وقت ٹھیک رہے گا؟", bName: "مریض کا پورا نام بتائیں؟", bMobile: "اپائنٹمنٹ کی تصدیق کے لیے 10 ہندسوں کا موبائل نمبر؟", bProblem: "چند الفاظ میں تکلیف بتائیں (یا چھوڑیں دبائیں)",
             bSkip: "چھوڑیں", bSummary: "براہ کرم چیک کریں:", bSend: "✅ واٹس ایپ پر پکا کریں", bBook: "✅ بکنگ پکی کریں", bEdit: "✏️ بدلیں", bCancel: "منسوخ",
             bSunday: "اتوار کو صرف ایمرجنسی ہوتی ہے، براہ کرم دوسرا دن چنیں۔ 🙂", bNoSlots: "اس دن مزید وقت نہیں — براہ کرم دوسرا دن چنیں۔", bBadMobile: "یہ 10 ہندسوں کا موبائل نمبر نہیں لگتا۔ دوبارہ لکھیں گے؟", bBadName: "براہ کرم پورا نام لکھیں (کم از کم 3 حروف)۔",
-            bDoneWa: "بہت خوب! 🎉 واٹس ایپ آپ کی درخواست کے ساتھ کھل رہا ہے — وہاں بس بھیجیں دبائیں۔ ریسیپشن جلد اپائنٹمنٹ کی تصدیق کرے گا۔", bDone: "ہو گیا! 🎉 آپ کی اپائنٹمنٹ {d} کو {t} بجے {doc} کے ساتھ بک ہے۔ براہ کرم 15 منٹ پہلے آئیں۔",
+            bDoneWa: "📝 آپ کی درخواست تیار ہے — ابھی اپائنٹمنٹ پکی نہیں ہوئی۔ WhatsApp کھل رہا ہے: وہاں Send دبائیں۔ ریسیپشن آپ کو کال یا میسج کر کے وقت پکا کرے گا۔ (جلدی ہے؟ +91 93701 11449 پر کال کریں۔)", bDone: "ہو گیا! 🎉 آپ کی اپائنٹمنٹ {d} کو {t} بجے {doc} کے ساتھ بک ہے۔ براہ کرم 15 منٹ پہلے آئیں۔",
             bDept: "شعبہ", bDoc: "ڈاکٹر", bDate: "تاریخ", bTimeL: "وقت", bNameL: "نام", bMobL: "موبائل", bProbL: "تکلیف", today: "آج", tomorrow: "کل", pickDate: "📅 دوسری تاریخ",
-            appIntro: "📲 ہماری مفت مریض ایپ <b>Care-Connect</b>: آپ کے نسخے، لیب رپورٹس، اپائنٹمنٹ، لائیو او پی ڈی ٹوکن، دوا کی یاد دہانی اور آن لائن مشورہ — English، हिन्दी، मराठी اور اردو میں۔", appDl: "⬇ Android کے لیے ڈاؤن لوڈ کریں", appHow: "انسٹال کیسے کریں / iPhone", appCode: "پہلی بار آپ کو اپنا مریض کوڈ چاہیے ہوگا (نسخے پر چھپا ہے)۔",
+            appIntro: "📲 ہماری مفت مریض ایپ <b>Care-Connect</b>: آپ کے نسخے، لیب رپورٹس، اپائنٹمنٹ، لائیو او پی ڈی ٹوکن، دوا کی یاد دہانی اور آن لائن مشورہ — English، हिन्दी، मराठी اور اردو میں۔", appDl: "⬇ Android کے لیے ڈاؤن لوڈ کریں", appHow: "انسٹال کیسے کریں / iPhone", appCode: "پہلی بار آپ کو اپنا Care-Connect کوڈ چاہیے ہوگا (نسخے پر چھپا ہے)۔",
             langNote: "🌐 آپ مجھ سے اپنی زبان میں بات کر سکتے ہیں — اردو، हिन्दी یا English (مراٹھی اور Hinglish الفاظ بھی چلیں گے)۔ زبان چنیں یا سیدھا لکھیں:",
             feedbackThanks: "آپ کی رائے کا شکریہ! 🙏", feedbackBad: "معذرت۔ میں نے نوٹ کر لیا ہے تاکہ ہسپتال میرا جواب بہتر کر سکے۔ آپ {p} پر کال بھی کر سکتے ہیں۔",
             note: "ورچوئل مددگار · صرف عمومی معلومات، ڈاکٹری مشورہ نہیں۔ یہاں اپنی ذاتی صحت کی معلومات نہ لکھیں۔"
@@ -421,7 +421,7 @@
             var P = window.CARE_APP || { apk: "downloads/Care-Connect.apk" };
             return { html: "<p>" + T("appIntro") + '</p><p><a class="ca-btn" href="' + esc(BASE + P.apk) + '" download="Care-Connect.apk">' + esc(T("appDl")) + "</a></p><p><small>" + esc(T("appCode")) + ' <a href="' + BASE + 'app.html">' + esc(T("appHow")) + "</a></small></p>" };
         },
-        learned: function (it) { return { html: "<p>" + esc(it.a).replace(/\n/g, "<br>") + "</p>" }; }
+        learned: function (it) { var a = it.tr && LANG !== it.lang && it.tr[LANG] ? it.tr[LANG] : it.a; return { html: "<p>" + esc(a).replace(/\n/g, "<br>") + "</p>" }; }
     };
     // only real reviews (assets/data/reviews.js) — never made-up ones
     function realReviews(docId) { var R = window.CARE_REVIEWS || {}; return (R.items || []).filter(function (r) { return r && r.text && r.name && (!docId || r.doctor === docId); }); }
@@ -467,7 +467,7 @@
     function loadLearned() {
         if (!SERVER || !window.fetch) return Promise.resolve();
         return fetch(SERVER + "/api/pt/siteai.kb", { credentials: "omit", mode: "cors" }).then(function (r) { return r.ok ? r.json() : null; }).then(function (j) {
-            if (j && Array.isArray(j.items)) KB.learned = j.items.filter(function (x) { return x && x.q && x.a; }).map(function (x) { return { q: String(x.q), a: String(x.a), lang: x.lang || "en", tok: tokens(x.q + " " + (x.keys || "")) }; });
+            if (j && Array.isArray(j.items)) KB.learned = j.items.filter(function (x) { return x && x.q && x.a; }).map(function (x) { return { q: String(x.q), a: String(x.a), lang: x.lang || "en", tr: x.tr && typeof x.tr === "object" ? x.tr : null, tok: tokens(x.q + " " + (x.keys || "")) }; });
             if (j && Array.isArray(j.popular) && j.popular.length) KB.popular = j.popular.slice(0, 4);
             SERVER_FEATURES = j && j.features || {};
         }).catch(function () { /* the hospital's server is not reachable — the website answers alone */ });
@@ -644,7 +644,11 @@
     function finishBooking() {
         var b = BK; BK = null;
         store.set("visitor", { name: b.name, mobile: b.mobile, at: Date.now() });   // filled in next time (this browser only)
-        var wa = function () { window.open("https://wa.me/" + WA + "?text=" + encodeURIComponent(waMessage(b)), "_blank"); return { html: "<p>" + esc(T("bDoneWa")) + "</p>", chips: [T("moreQ")] }; };
+        var wa = function () {
+            // 3.25.1: the request is ALSO kept in CARE (Appointments → 🌐 Website requests) when the CARE server answers
+            if (SERVER) { try { fetch(SERVER + "/api/pt/siteai.request", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ name: b.name, mobile: b.mobile, dept: b.dept, doctor: b.doctor, date: b.date, time: b.time, problem: b.problem, lang: LANG }), credentials: "omit", mode: "cors", keepalive: true }).catch(function () {}); } catch (e) { /* WhatsApp is enough */ } }
+            window.open("https://wa.me/" + WA + "?text=" + encodeURIComponent(waMessage(b)), "_blank"); return { html: "<p>" + esc(T("bDoneWa")) + "</p>", chips: [T("moreQ")] };
+        };
         if (!(SERVER && SERVER_FEATURES.book)) return wa();
         // straight into CARE (when the hospital switched on website bookings) — WhatsApp if it does not answer
         return fetch(SERVER + "/api/pt/siteai.book", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ name: b.name, mobile: b.mobile, dept: b.dept, doctor: b.doctor, date: b.date, time: b.time, problem: b.problem, lang: LANG }), credentials: "omit", mode: "cors" })
@@ -673,8 +677,27 @@
             var d = document.createElement("div"); d.innerHTML = html;
             return (d.textContent || "").replace(/[\u{1F300}-\u{1FAFF}☀-➿️]/gu, " ").replace(/https?:\S+/g, "").replace(/\s+/g, " ").trim().slice(0, 900);
         },
+        srv: true, audio: null,
+        // 🔊 3.25.1: the hospital's natural voice (Azure Neerja / Swara / Gul), only when the hospital switched it on; else this device's voice
+        sayServer: function (t) {
+            if (!SERVER || !VOICE.srv || !window.fetch || !window.Audio) return Promise.resolve(false);
+            return fetch(SERVER + "/api/pt/siteai.voice", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ text: t, lang: LANG === "hi" ? "hi-IN" : LANG === "ur" ? "ur-IN" : LANG === "mr" ? "mr-IN" : "en-IN", where: "site" }), credentials: "omit", mode: "cors" })
+                .then(function (r) { return r.ok ? r.json() : null; })
+                .then(function (j) {
+                    if (!j || !j.ok || !j.b64) { VOICE.srv = false; return false; }
+                    VOICE.audio = new Audio("data:" + (j.mime || "audio/mpeg") + ";base64," + j.b64);
+                    return VOICE.audio.play().then(function () { return true; }, function () { return false; });
+                }, function () { VOICE.srv = false; return false; });
+        },
         say: function (html) {
-            if (!VOICE.on || !VOICE.ok) return;
+            if (!VOICE.on) return;
+            var t0 = VOICE.clean(html); if (!t0) return;
+            VOICE.stop();
+            if (VOICE.srv && SERVER) { VOICE.sayServer(t0).then(function (done) { if (!done) VOICE.sayDevice(html); }); return; }
+            VOICE.sayDevice(html);
+        },
+        sayDevice: function (html) {
+            if (!VOICE.ok) return;
             try {
                 window.speechSynthesis.cancel();
                 var t = VOICE.clean(html); if (!t) return;
@@ -684,7 +707,7 @@
                 window.speechSynthesis.speak(u);
             } catch (e) { /* no voice on this device */ }
         },
-        stop: function () { try { window.speechSynthesis.cancel(); } catch (e) { /* */ } }
+        stop: function () { try { if (VOICE.audio) { VOICE.audio.pause(); VOICE.audio = null; } } catch (e) { /* */ } try { window.speechSynthesis.cancel(); } catch (e) { /* */ } }
     };
     if (VOICE.ok) { VOICE.load(); try { window.speechSynthesis.onvoiceschanged = VOICE.load; } catch (e) { /* */ } }
     // 🎤 speak the question (Chrome / Edge / Android; the browser asks the visitor first)
