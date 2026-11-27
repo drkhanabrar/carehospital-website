@@ -49,7 +49,7 @@
             "Open the app the first time": "ऐप पहली बार खोलें",
             "Choose your language at the top: English, हिन्दी, मराठी or اردو.": "ऊपर अपनी भाषा चुनें: English, हिन्दी, मराठी या اردو।",
             "Coming for the first time? Tap “Book an appointment” — no code is needed.": "पहली बार आ रहे हैं? “Book an appointment” दबाएँ — कोड की ज़रूरत नहीं।",
-            "Already a patient? Tap “Scan the QR code on your prescription”, or type the 8-letter patient code printed on it.": "पहले से मरीज़ हैं? “Scan the QR code on your prescription” दबाएँ, या पर्चे पर छपा 8 अक्षरों का मरीज़ कोड लिखें।",
+            "Already a patient? Tap “Scan the QR code on your prescription”, or type the 8-letter patient code printed on it.": "पहले से मरीज़ हैं? “Scan the QR code on your prescription” दबाएँ, या पर्चे पर छपा 8 अक्षरों का Care-Connect कोड लिखें।",
             "Tap “Open”. The app remembers you — next time it opens straight away.": "“Open” दबाएँ। ऐप आपको याद रखता है — अगली बार सीधे खुल जाएगा।",
             "How to use": "कैसे इस्तेमाल करें",
             "Everything the app does": "ऐप क्या-क्या करता है",
@@ -71,7 +71,7 @@
             "Feedback": "फ़ीडबैक",
             "Rate your visit with stars and a few words, or talk to the hospital management. Every complaint gets a number you can follow.": "स्टार और कुछ शब्दों से अपनी विज़िट को रेट करें, या अस्पताल मैनेजमेंट से बात करें। हर शिकायत को एक नंबर मिलता है जिसे आप देख सकते हैं।",
             "Family & language": "परिवार और भाषा",
-            "Add your family members with their own patient codes and switch between them with one tap. Change the language any time.": "अपने परिवार के सदस्यों को उनके मरीज़ कोड से जोड़ें और एक टैप से बदलें। भाषा कभी भी बदलें।",
+            "Add your family members with their own patient codes and switch between them with one tap. Change the language any time.": "अपने परिवार के सदस्यों को उनके Care-Connect कोड से जोड़ें और एक टैप से बदलें। भाषा कभी भी बदलें।",
             "iPhone": "iPhone",
             "How to install & use": "इंस्टॉल और इस्तेमाल कैसे करें",
             "Real experiences shared by our patients.": "हमारे मरीज़ों के असली अनुभव।",
@@ -105,15 +105,15 @@
             "Tap Install, then Open.": "Install दबाएँ, फिर Open।",
             "First time in the app": "ऐप में पहली बार",
             "If the app asks for the hospital's address, it is printed on your prescription, next to the QR code.": "अगर ऐप अस्पताल का पता पूछे, तो वह आपके पर्चे पर QR कोड के पास छपा है।",
-            "Type your 8-letter patient code from the prescription.": "पर्चे पर दिया 8 अक्षरों का अपना मरीज़ कोड लिखें।",
+            "Type your 8-letter patient code from the prescription.": "पर्चे पर दिया 8 अक्षरों का अपना Care-Connect कोड लिखें।",
             "Confirm with the last 4 digits of your registered mobile number.": "अपने रजिस्टर्ड मोबाइल नंबर के आख़िरी 4 अंकों से कन्फ़र्मेशन करें।",
             "Copy": "कॉपी करें",
             "iPhone or iPad": "iPhone या iPad",
             "Open the hospital's app address in Safari.": "अस्पताल का ऐप पता Safari में खोलें।",
             "Tap Share, then “Add to Home Screen”.": "Share दबाएँ, फिर “Add to Home Screen”।",
-            "Open the new Care-Connect icon and type your patient code.": "नया Care-Connect आइकन खोलें और अपना मरीज़ कोड लिखें।",
+            "Open the new Care-Connect icon and type your patient code.": "नया Care-Connect आइकन खोलें और अपना Care-Connect कोड लिखें।",
             "Open in Safari": "Safari में खोलें",
-            "Don't have a patient code yet? Ask at the reception, or call / WhatsApp +91 93701 11449. The app is free. Your records are kept by the hospital — the app only shows them to you.": "अभी तक मरीज़ कोड नहीं है? रिसेप्शन पर पूछें, या +91 93701 11449 पर कॉल / WhatsApp करें। ऐप मुफ़्त है। आपके रिकॉर्ड अस्पताल के पास सुरक्षित रहते हैं — ऐप उन्हें केवल आपको दिखाता है।"
+            "Don't have a patient code yet? Ask at the reception, or call / WhatsApp +91 93701 11449. The app is free. Your records are kept by the hospital — the app only shows them to you.": "अभी तक Care-Connect कोड नहीं है? रिसेप्शन पर पूछें, या +91 93701 11449 पर कॉल / WhatsApp करें। ऐप मुफ़्त है। आपके रिकॉर्ड अस्पताल के पास सुरक्षित रहते हैं — ऐप उन्हें केवल आपको दिखाता है।"
         },
         ur: {
             "We add new features to Care-Connect regularly. When a new version is ready, the app shows “⬆️ Update” — tap it to get the latest app from the hospital. On iPhone (Safari way) you always have the latest version by itself.": "ہم Care-Connect میں نئے فیچر برابر جوڑتے رہتے ہیں۔ نیا ورژن آنے پر ایپ میں “⬆️ Update” دکھے گا — اسے دبائیے اور ہسپتال سے نئی ایپ لے لیجیے۔ iPhone (Safari والے طریقے) میں آپ کو ہمیشہ خود بخود نیا ورژن ملتا ہے۔",
@@ -159,7 +159,7 @@
             "Open the app the first time": "ایپ پہلی بار کھولیں",
             "Choose your language at the top: English, हिन्दी, मराठी or اردو.": "اوپر اپنی زبان چنیں: English، हिन्दी، मराठी یا اردو۔",
             "Coming for the first time? Tap “Book an appointment” — no code is needed.": "پہلی بار آ رہے ہیں؟ “Book an appointment” دبائیں — کوڈ کی ضرورت نہیں۔",
-            "Already a patient? Tap “Scan the QR code on your prescription”, or type the 8-letter patient code printed on it.": "پہلے سے مریض ہیں؟ “Scan the QR code on your prescription” دبائیں، یا نسخے پر چھپا 8 حروف کا مریض کوڈ لکھیں۔",
+            "Already a patient? Tap “Scan the QR code on your prescription”, or type the 8-letter patient code printed on it.": "پہلے سے مریض ہیں؟ “Scan the QR code on your prescription” دبائیں، یا نسخے پر چھپا 8 حروف کا Care-Connect کوڈ لکھیں۔",
             "Tap “Open”. The app remembers you — next time it opens straight away.": "“Open” دبائیں۔ ایپ آپ کو یاد رکھتی ہے — اگلی بار سیدھی کھل جائے گی۔",
             "How to use": "کیسے استعمال کریں",
             "Everything the app does": "ایپ کیا کیا کرتی ہے",
@@ -181,7 +181,7 @@
             "Feedback": "فیڈبیک",
             "Rate your visit with stars and a few words, or talk to the hospital management. Every complaint gets a number you can follow.": "ستاروں اور چند الفاظ سے اپنی ملاقات کو ریٹ کریں، یا ہسپتال مینجمنٹ سے بات کریں۔ ہر شکایت کو ایک نمبر ملتا ہے جسے آپ دیکھ سکتے ہیں۔",
             "Family & language": "خاندان اور زبان",
-            "Add your family members with their own patient codes and switch between them with one tap. Change the language any time.": "اپنے خاندان کے افراد کو ان کے مریض کوڈ سے جوڑیں اور ایک ٹیپ سے بدلیں۔ زبان کبھی بھی بدلیں۔",
+            "Add your family members with their own patient codes and switch between them with one tap. Change the language any time.": "اپنے خاندان کے افراد کو ان کے Care-Connect کوڈ سے جوڑیں اور ایک ٹیپ سے بدلیں۔ زبان کبھی بھی بدلیں۔",
             "iPhone": "iPhone",
             "How to install & use": "انسٹال اور استعمال کیسے کریں",
             "Real experiences shared by our patients.": "ہمارے مریضوں کے اصلی تجربات۔",
@@ -215,15 +215,15 @@
             "Tap Install, then Open.": "Install دبائیں، پھر Open۔",
             "First time in the app": "ایپ میں پہلی بار",
             "If the app asks for the hospital's address, it is printed on your prescription, next to the QR code.": "اگر ایپ ہسپتال کا پتہ پوچھے تو وہ آپ کے نسخے پر QR کوڈ کے پاس چھپا ہے۔",
-            "Type your 8-letter patient code from the prescription.": "نسخے پر دیا گیا 8 حروف کا اپنا مریض کوڈ لکھیں۔",
+            "Type your 8-letter patient code from the prescription.": "نسخے پر دیا گیا 8 حروف کا اپنا Care-Connect کوڈ لکھیں۔",
             "Confirm with the last 4 digits of your registered mobile number.": "اپنے رجسٹرڈ موبائل نمبر کے آخری 4 ہندسوں سے تصدیق کریں۔",
             "Copy": "کاپی کریں",
             "iPhone or iPad": "iPhone یا iPad",
             "Open the hospital's app address in Safari.": "ہسپتال کا ایپ پتہ Safari میں کھولیں۔",
             "Tap Share, then “Add to Home Screen”.": "Share دبائیں، پھر “Add to Home Screen”۔",
-            "Open the new Care-Connect icon and type your patient code.": "نیا Care-Connect آئیکن کھولیں اور اپنا مریض کوڈ لکھیں۔",
+            "Open the new Care-Connect icon and type your patient code.": "نیا Care-Connect آئیکن کھولیں اور اپنا Care-Connect کوڈ لکھیں۔",
             "Open in Safari": "Safari میں کھولیں",
-            "Don't have a patient code yet? Ask at the reception, or call / WhatsApp +91 93701 11449. The app is free. Your records are kept by the hospital — the app only shows them to you.": "ابھی تک مریض کوڈ نہیں ہے؟ ریسیپشن پر پوچھیں، یا +91 93701 11449 پر کال / WhatsApp کریں۔ ایپ مفت ہے۔ آپ کے ریکارڈ ہسپتال کے پاس محفوظ رہتے ہیں — ایپ انہیں صرف آپ کو دکھاتی ہے۔"
+            "Don't have a patient code yet? Ask at the reception, or call / WhatsApp +91 93701 11449. The app is free. Your records are kept by the hospital — the app only shows them to you.": "ابھی تک Care-Connect کوڈ نہیں ہے؟ ریسیپشن پر پوچھیں، یا +91 93701 11449 پر کال / WhatsApp کریں۔ ایپ مفت ہے۔ آپ کے ریکارڈ ہسپتال کے پاس محفوظ رہتے ہیں — ایپ انہیں صرف آپ کو دکھاتی ہے۔"
         }
     };
     window.CARE_I18N = window.CARE_I18N || { hi: {}, ur: {} };
