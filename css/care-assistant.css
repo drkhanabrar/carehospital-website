@@ -124,4 +124,10 @@ html.care-asst-lock, html.care-asst-lock body{ overflow:hidden !important; }
 @media (prefers-reduced-motion: reduce){ .care-asst *{ animation:none !important; transition:none !important; } }
 @media print{ .care-asst{ display:none !important; } }
 /* the "Patient App" menu link: only in the phone / tablet menu — the desktop header has room for nine links */
-@media (min-width:1251px){ .nav li.nav-app{ display:none !important; } }
+/* 3.25.0: on desktops the "Patient App" link shows as a small 📲 App pill (narrow, so the nine other links keep their place) */
+@media (min-width:1251px){
+  .nav li.nav-app{ display:list-item !important; }
+  .nav li.nav-app > a{ font-size:0 !important; padding-left:6px !important; padding-right:6px !important; letter-spacing:0 !important; }
+  .nav li.nav-app > a::before{ content:"📲 App"; font-size:13px; font-weight:700; line-height:1; display:inline-block; padding:6px 10px; border-radius:999px; background:#0f766e; color:#fff; white-space:nowrap; }
+  .nav li.nav-app > a:hover::before, .nav li.nav-app > a.active::before{ background:#115e59; }
+}
