@@ -51,13 +51,7 @@
 /* The desktop header was measured for nine links (css/responsive.css); a tenth pushed "Emergency" under the
    scrollbar. On desktops the patient app is reached from the home-page section, the footer and the 💬 assistant;
    the phone / tablet menu (below 1251px) shows it. */
-/* 3.25.0: on desktops the "Patient App" link shows as a small 📲 App pill (narrow, so the nine other links keep their place) */
-@media (min-width:1251px){
-  .nav li.nav-app{ display:list-item !important; }
-  .nav li.nav-app > a{ font-size:0 !important; padding-left:6px !important; padding-right:6px !important; letter-spacing:0 !important; }
-  .nav li.nav-app > a::before{ content:"📲 App"; font-size:13px; font-weight:700; line-height:1; display:inline-block; padding:6px 10px; border-radius:999px; background:#0f766e; color:#fff; white-space:nowrap; }
-  .nav li.nav-app > a:hover::before, .nav li.nav-app > a.active::before{ background:#115e59; }
-}
+@media (min-width:1251px){ .nav li.nav-app{ display:none !important; } }
 
 /* ---------------------------------------------------------- app.html v2: download, steps with pictures, how to use */
 .pa-shot{ margin:0; border-radius:26px; background:#0f2f35; padding:8px; box-shadow:0 16px 40px rgba(15,47,53,.18); }
