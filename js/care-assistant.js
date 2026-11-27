@@ -421,7 +421,7 @@
             var P = window.CARE_APP || { apk: "downloads/Care-Connect.apk" };
             return { html: "<p>" + T("appIntro") + '</p><p><a class="ca-btn" href="' + esc(BASE + P.apk) + '" download="Care-Connect.apk">' + esc(T("appDl")) + "</a></p><p><small>" + esc(T("appCode")) + ' <a href="' + BASE + 'app.html">' + esc(T("appHow")) + "</a></small></p>" };
         },
-        learned: function (it) { return { html: "<p>" + esc(it.a).replace(/\n/g, "<br>") + "</p>" }; }
+        learned: function (it) { var a = it.tr && LANG !== it.lang && it.tr[LANG] ? it.tr[LANG] : it.a; return { html: "<p>" + esc(a).replace(/\n/g, "<br>") + "</p>" }; }
     };
     // only real reviews (assets/data/reviews.js) — never made-up ones
     function realReviews(docId) { var R = window.CARE_REVIEWS || {}; return (R.items || []).filter(function (r) { return r && r.text && r.name && (!docId || r.doctor === docId); }); }
@@ -467,7 +467,7 @@
     function loadLearned() {
         if (!SERVER || !window.fetch) return Promise.resolve();
         return fetch(SERVER + "/api/pt/siteai.kb", { credentials: "omit", mode: "cors" }).then(function (r) { return r.ok ? r.json() : null; }).then(function (j) {
-            if (j && Array.isArray(j.items)) KB.learned = j.items.filter(function (x) { return x && x.q && x.a; }).map(function (x) { return { q: String(x.q), a: String(x.a), lang: x.lang || "en", tok: tokens(x.q + " " + (x.keys || "")) }; });
+            if (j && Array.isArray(j.items)) KB.learned = j.items.filter(function (x) { return x && x.q && x.a; }).map(function (x) { return { q: String(x.q), a: String(x.a), lang: x.lang || "en", tr: x.tr && typeof x.tr === "object" ? x.tr : null, tok: tokens(x.q + " " + (x.keys || "")) }; });
             if (j && Array.isArray(j.popular) && j.popular.length) KB.popular = j.popular.slice(0, 4);
             SERVER_FEATURES = j && j.features || {};
         }).catch(function () { /* the hospital's server is not reachable — the website answers alone */ });
@@ -644,7 +644,11 @@
     function finishBooking() {
         var b = BK; BK = null;
         store.set("visitor", { name: b.name, mobile: b.mobile, at: Date.now() });   // filled in next time (this browser only)
-        var wa = function () { window.open("https://wa.me/" + WA + "?text=" + encodeURIComponent(waMessage(b)), "_blank"); return { html: "<p>" + esc(T("bDoneWa")) + "</p>", chips: [T("moreQ")] }; };
+        var wa = function () {
+            // 3.25.1: the request is ALSO kept in CARE (Appointments → 🌐 Website requests) when the CARE server answers
+            if (SERVER) { try { fetch(SERVER + "/api/pt/siteai.request", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ name: b.name, mobile: b.mobile, dept: b.dept, doctor: b.doctor, date: b.date, time: b.time, problem: b.problem, lang: LANG }), credentials: "omit", mode: "cors", keepalive: true }).catch(function () {}); } catch (e) { /* WhatsApp is enough */ } }
+            window.open("https://wa.me/" + WA + "?text=" + encodeURIComponent(waMessage(b)), "_blank"); return { html: "<p>" + esc(T("bDoneWa")) + "</p>", chips: [T("moreQ")] };
+        };
         if (!(SERVER && SERVER_FEATURES.book)) return wa();
         // straight into CARE (when the hospital switched on website bookings) — WhatsApp if it does not answer
         return fetch(SERVER + "/api/pt/siteai.book", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ name: b.name, mobile: b.mobile, dept: b.dept, doctor: b.doctor, date: b.date, time: b.time, problem: b.problem, lang: LANG }), credentials: "omit", mode: "cors" })
@@ -673,8 +677,27 @@
             var d = document.createElement("div"); d.innerHTML = html;
             return (d.textContent || "").replace(/[\u{1F300}-\u{1FAFF}☀-➿️]/gu, " ").replace(/https?:\S+/g, "").replace(/\s+/g, " ").trim().slice(0, 900);
         },
+        srv: true, audio: null,
+        // 🔊 3.25.1: the hospital's natural voice (Azure Neerja / Swara / Gul), only when the hospital switched it on; else this device's voice
+        sayServer: function (t) {
+            if (!SERVER || !VOICE.srv || !window.fetch || !window.Audio) return Promise.resolve(false);
+            return fetch(SERVER + "/api/pt/siteai.voice", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ text: t, lang: LANG === "hi" ? "hi-IN" : LANG === "ur" ? "ur-IN" : LANG === "mr" ? "mr-IN" : "en-IN", where: "site" }), credentials: "omit", mode: "cors" })
+                .then(function (r) { return r.ok ? r.json() : null; })
+                .then(function (j) {
+                    if (!j || !j.ok || !j.b64) { VOICE.srv = false; return false; }
+                    VOICE.audio = new Audio("data:" + (j.mime || "audio/mpeg") + ";base64," + j.b64);
+                    return VOICE.audio.play().then(function () { return true; }, function () { return false; });
+                }, function () { VOICE.srv = false; return false; });
+        },
         say: function (html) {
-            if (!VOICE.on || !VOICE.ok) return;
+            if (!VOICE.on) return;
+            var t0 = VOICE.clean(html); if (!t0) return;
+            VOICE.stop();
+            if (VOICE.srv && SERVER) { VOICE.sayServer(t0).then(function (done) { if (!done) VOICE.sayDevice(html); }); return; }
+            VOICE.sayDevice(html);
+        },
+        sayDevice: function (html) {
+            if (!VOICE.ok) return;
             try {
                 window.speechSynthesis.cancel();
                 var t = VOICE.clean(html); if (!t) return;
@@ -684,7 +707,7 @@
                 window.speechSynthesis.speak(u);
             } catch (e) { /* no voice on this device */ }
         },
-        stop: function () { try { window.speechSynthesis.cancel(); } catch (e) { /* */ } }
+        stop: function () { try { if (VOICE.audio) { VOICE.audio.pause(); VOICE.audio = null; } } catch (e) { /* */ } try { window.speechSynthesis.cancel(); } catch (e) { /* */ } }
     };
     if (VOICE.ok) { VOICE.load(); try { window.speechSynthesis.onvoiceschanged = VOICE.load; } catch (e) { /* */ } }
     // 🎤 speak the question (Chrome / Edge / Android; the browser asks the visitor first)
