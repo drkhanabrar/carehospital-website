@@ -1,8 +1,8 @@
-/* Written by CARE Workstation 3.25.1 — 2026-11-27. CARE updates this file by itself. */
+/* Written by CARE Workstation 3.24.0 — 2026-11-27. CARE updates this file by itself. */
 window.CARE_APP = {
     "name": "Care-Connect",
     "apk": "downloads/Care-Connect.apk",
-    "version": "3.25.1",
+    "version": "3.24.0",
     "size": "2.1 MB",
     "address": "https://emr.carehospital.in/p/",
     "ipa": "downloads/Care-Connect-iOS-arm64.ipa"
